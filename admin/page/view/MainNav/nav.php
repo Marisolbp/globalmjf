@@ -22,25 +22,25 @@
                 <li id="liMiembro" class="<?php if (isset($active3)) { echo $active3; } ?> nav-item"><a href="../Miembro/"><i class="menu-livicon" data-icon="users"></i><span class="menu-title" data-i18n="Todo">Miembros</span></a>
                 </li>
 
-                <li class=" nav-item"><a href="app-kanban.html"><i class="menu-livicon" data-icon="flag"></i><span class="menu-title" data-i18n="Kanban">Independización</span></a>
+                <li id="liIndependizacion" class="<?php if (isset($active4)) { echo $active4; } ?> nav-item"><a href="../Independizacion/"><i class="menu-livicon" data-icon="flag"></i><span class="menu-title" data-i18n="Kanban">Independización</span></a>
                 </li>
 
-                <li class=" nav-item"><a href="app-kanban.html"><i class="menu-livicon" data-icon="home"></i><span class="menu-title" data-i18n="Kanban">Propiedades en venta</span></a>
+                <li id="liPropiedad" class="<?php if (isset($active5)) { echo $active5; } ?> nav-item"><a href="../Propiedad/"><i class="menu-livicon" data-icon="home"></i><span class="menu-title" data-i18n="Kanban">Propiedades en venta</span></a>
                 </li>
 
-                <li class=" nav-item"><a href="app-kanban.html"><i class="menu-livicon" data-icon="home"></i><span class="menu-title" data-i18n="Kanban">Proyectos arquitectura</span></a>
+                <li id="liProyecto" class="<?php if (isset($active6)) { echo $active6; } ?> nav-item"><a href="../Proyecto/"><i class="menu-livicon" data-icon="home"></i><span class="menu-title" data-i18n="Kanban">Proyectos arquitectura</span></a>
                 </li>
 
 
                 <li class=" nav-item"><a href="#"><i class="menu-livicon" data-icon="gears"></i><span class="menu-title" data-i18n="Invoice">Configuración</span></a>
                     <ul class="menu-content">
-                        <li><a href="app-invoice-list.html"><i class="bx bx-right-arrow-alt"></i><span class="menu-item" data-i18n="Invoice List">General</span></a>
+                        <li class="<?php if (isset($active7)) { echo $active7; } ?> nav-item"><a href="../General/"><i class="bx bx-right-arrow-alt"></i><span class="menu-item" data-i18n="Invoice List">General</span></a>
                         </li>
-                        <li><a href="app-invoice.html"><i class="bx bx-right-arrow-alt"></i><span class="menu-item" data-i18n="Invoice">Slider</span></a>
+                        <li class="<?php if (isset($active8)) { echo $active8; } ?> nav-item"><a href="../Slider/"><i class="bx bx-right-arrow-alt"></i><span class="menu-item" data-i18n="Invoice">Slider</span></a>
                         </li>
-                        <li><a href="app-invoice.html"><i class="bx bx-right-arrow-alt"></i><span class="menu-item" data-i18n="Invoice">Tipo de propiedad</span></a>
+                        <li class="<?php if (isset($active9)) { echo $active9; } ?> nav-item"><a href="../Tipo_Propiedad/"><i class="bx bx-right-arrow-alt"></i><span class="menu-item" data-i18n="Invoice">Tipo de propiedad</span></a>
                         </li>
-                        <li><a href="app-invoice-list.html"><i class="bx bx-right-arrow-alt"></i><span class="menu-item" data-i18n="Invoice List">Usuarios</span></a>
+                        <li class="<?php if (isset($active10)) { echo $active10; } ?> nav-item"><a href="../Usuario/"><i class="bx bx-right-arrow-alt"></i><span class="menu-item" data-i18n="Invoice List">Usuarios</span></a>
                         </li>
                     </ul>
                 </li>

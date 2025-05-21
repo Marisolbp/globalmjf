@@ -95,7 +95,7 @@
                                             <div class="col-md-3 col-sm-6">
                                                 <h6>Estado</h6>
                                                 <div class="custom-control custom-switch custom-control-inline mt-0">
-                                                    <input type="checkbox" class="custom-control-input" checked id="estado" name="estado">
+                                                    <input type="checkbox" class="custom-control-input" id="estado" name="estado">
                                                         <label class="custom-control-label mr-1" for="estado">
                                                         </label>
                                                         <span id="lblEstado">Activo</span>
@@ -108,7 +108,7 @@
                                         <div class="dropzone dz-custom-style" id="upload-form">
                                             <div class="dz-message">
                                                 <i class="bx bx-cloud-upload upload-icon"></i>
-                                                <p>Arrastra o selecciona la foto del producto</p>
+                                                <p>Arrastra o selecciona la foto del miembro</p>
                                             </div>
                                         </div>
                                     </div>

@@ -9,14 +9,14 @@ $(document).ready(function(){
         colReorder: true,
         "ordering": false,
         columnDefs: [
-            { width: "15%", targets: 0, className: 'text-center'},
-            { width: "15%", targets: 1, className: 'text-center'},
-            { width: "15%", targets: 2, className: 'text-center'},
+            { width: "20%", targets: 0, className: 'text-center'},
+            { width: "20%", targets: 1, className: 'text-center'},
+            { width: "20%", targets: 2, className: 'text-center'},
             { width: "15%", targets: 3, className: 'text-center'},
-            { width: "10%", targets: 4, className: 'text-center'},
-            { width: "10%", targets: 5, className: 'text-center'},
+            { width: "5%", targets: 4, className: 'text-center'},
+            { width: "5%", targets: 5, className: 'text-center'},
             { width: "10%", targets: 6, className: 'text-center'},
-            { width: "10%", targets: 7, className: 'text-center'}
+            { width: "5%", targets: 7, className: 'text-center'}
         ],
         "ajax":{
             url: '../../controller/miembro.php?op=listar',
@@ -56,6 +56,27 @@ $(document).ready(function(){
             }
         }     
     }).DataTable();
+
+    $('#estado').prop('checked', true); 
+});
+
+$(document).on('change', '.input-orden', function () {
+    let nuevoOrden = $(this).val();
+    let id = $(this).data('id');
+
+    $.ajax({
+        url: '../../controller/miembro.php?op=actualizar_orden',
+        method: 'POST',
+        data: { id: id, orden: nuevoOrden },
+        success: function (resp) {
+            let r = JSON.parse(resp);
+            if (r.success == 1) {
+                $('#data_miembro').DataTable().ajax.reload();
+            } else {
+                toastr.error('Error al actualizar el orden');
+            }
+        }
+    });
 });
 
 // Inicializar Dropzone
@@ -97,8 +118,12 @@ var myDropzone = new Dropzone("#upload-form", {
             console.log("Error al subir el archivo", errorMessage);
         });
 
+        // Guardamos referencia para usar fuera
+        window.dropzoneInstance = this;
+
     }
 });
+
 
 $('#estado').on('change', function () {
     if ($(this).is(':checked')) {
@@ -111,6 +136,8 @@ $('#estado').on('change', function () {
 });
 
 function nuevoMiembro(){
+    $('#estado').prop('checked', true); 
+    
     $('#lblTitle').html('Nuevo registro');
     $('#modal_miembro').modal('show');
 }
@@ -179,8 +206,18 @@ function guardarRegistro(){
       formData.append("foto" + i, file); // Añade los archivos al FormData
     });
 
+    let url_ajax, resultado;
+
+    if($('#codigo').val() != ''){
+        url_ajax = "../../controller/miembro.php?op=editar";
+        resultado = 'Miembro actualizado';
+    } else {
+        url_ajax = "../../controller/miembro.php?op=registrar";
+        resultado = 'Miembro registrado';
+    }
+
     $.ajax({
-        url: "../../controller/miembro.php?op=registrar",
+        url: url_ajax,
         type: "POST",
         data: formData,
         contentType: false,
@@ -193,19 +230,19 @@ function guardarRegistro(){
                 $("#miembro_form")[0].reset();
 
                 const Toast = Swal.mixin({
-                toast: true,
-                position: "top-end",
-                showConfirmButton: false,
-                timer: 2000,
-                timerProgressBar: true,
-                onOpen: (toast) => {
-                    toast.addEventListener("mouseenter", Swal.stopTimer);
-                    toast.addEventListener("mouseleave", Swal.resumeTimer);
-                },
+                    toast: true,
+                    position: "top-end",
+                    showConfirmButton: false,
+                    timer: 2000,
+                    timerProgressBar: true,
+                    onOpen: (toast) => {
+                        toast.addEventListener("mouseenter", Swal.stopTimer);
+                        toast.addEventListener("mouseleave", Swal.resumeTimer);
+                    },
                 });
                 Toast.fire({
-                icon: "success",
-                title: "Miembro registrado",
+                    icon: "success",
+                    title: resultado,
                 });
 
                 $('#data_miembro').DataTable().ajax.reload();	
@@ -231,6 +268,63 @@ function guardarRegistro(){
     });
 }
 
+function editarRegistro(id){
+    $('#lblTitle').html('Editar registro');
+    $('#modal_miembro').modal('show');
+
+    $("#codigo").val(id);
+
+    $.post("../../controller/miembro.php?op=obtener", { id: id }, function (data) {
+        data = JSON.parse(data);
+        $('#nombre').val(data.nombre);
+        $('#apellido').val(data.apellido);
+        $('#puesto').val(data.puesto);  
+        $('#correo').val(data.correo);
+        $('#linkedin').val(data.linkedin);
+        $('#instagram').val(data.instagram);
+        $('#descrip').val(data.descrip);
+        $('#orden').val(data.orden);
+
+        // Simula la imagen previa
+        if (data.foto) {
+            var mockFile = {
+                name: "foto_perfil.png", // Nombre ficticio
+                size: 7024, // Tamaño ficticio en bytes
+                type: "image/png"
+            };
+
+            // Agrega archivo ficticio a Dropzone
+            dropzoneInstance.emit("addedfile", mockFile);
+            dropzoneInstance.emit("thumbnail", mockFile, data.foto);
+            dropzoneInstance.emit("complete", mockFile);
+
+            // Marca que no es archivo nuevo
+            dropzoneInstance.files.push(mockFile);
+
+            dropzoneInstance.emit("thumbnail", mockFile, data.foto);
+
+            // Limita la imagen después de insertarla
+            $(mockFile.previewElement).find("img").css({
+                width: "100%",
+                height: "auto",
+                "object-fit": "cover",
+                "max-height": "120px"
+            });
+        }
+        
+        if(data.estado == 'I'){
+            $('#estado').prop('checked', false); 
+        } else {
+            $('#estado').prop('checked', true); 
+        }
+        
+    });
+}
+
 function cerrarModal(){
-    $('#modal_miembro').modal('hide');   
+    $('#modal_miembro').modal('hide'); 
+    
+    $("#miembro_form")[0].reset();
+
+    myDropzone.removeAllFiles(true); // Limpiar Dropzone
 }
