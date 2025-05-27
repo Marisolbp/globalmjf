@@ -683,7 +683,7 @@ body.footer-hidden footer {
 }
 
 .main-menu.menu-dark .navigation > li ul .active {
-  background: rgba(90, 141, 238, 0.15);
+  background: #153138;
 }
 
 .main-menu.menu-dark .navigation > li ul .active > a {

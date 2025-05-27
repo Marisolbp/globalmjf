@@ -25,7 +25,7 @@ body.semi-dark-layout .main-menu-content .navigation-main .nav-item a:after {
 }
 
 body.semi-dark-layout .main-menu-content .navigation-main .nav-item .menu-content .active .menu-item {
-  color: #5A8DEE !important;
+  color: #f6a700 !important;
 }
 
 body.semi-dark-layout .main-menu-content .navigation-main .active .menu-title,
@@ -34,7 +34,7 @@ body.semi-dark-layout .main-menu-content .navigation-main .active i {
 }
 
 body.semi-dark-layout .main-menu-content .navigation-main .sidebar-group-active {
-  background: #272e48 !important;
+  background: #062C37 !important;
 }
 
 body.semi-dark-layout .main-menu-content .navigation-main .sidebar-group-active .menu-content .active {
