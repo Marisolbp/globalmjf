@@ -289,7 +289,7 @@ create table m_tipo_propiedad(
     estado char(1) not null
 );
 
-INSERT INTO m_distrito (nombre, estado) VALUES
+INSERT INTO m_tipo_propiedad (nombre, estado) VALUES
 ('Casa', 'A'),
 ('Departamento', 'A'),
 ('Terrno', 'A');
