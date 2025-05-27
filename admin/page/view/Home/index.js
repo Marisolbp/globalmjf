@@ -25,19 +25,19 @@ $(document).ready(function(){
         $('#lblTotalMiembros').html(data.total_miembros);
     });
 
-    $.post("../../controller/dashboard.php?op=obtener_propiedades_disponibles", function (data) {
+    $.post("../../controller/dashboard.php?op=obtener_total_propiedades", function (data) {
         data = JSON.parse(data); 
-        $('#lblPropiedadesDisponibles').html(data.total_propiedades);
+        $('#lblTotalPropiedades').html(data.total_propiedades);
     });
 
-    $.post("../../controller/dashboard.php?op=obtener_distrito_mayor_in", function (data) {
+    $.post("../../controller/dashboard.php?op=obtener_total_independizacion", function (data) {
         data = JSON.parse(data); 
-        $('#lblDistritoMayor').html(data.mayor_distrito);
+        $('#lblTotalIndependizaciones').html(data.total_independizacion);
     });
 
-    $.post("../../controller/dashboard.php?op=obtener_proyectos_en_curso", function (data) {
+    $.post("../../controller/dashboard.php?op=obtener_total_proyectos", function (data) {
         data = JSON.parse(data); 
-        $('#lblProyectoCurso').html(data.total_proyectos);
+        $('#lblTotalProyectos').html(data.total_proyectos);
     });
 
     $.post("../../controller/dashboard.php?op=obtener_proyectos_mas_cotizado", function (data) {

@@ -24,8 +24,8 @@ switch($_GET["op"]){
        
         break;
 
-    case "obtener_propiedades_disponibles":
-        $datos = $dashboard->obtener_propiedades_disponibles();
+    case "obtener_total_propiedades":
+        $datos = $dashboard->obtener_total_propiedades();
         
         foreach ($datos as $row) {
             $output["total_propiedades"] = $row["total_propiedades"];
@@ -35,18 +35,18 @@ switch($_GET["op"]){
         break;
 
     
-    case "obtener_distrito_mayor_in":
-        $datos = $dashboard->obtener_distrito_mayor_in();
+    case "obtener_total_independizacion":
+        $datos = $dashboard->obtener_total_independizacion();
         
         foreach ($datos as $row) {
-            $output["mayor_distrito"] = $row["mayor_distrito"];
+            $output["total_independizacion"] = $row["total_independizacion"];
         } 
         echo json_encode($output);
        
         break;
 
-    case "obtener_proyectos_en_curso":
-        $datos = $dashboard->obtener_proyectos_en_curso();
+    case "obtener_total_proyectos":
+        $datos = $dashboard->obtener_total_proyectos();
         
         foreach ($datos as $row) {
             $output["total_proyectos"] = $row["total_proyectos"];

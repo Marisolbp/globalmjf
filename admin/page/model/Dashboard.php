@@ -6,19 +6,10 @@ class Dashboard extends Conectar{
     public function obtener_solicitudes_activas(){
         $conectar= parent::conexion();
         parent::set_names();
-
-        /*$codusu = $_SESSION['codusu'];
-        if ($_SESSION['codrol'] == 1) {
-            $cond_c = "1 = 1";
-        } else if ($_SESSION['codrol'] == 5) {
-            $cond_c = "tb_constitucion.codusu='$codusu'";
-        }
-        AND $cond_c";    
-        */
         
         $sql="SELECT COUNT(*) total_solicitudes
         FROM g_solicitud
-        WHERE g_solicitud.estado = 'A' ";
+        WHERE estado = 'A' ";
 
         $sql=$conectar->prepare($sql);
         $sql->execute();
@@ -31,7 +22,8 @@ class Dashboard extends Conectar{
         parent::set_names();
         
         $sql="SELECT COUNT(*) total_miembros
-        FROM m_miembro";
+                FROM m_miembro
+                WHERE estado = 'A'";
 
         $sql=$conectar->prepare($sql);
         $sql->execute();
@@ -39,12 +31,13 @@ class Dashboard extends Conectar{
         return $resultado=$sql->fetchAll();
     }
 
-    public function obtener_propiedades_disponibles(){
+    public function obtener_total_propiedades(){
         $conectar= parent::conexion();
         parent::set_names();
         
         $sql="SELECT COUNT(*) total_propiedades
-        FROM g_propi_venta";
+        FROM g_propi_venta
+        WHERE estado = 'A'";
 
         $sql=$conectar->prepare($sql);
         $sql->execute();
@@ -52,15 +45,13 @@ class Dashboard extends Conectar{
         return $resultado=$sql->fetchAll();
     }
 
-    public function obtener_distrito_mayor_in(){
+    public function obtener_total_independizacion(){
         $conectar= parent::conexion();
         parent::set_names();
         
-        $sql="SELECT nombre mayor_distrito
+        $sql="SELECT COUNT(*) total_independizacion
                 FROM g_independizacion
-                GROUP BY nombre
-                ORDER BY COUNT(*) DESC
-                LIMIT 1";
+                WHERE estado = 'A'";
 
         $sql=$conectar->prepare($sql);
         $sql->execute();
@@ -68,12 +59,13 @@ class Dashboard extends Conectar{
         return $resultado=$sql->fetchAll();
     }
 
-    public function obtener_proyectos_en_curso(){
+    public function obtener_total_proyectos(){
         $conectar= parent::conexion();
         parent::set_names();
         
         $sql="SELECT COUNT(*) total_proyectos
-                FROM g_proyec_arqui";
+                FROM g_proyec_arqui
+                WHERE estado = 'A'";
 
         $sql=$conectar->prepare($sql);
         $sql->execute();
@@ -85,14 +77,11 @@ class Dashboard extends Conectar{
         $conectar= parent::conexion();
         parent::set_names();
         
-        $sql="SELECT CASE 
-		                WHEN id_t_prop = 1 
-                        THEN 'Casas'
-                        WHEN id_t_prop = 2 
-                        THEN 'Departamentos' 
-                        ELSE 'Terrenos'
-                     END proyectos_cotizados
-                    FROM `g_proyec_arqui` 
+        $sql="SELECT m_tipo_propiedad.nombre proyectos_cotizados
+                    FROM g_proyec_arqui
+                    JOIN m_tipo_propiedad 
+                    ON g_proyec_arqui.id_t_prop = m_tipo_propiedad.id
+                    WHERE g_proyec_arqui.estado = 'A'
                     GROUP BY id_t_prop
                     ORDER BY COUNT(*) DESC
                 LIMIT 1 ";
