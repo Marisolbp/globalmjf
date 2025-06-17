@@ -19,7 +19,7 @@
         }
 
 		public static function ruta(){
-            return "http://localhost/globalmjf/admin/page/";
+            return "http://localhost:8080/globalmjf/admin/page/";
         }
 	
     }
