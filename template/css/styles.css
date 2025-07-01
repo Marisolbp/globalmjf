@@ -4473,6 +4473,15 @@ mark,
     list-style: none
 }
 
+@media screen and (min-width: 769px){
+    .list-inline {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+    }
+}
+
 .list-inline-item {
     display: inline-block
 }
@@ -30381,7 +30390,6 @@ input[type="number"] {
     font-size: 60px;
     margin-bottom: 20px;
     font-weight: 600;
-    text-transform: capitalize
 }
 
 @media screen and (min-width: 320px) and (max-width: 575px) {
@@ -31401,8 +31409,8 @@ input[type="number"] {
 
 .wrap-agent .team-member .team-img img {
     height: 300px;
+    width: 360px;
     -o-object-fit: cover;
-    object-fit: cover
 }
 
 .wrap-agent .team-member:hover .team-hover {
@@ -31602,7 +31610,6 @@ input[type="number"] {
     height: 311px;
     width: 100%;
     -o-object-fit: cover;
-    object-fit: cover
 }
 
 .profile__agents-info {

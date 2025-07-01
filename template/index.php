@@ -30,135 +30,32 @@
 </head>
 
 <body>
-    <!-- NAVBAR TOP -->
-    <div class="topbar d-none d-sm-block">
-        <div class="container ">
-            <div class="row">
-                <div class="col-sm-12 col-md-5">
-                    <div class="topbar-left">
-                        <div class="topbar-text">
-                            Monday, March 22, 2020
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-12 col-md-7">
-                    <div class="list-unstyled topbar-right">
-                        <ul class="topbar-link">
-                            <li><a href="#" title="">Career</a></li>
-                            <li><a href="#" title="">Contact Us</a></li>
-                            <li><a href="#" title="">Login / Register</a></li>
-                        </ul>
-                        <ul class="topbar-sosmed">
-                            <li>
-                                <a href="#"><i class="fa fa-facebook"></i></a>
-                            </li>
-                            <li>
-                                <a href="#"><i class="fa fa-twitter"></i></a>
-                            </li>
-                            <li>
-                                <a href="#"><i class="fa fa-instagram"></i></a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- END NAVBAR TOP -->
+    
     <nav class="navbar navbar-hover navbar-expand-lg navbar-soft">
         <div class="container">
-            <a class="navbar-brand" href="#">
-                <img src="images/logo-blue-stiky.png" alt="" class="img-fluid">
+            <a class="navbar-brand" href="../template/">
+                <img src="images/logo-gold.png" alt="" class="img-fluid">
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main_nav99">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="main_nav99">
                 <ul class="navbar-nav  mx-auto">
-                    <li class="nav-item dropdown">
-                        <a class="nav-link active dropdown-toggle" href="#" data-toggle="dropdown"> Home </a>
-                        <ul class="dropdown-menu dropdown-menu-left animate fade-up">
-                            <li><a class='dropdown-item' href='/homepage-v1'> Home version one </a>
-                            </li>
-                            <li><a class='dropdown-item' href='/homepage-v2'> Home version two </a></li>
-                            <li><a class='dropdown-item' href='/homepage-v3'> Home version three </a></li>
-                            <li><a class='dropdown-item' href='/homepage-v4'> Home version four </a></li>
-                            <li><a class='dropdown-item' href='/homepage-v5'> Home version five </a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown"> Pages </a>
-                        <ul class="dropdown-menu animate fade-up">
+                    <li class="nav-item"><a class='nav-link' href='nosotros.php'> Nosotros </a></li>
 
-                            <li><a class="dropdown-item icon-arrow" href="#"> Property Listing </a>
-                                <ul class="submenu dropdown-menu  animate fade-up">
-                                    <li><a class='dropdown-item' href='/listing-style-v1'> Style 1</a></li>
-                                    <li><a class='dropdown-item' href='/listing-style-v2'> Style 2</a></li>
-                                    <li><a class='dropdown-item' href='/listing-style-v3'> Style 3</a></li>
-                                    <li><a class='dropdown-item' href='/listing-style-v4'> Style 4</a></li>
-                                    <li><a class='dropdown-item' href='/listing-style-v5'> Style 5</a></li>
-                                    <li><a class="dropdown-item icon-arrow" href="">Submenu item 3 </a>
-                                        <ul class="submenu dropdown-menu  animate fade-up">
-                                            <li><a class="dropdown-item" href="">Multi level 1</a></li>
-                                            <li><a class="dropdown-item" href="">Multi level 2</a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a class="dropdown-item" href="">Submenu item 4</a></li>
-                                    <li><a class="dropdown-item" href="">Submenu item 5</a></li>
-                                </ul>
-                            </li>
-                            <li><a class="dropdown-item icon-arrow" href="#"> Property single detail </a>
-                                <ul class="submenu dropdown-menu  animate fade-up">
-                                    <li><a class='dropdown-item' href='/single-detail-v1'>Style 1</a></li>
-                                    <li><a class='dropdown-item' href='/single-detail-v2'>Style 2</a></li>
-                                    <li><a class='dropdown-item' href='/single-detail-v3'>Style 3</a></li>
-                                    <li><a class='dropdown-item' href='/single-detail-v4'>Style 4</a></li>
-                                    <li><a class='dropdown-item' href='/single-detail-v5'>Style 5</a></li>
-                                </ul>
+                    <li class="nav-item"><a class='nav-link' href='proyectos.php'> Proyectos </a></li>
 
-                            </li>
+                    <li class="nav-item"><a class='nav-link' href='inmobiliaria.php'> Inmobiliaria </a></li>
 
-                            <li><a class="dropdown-item icon-arrow" href="#"> Agent </a>
-                                <ul class="submenu dropdown-menu  animate fade-up">
-                                    <li><a class='dropdown-item' href='/agents-v1'>Style 1</a></li>
-                                    <li><a class='dropdown-item' href='/agents-v2'>Style 2</a></li>
-                                    <li><a class='dropdown-item' href='/agents-detail'>Agent detail</a></li>
-                                </ul>
-                            </li>
-                            <li><a class="dropdown-item icon-arrow" href="#"> Agency </a>
-                                <ul class="submenu dropdown-menu  animate fade-up">
-                                    <li><a class='dropdown-item' href='/agency-v1'>Style 1</a></li>
-                                    <li><a class='dropdown-item' href='/agency-v2'>Style 2</a></li>
-                                    <li><a class='dropdown-item' href='/agency-detail'>Agency detail</a></li>
-                                </ul>
-                            </li>
-                            <li><a class='dropdown-item' href='/about-us'>About us </a>
-                            <li><a class='dropdown-item' href='/login'>Login </a>
-                            <li><a class='dropdown-item' href='/register'> Register </a>
-                            <li><a class='dropdown-item' href='/contact'> Contact </a>
-                            <li><a class='dropdown-item' href='/404'> 404 Error </a>
-                        </ul>
-                    </li>
-
-                    <li class="nav-item dropdown">
-                        <a class="nav-link active dropdown-toggle" href="#" data-toggle="dropdown"> Blog </a>
-                        <ul class="dropdown-menu dropdown-menu-left animate fade-up">
-                            <li><a class='dropdown-item' href='/blog'> Blog </a>
-                            </li>
-                            <li><a class='dropdown-item' href='/blog-single'> Blog Single </a></li>
-
-                        </ul>
-                    </li>
-
-                    <li class="nav-item"><a class='nav-link' href='/contact'> contact </a></li>
+                    <li class="nav-item"><a class='nav-link' href='contacto.php'> Declaratoria fábrica </a></li>
                 </ul>
 
 
                 <!-- Search bar.// -->
                 <ul class="navbar-nav">
                     <li>
-                        <a href="#" class="btn btn-primary text-capitalize">
-                            <i class="fa fa-plus-circle mr-1"></i> add listing</a>
+                        <a href="#" class="btn btn-primary">
+                            <i class="fa fa-plus-circle mr-1"></i> Vender mi propiedad</a>
                     </li>
                 </ul>
                 <!-- Search content bar.// -->
@@ -208,17 +105,17 @@
                                             <div class="slider__content-title ">
                                                 <h2 data-animation="fadeInDown" data-delay=".2s" data-duration="1000ms"
                                                     class="text-white animated fadeInDown">
-                                                    The #1 place for commercial
-                                                    property</h2>
+                                                    Diseña y construye
+                                                    con nosotros</h2>
                                                 <p data-animation="fadeInUp" data-delay=".4s" data-duration="1000ms"
                                                     class="text-white animated fadeInUp">
 
-                                                    This is real estate website template based on Bootstrap 4 framework.
+                                                    Diseñamos planos que transforman tus ideas en el hogar que siempre soñaste.
                                                 </p>
                                                 <a href="#" data-animation="fadeInUp" data-delay=".6s"
                                                     data-duration="1000ms"
                                                     class="btn btn-primary text-uppercase animated fadeInUp">
-                                                    contact us
+                                                    CONTÁCTANOS
                                                     <i class="fa fa-angle-right arrow-btn "></i></a>
 
                                             </div>
@@ -238,15 +135,14 @@
                                             <div class="slider__content-title ">
                                                 <h2 data-animation="animated fadeInDown"
                                                     class="text-white animated fadeInDown">
-                                                    The #1 place for commercial
-                                                    property</h2>
+                                                    Tenemos la propiedad ideal para ti</h2>
                                                 <p data-animation="animated fadeInUp"
                                                     class="text-white animated fadeInUp ">
 
-                                                    This is real estate website template based on Bootstrap 4 framework.
+                                                    Casas, terrenos, departamentos y más. Tu espacio ideal, solo a un clic de distancia.
                                                 </p>
                                                 <a href="#" class="btn btn-primary text-uppercase animated fadeInUp">
-                                                    contact us
+                                                    CONTÁCTANOS
                                                     <i class="fa fa-angle-right arrow-btn "></i></a>
                                             </div>
                                         </div>
@@ -261,19 +157,19 @@
                             <div class="carousel__content">
                                 <div class="container">
                                     <div class="row justify-content-center">
-                                        <div class="col-lg-8 col-md-12 col-sm-12 text-center">
+                                        <div class="col-lg-10 col-md-12 col-sm-12 text-center">
                                             <div class="slider__content-title ">
                                                 <h2 data-animation="animated fadeInDown"
                                                     class="text-white animated fadeInDown">
-                                                    The #1 place for commercial
-                                                    property</h2>
+                                                    Declara la fábrica e independiza
+                                                    tu propiedad</h2>
                                                 <p data-animation="animated fadeInUp"
                                                     class="text-white animated fadeInUp ">
 
-                                                    This is real estate website template based on Bootstrap 4 framework.
+                                                    Formaliza tu propiedad con la declaratoria de fábrica e independización, y dale valor real a lo que con tanto esfuerzo construiste.
                                                 </p>
                                                 <a href="#" class="btn btn-primary text-uppercase animated fadeInUp">
-                                                    contact us
+                                                    CONTÁCTANOS
                                                     <i class="fa fa-angle-right arrow-btn "></i></a>
                                             </div>
                                         </div>
@@ -305,131 +201,28 @@
     <div class="clearfix"></div>
     <!-- END CAROUSEL -->
     <div class="clearfix"></div>
-    <div class="search__area bg-light">
-        <div class="container">
-            <div class="search__area-inner">
-                <div class="row">
-                    <div class="col-6 col-lg-3 col-md-3">
-                        <div class="form-group">
-                            <select class="wide select_option">
-                                <option data-display="Property Status">Property Status</option>
-                                <option>For Sale</option>
-                                <option>For Rent</option>
-
-                            </select>
-                        </div>
-                    </div>
-                    <div class="col-6 col-lg-3 col-md-3">
-                        <div class="form-group">
-                            <select class="wide select_option">
-                                <option data-display="Property Type">Property Type</option>
-                                <option>Residential</option>
-                                <option>Commercial</option>
-                                <option>Land</option>
-                                <option>Luxury</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="col-6 col-lg-3 col-md-3">
-                        <div class="form-group">
-                            <select class="wide select_option">
-                                <option data-display="Area From">Area From </option>
-                                <option>1500</option>
-                                <option>1200</option>
-                                <option>900</option>
-                                <option>600</option>
-                                <option>300</option>
-                                <option>100</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="col-6 col-lg-3 col-md-3">
-                        <div class="form-group">
-                            <select class="wide select_option">
-                                <option data-display="Locations">Locations</option>
-                                <option>United Kingdom</option>
-                                <option>American Samoa</option>
-                                <option>Belgium</option>
-                                <option>Canada</option>
-                                <option>Delaware</option>
-                                <option>Indonesia</option>
-                                <option>Malaysia</option>
-                                <option>Japan</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="col-6 col-lg-3 col-md-3">
-                        <div class="form-group">
-                            <select class="wide select_option">
-                                <option data-display="Bedrooms">Bedrooms</option>
-                                <option>1</option>
-                                <option>2</option>
-                                <option>3</option>
-                                <option>4</option>
-                                <option>5</option>
-                                <option>6</option>
-                                <option>7</option>
-                                <option>8</option>
-                                <option>9</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="col-6 col-lg-3 col-md-3">
-                        <div class="form-group">
-                            <select class="wide select_option">
-                                <option data-display="Bathrooms">Bathrooms</option>
-                                <option>1</option>
-                                <option>2</option>
-                                <option>3</option>
-                                <option>4</option>
-
-
-                            </select>
-                        </div>
-                    </div>
-                    <div class="col-12 col-lg-3 col-md-3">
-                        <div class="form-group">
-                            <div class="filter__price">
-                                <input class="price-range" type="text" name="my_range" value="" />
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-12 col-lg-3 col-md-3">
-                        <div class="form-group">
-                            <button class="btn btn-primary text-uppercase btn-block"> search <i
-                                    class="fa fa-search ml-1"></i></button>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </div>
-
+    
     <section>
         <div class="container">
             <div class="row">
                 <div class="col-md-8 col-lg-6 mx-auto">
                     <div class="title__head">
                         <h2 class="text-center text-capitalize">
-                            featured properties
+                            Propiedades
                         </h2>
-                        <p class="text-center text-capitalize">handpicked exclusive properties by our team.</p>
+                        <p class="text-center">Propiedades exclusivas seleccionadas por nuestro equipo.</p>
 
                     </div>
                 </div>
             </div>
 
-            <!--=========================================
-=            Section Gallery two            =
-==========================================-->
             <div class="card__image-filter">
                 <div class="filterizr-control">
                     <ul class="list-inline filterizr-filter">
-                        <li class="list-inline-item filtr-active btn-filter" data-filter="all">All Property</li>
-                        <li class="list-inline-item btn-filter" data-filter="1">Apartment</li>
-                        <li class="list-inline-item btn-filter" data-filter="2">House</li>
-                        <li class="list-inline-item btn-filter" data-filter="4">Office</li>
+                        <li class="list-inline-item filtr-active btn-filter" data-filter="all">Todos</li>
+                        <li class="list-inline-item btn-filter" data-filter="1">Casa</li>
+                        <li class="list-inline-item btn-filter" data-filter="2">Departamento</li>
+                        <li class="list-inline-item btn-filter" data-filter="4">Terreno</li>
                     </ul>
                 </div>
                 <div class="row">
@@ -856,141 +649,16 @@
         </div>
     </section>
 
-
-    <!-- MOST POPULAR PLACES -->
-    <section class="wrap__heading bg-light">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-8 col-lg-6 mx-auto">
-                    <div class="title__head">
-                        <h2 class="text-center text-capitalize">
-                            most popular places
-                        </h2>
-                        <p class="text-center text-capitalize">find properties in these cities.</p>
-                    </div>
-                </div>
-                <div class="clearfix"></div>
-            </div>
-            <div class="row">
-                <div class="col-lg-5 col-xl-5 col-padd">
-                    <!-- CARD IMAGE -->
-
-                    <a href="#">
-                        <div class="card__image-hover-style-v3">
-                            <div class="card__image-hover-style-v3-thumb h-475">
-                                <img src="images/city3.jpg" alt="" class="img-fluid w-100">
-                            </div>
-                            <div class="overlay">
-                                <div class="desc">
-                                    <h6 class="text-capitalize">tokyo</h6>
-                                    <p class="text-capitalize">70 properties</p>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-lg-7 col-xl-7">
-                    <div class="row">
-                        <div class="col-md-6 col-padd">
-                            <!-- CARD IMAGE -->
-                            <a href="#">
-                                <div class="card__image-hover-style-v3">
-                                    <div class="card__image-hover-style-v3-thumb h-230">
-                                        <img src="images/city4.jpg" alt="" class="img-fluid w-100">
-                                    </div>
-                                    <div class="overlay">
-                                        <div class="desc">
-                                            <h6 class="text-capitalize">australia</h6>
-                                            <p class="text-capitalize">70 properties</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="col-md-6 col-padd">
-                            <!-- CARD IMAGE -->
-                            <a href="#">
-                                <div class="card__image-hover-style-v3">
-                                    <div class="card__image-hover-style-v3-thumb h-230">
-                                        <img src="images/city5.jpg" alt="" class="img-fluid w-100">
-                                    </div>
-                                    <div class="overlay">
-                                        <div class="desc">
-                                            <h6 class="text-capitalize">rome</h6>
-                                            <p class="text-capitalize">70 properties</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="col-md-6 col-padd">
-                            <!-- CARD IMAGE -->
-                            <a href="#">
-                                <div class="card__image-hover-style-v3">
-                                    <div class="card__image-hover-style-v3-thumb h-230">
-                                        <img src="images/city6.jpg" alt="" class="img-fluid w-100">
-                                    </div>
-                                    <div class="overlay">
-                                        <div class="desc">
-                                            <h6 class="text-capitalize">new york</h6>
-                                            <p class="text-capitalize">70 properties</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="col-md-6 col-padd">
-                            <!-- CARD IMAGE -->
-                            <a href="#">
-                                <div class="card__image-hover-style-v3">
-                                    <div class="card__image-hover-style-v3-thumb h-230">
-                                        <img src="images/city7.jpg" alt="" class="img-fluid w-100">
-                                    </div>
-                                    <div class="overlay">
-                                        <div class="desc">
-                                            <h6 class="text-capitalize">london</h6>
-                                            <p class="text-capitalize">70 properties</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- END MOST POPULAR PLACES -->
-
-
-
-    <!-- VIDEO -->
-    <section class="home__video bg-theme-v6">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-8 mx-auto">
-                    <div class="home__video-area text-center">
-                        <a href="#" class="play-video ">
-                            <i class="icon fa fa-play text-white"></i>
-                        </a>
-                        <h2 class="text-white">The #1 Place For Commercial Property</h2>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- END VIDEO -->
-
-
-    <!-- BRAND PARTNER -->
     <section class="projects__partner bg-light">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-md-8 col-lg-6">
                     <div class="title__head">
-                        <h2 class="text-center text-capitalize">our partners</h2>
-                        <p class="text-center text-capitalize">Brand Partners Successful Projects Trusted Many Clients
-                            Real Estate</p>
+                        <h2 class="text-center text-capitalize">Certificación institucional</h2>
+                        <p> Estamos registrados como agentes inmobiliarios ante el MVCS, somos 
+                            miembros del Colegio de Arquitectos del Perú (CAP) - Regional Lima, 
+                            y estamos habilitados por SUNARP como verificadores comunes.
+                         </p>
                     </div>
                 </div>
             </div>
@@ -999,19 +667,13 @@
                     <div class="projects__partner-logo">
                         <ul class="list-inline mb-0">
                             <li class="list-inline-item">
-                                <img src="images/partner-logo6.png" alt="" class="img-fluid">
+                                <img src="images/03-mvcs.png" alt="" class="img-fluid">
                             </li>
                             <li class="list-inline-item">
-                                <img src="images/partner-logo7.png" alt="" class="img-fluid">
+                                <img src="images/02-cap.png" alt="" class="img-fluid">
                             </li>
                             <li class="list-inline-item">
-                                <img src="images/partner-logo8.png" alt="" class="img-fluid">
-                            </li>
-                            <li class="list-inline-item">
-                                <img src="images/partner-logo1.png" alt="" class="img-fluid">
-                            </li>
-                            <li class="list-inline-item">
-                                <img src="images/partner-logo5.png" alt="" class="img-fluid">
+                                <img src="images/01-sunarp.png" alt="" class="img-fluid">
                             </li>
                         </ul>
                     </div>
@@ -1019,297 +681,190 @@
             </div>
         </div>
     </section>
-    <!-- END BRAND PARTNER -->
 
-    <!-- TESTIMONIAL -->
-    <section>
+    <!-- OUR TEAM -->
+    <section class="our__team">
         <div class="container">
-            <div class="row">
-                <div class="col-md-8 col-lg-6 mx-auto">
+            <div class="row justify-content-center">
+                <div class="col-md-7">
                     <div class="title__head">
-                        <h2 class="text-center text-capitalize">
-                            what people says
-                        </h2>
-                        <p class="text-center text-capitalize">people says about walls property.</p>
+                        <h2 class="text-center">Nuestro equipo de trabajo</h2>
+                        <p class="text-center">Conoce más sobre su experiencia</p>
                     </div>
                 </div>
-                <div class="clearfix"></div>
             </div>
-            <div class="testimonial owl-carousel owl-theme">
-                <!-- TESTIMONIAL -->
-                <div class="item testimonial__block">
-                    <div class="testimonial__block-card bg-reviews">
-                        <p>
-                            Thank you walls property help me, choice dream home We were impressed with the build
-                            quality, Plus they are competitively priced.
-                        </p>
-                    </div>
-                    <div class="testimonial__block-users">
-                        <div class="testimonial__block-users-img">
-                            <img src="images/profile-blog.jpg" alt="" class="img-fluid">
-                        </div>
-                        <div class="testimonial__block-users-name">
-                            jhon doe <br>
-                            <span>owner, digital agency</span>
-                        </div>
-                    </div>
-                </div>
-                <!-- END TESTIMONIAL -->
-                <!-- TESTIMONIAL -->
-                <div class="item testimonial__block">
-                    <div class="testimonial__block-card bg-reviews">
-                        <p>
-                            Thank you walls property help me, choice dream home We were impressed with the build
-                            quality, Plus they are competitively priced.
-                        </p>
-                    </div>
-                    <div class="testimonial__block-users">
-                        <div class="testimonial__block-users-img">
-                            <img src="images/client.png" alt="" class="img-fluid">
-                        </div>
-                        <div class="testimonial__block-users-name">
-                            jhon doe <br>
-                            <span>owner, digital agency</span>
-                        </div>
-                    </div>
-                </div>
-                <!-- END TESTIMONIAL -->
-                <!-- TESTIMONIAL -->
-                <div class="item testimonial__block">
-                    <div class="testimonial__block-card bg-reviews">
-                        <p>
-                            Thank you walls property help me, choice dream home We were impressed with the build
-                            quality, Plus they are competitively priced.
-                        </p>
-                    </div>
-                    <div class="testimonial__block-users">
-                        <div class="testimonial__block-users-img">
-                            <img src="images/profile-blog.jpg" alt="" class="img-fluid">
-                        </div>
-                        <div class="testimonial__block-users-name">
-                            jhon doe <br>
-                            <span>owner, digital agency</span>
+            <div class="row">
+                <div class="col-md-6 col-lg-4">
+                    <div class="wrap-agent">
+                        <div class="team-member">
+                            <div class="team-img">
+                                <img alt="team member" class="img-fluid" src="images/milser1.png">
+                            </div>
+                            <div class="team-hover">
+                                <div class="desk">
+                                    <h5>
+                                        Arquitecto CAP 24160
+                                    </h5>
+                                    <p>
+                                        Broker inmobiliario
+                                    </p>
+                                    <a class="btn btn-primary" href="#">
+                                        Perfil profesional
+                                    </a>
+                                </div>
+                                <ul class="list-inline s-link mb-0">
+                                    <li class="list-inline-item">
+                                        <a href="#">
+                                            <i class="fa fa-facebook">
+                                            </i>
+                                        </a>
+                                    </li>
+                                    <li class="list-inline-item">
+                                        <a href="#">
+                                            <i class="fa fa-twitter">
+                                            </i>
+                                        </a>
+                                    </li>
+                                    <li class="list-inline-item">
+                                        <a href="#">
+                                            <i class="fa fa-google-plus">
+                                            </i>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="team-title">
+                                <h6>
+                                    Milser LLanos
+                                </h6>
+                                <span>
+                                    Gerente general
+                                </span>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <!-- END TESTIMONIAL -->
-                <!-- TESTIMONIAL -->
-                <div class="item testimonial__block">
-                    <div class="testimonial__block-card bg-reviews">
-                        <p>
-                            Thank you walls property help me, choice dream home We were impressed with the build
-                            quality, Plus they are competitively priced.
-                        </p>
-                    </div>
-                    <div class="testimonial__block-users">
-                        <div class="testimonial__block-users-img">
-                            <img src="images/client.png" alt="" class="img-fluid">
-                        </div>
-                        <div class="testimonial__block-users-name">
-                            jhon doe <br>
-                            <span>owner, digital agency</span>
+
+                <div class="col-md-6 col-lg-4">
+                    <div class="wrap-agent">
+                        <div class="team-member">
+                            <div class="team-img">
+                                <img alt="team member" class="img-fluid w-100" src="images/angel2.png">
+                            </div>
+                            <div class="team-hover">
+                                <div class="desk"> 
+                                    <h5>
+                                        Arquitecto CAP 24178
+                                    </h5>                       
+                                    <p>
+                                        Especialista en saneamiento físico legal
+                                    </p>
+                                    <a class="btn btn-primary" href="#">
+                                        Perfil profesional
+                                    </a>
+                                </div>
+                                <ul class="list-inline s-link mb-0">
+                                    <li class="list-inline-item">
+                                        <a href="#">
+                                            <i class="fa fa-facebook">
+                                            </i>
+                                        </a>
+                                    </li>
+                                    <li class="list-inline-item">
+                                        <a href="#">
+                                            <i class="fa fa-twitter">
+                                            </i>
+                                        </a>
+                                    </li>
+                                    <li class="list-inline-item">
+                                        <a href="#">
+                                            <i class="fa fa-google-plus">
+                                            </i>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="team-title">
+                                <h6>
+                                    Angel Gimenez
+                                </h6>
+                                <span>
+                                    Subgerente
+                                </span>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <!-- END TESTIMONIAL -->
-                <!-- TESTIMONIAL -->
-                <div class="item testimonial__block">
-                    <div class="testimonial__block-card bg-reviews">
-                        <p>
-                            Thank you walls property help me, choice dream home We were impressed with the build
-                            quality, Plus they are competitively priced.
-                        </p>
-                    </div>
-                    <div class="testimonial__block-users">
-                        <div class="testimonial__block-users-img">
-                            <img src="images/profile-blog.jpg" alt="" class="img-fluid">
-                        </div>
-                        <div class="testimonial__block-users-name">
-                            jhon doe <br>
-                            <span>owner, digital agency</span>
+
+                <div class="col-md-6 col-lg-4">
+                    <div class="wrap-agent">
+                        <div class="team-member">
+                            <div class="team-img">
+                                <img alt="team member" class="img-fluid w-100" src="images/francisco3.png">
+                            </div>
+                            <div class="team-hover">
+                                <div class="desk">
+                                    <h5>
+                                        Arquitecto CAP 32029
+                                    </h5>
+                                    <p>
+                                        Especialista en construcción y edificaciones
+                                    </p>
+                                    <a class="btn btn-primary" href="#">
+                                        Perfil profesional
+                                    </a>
+                                </div>
+                                <ul class="list-inline s-link mb-0">
+                                    <li class="list-inline-item">
+                                        <a href="#">
+                                            <i class="fa fa-facebook">
+                                            </i>
+                                        </a>
+                                    </li>
+                                    <li class="list-inline-item">
+                                        <a href="#">
+                                            <i class="fa fa-twitter">
+                                            </i>
+                                        </a>
+                                    </li>
+                                    <li class="list-inline-item">
+                                        <a href="#">
+                                            <i class="fa fa-google-plus">
+                                            </i>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="team-title">
+                                <h6>
+                                    Francisco Milla
+                                </h6>
+                                <span>
+                                    Subgerente
+                                </span>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <!-- END TESTIMONIAL -->
+
 
             </div>
         </div>
     </section>
-    <!-- END TESTIMONIAL -->
-
-
-
-    <!-- BLOG -->
-    <section class="blog__home bg-light">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-8 col-lg-6 mx-auto">
-                    <div class="title__head">
-                        <h2 class="text-center text-capitalize">
-                            lastest news post
-                        </h2>
-                        <p class="text-center text-capitalize">Find Of The Most Popular Real Estate Company All Around
-                            Indonesia.</p>
-                    </div>
-                </div>
-                <div class="clearfix"></div>
-            </div>
-            <div class="row">
-                <div class="col-md-4">
-                    <!-- BLOG  -->
-                    <div class="card__image">
-                        <div class="card__image-header h-250">
-                            <img src="images/gallery17.jpg" alt="" class="img-fluid w100 img-transition">
-                            <div class="info"> event</div>
-                        </div>
-                        <div class="card__image-body">
-                            <!-- <span class="badge badge-secondary p-1 text-capitalize mb-3">May 08, 2019 </span> -->
-                            <h6 class="text-capitalize">
-                                <a href='/blog-single'>Best Interior Oppertunity </a>
-                            </h6>
-                            <p class=" mb-0">
-                                Real estate festival is one of the famous feval for explain to you how all this mistaolt
-                                deand praising pain
-                                wasnad I will give complete
-
-                            </p>
-
-
-                        </div>
-                        <div class="card__image-footer">
-                            <figure>
-                                <img src="images/profile-blog.jpg" alt="" class="img-fluid rounded-circle">
-                            </figure>
-                            <ul class="list-inline my-auto">
-                                <li class="list-inline-item ">
-                                    <a href="#">
-                                        tom wilson
-                                    </a>
-
-                                </li>
-
-                            </ul>
-                            <ul class="list-inline my-auto ml-auto">
-                                <li class="list-inline-item ">
-                                    <a class='btn btn-sm btn-primary ' href='/blog-single'><small
-                                            class="text-white ">read more <i
-                                                class="fa fa-angle-right ml-1"></i></small></a>
-                                </li>
-
-                            </ul>
-                        </div>
-                    </div>
-                    <!-- END BLOG -->
-                </div>
-                <div class="col-md-4">
-                    <!-- BLOG  -->
-                    <div class="card__image">
-                        <div class="card__image-header h-250">
-                            <img src="images/gallery23.png" alt="" class="img-fluid w100 img-transition">
-                            <div class="info"> event</div>
-                        </div>
-                        <div class="card__image-body">
-                            <!-- <span class="badge badge-secondary p-1 text-capitalize mb-3">May 08, 2019 </span> -->
-                            <h6 class="text-capitalize">
-                                <a href="#">Tips & Trick buy real estate </a>
-                            </h6>
-                            <p class=" mb-0">
-                                Real estate festival is one of the famous feval for explain to you how all this mistaolt
-                                deand praising pain
-                                wasnad I will give complete
-
-                            </p>
-
-
-                        </div>
-                        <div class="card__image-footer">
-                            <figure>
-                                <img src="images/profile-blog.jpg" alt="" class="img-fluid rounded-circle">
-                            </figure>
-                            <ul class="list-inline my-auto">
-                                <li class="list-inline-item">
-                                    <a href="#">
-                                        tom wilson
-                                    </a>
-
-                                </li>
-
-                            </ul>
-                            <ul class="list-inline my-auto ml-auto">
-                                <li class="list-inline-item">
-                                    <a href="#" class="btn btn-sm btn-primary "><small class="text-white ">read more <i
-                                                class="fa fa-angle-right ml-1"></i></small></a>
-                                </li>
-
-                            </ul>
-                        </div>
-                    </div>
-                    <!-- END BLOG -->
-                </div>
-                <div class="col-md-4">
-                    <!-- BLOG  -->
-                    <div class="card__image">
-                        <div class="card__image-header h-250">
-                            <img src="images/gallery4.jpg" alt="" class="img-fluid w100 img-transition">
-                            <div class="info"> event</div>
-                        </div>
-                        <div class="card__image-body">
-                            <!-- <span class="badge badge-secondary p-1 text-capitalize mb-3">May 08, 2019 </span> -->
-                            <h6 class="text-capitalize">
-                                <a href="#">Our Must Popular Deluxe House </a>
-                            </h6>
-                            <p class=" mb-0">
-                                Real estate festival is one of the famous feval for explain to you how all this mistaolt
-                                deand praising pain
-                                wasnad I will give complete
-
-                            </p>
-
-
-                        </div>
-                        <div class="card__image-footer">
-                            <figure>
-                                <img src="images/profile-blog.jpg" alt="" class="img-fluid rounded-circle">
-                            </figure>
-                            <ul class="list-inline  my-auto">
-                                <li class="list-inline-item">
-                                    <a href="#">
-                                        tom wilson
-                                    </a>
-
-                                </li>
-
-                            </ul>
-                            <ul class="list-inline  my-auto ml-auto">
-                                <li class="list-inline-item">
-                                    <a href="#" class="btn btn-sm btn-primary "><small class="text-white ">read more <i
-                                                class="fa fa-angle-right ml-1"></i></small></a>
-                                </li>
-
-                            </ul>
-                        </div>
-                    </div>
-                    <!-- END BLOG -->
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- END BLOG -->
+    <!-- END TEAM -->
 
     <!-- CALL TO ACTION -->
     <section class="cta-v1 py-5">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-9">
-                    <h2 class="text-uppercase text-white">Looking To Sell Or Rent Your Property?</h2>
-                    <p class="text-capitalize text-white">We Will Assist You In The Best And Comfortable Property
-                        Services
-                        For You
+                    <h2 class="text-uppercase text-white">¿Desea vender o alquilar su propiedad?</h2>
+                    <p class="text-white">Le ayudaremos con los mejores y más cómodos servicios inmobiliarios.
                     </p>
 
                 </div>
                 <div class="col-lg-3">
-                    <a href="#" class="btn btn-light text-uppercase ">request a quote
+                    <a href="#" class="btn btn-light text-uppercase ">solicitar cotización
                         <i class="fa fa-angle-right ml-3 arrow-btn "></i></a>
                 </div>
             </div>
@@ -1458,33 +1013,8 @@
                 <div class="row flex-column-reverse flex-md-row">
                     <div class="col-md-6">
                         <span>
-                            © 2020 Rethouse Real Estate - Premium real estate & theme &amp; theme by
-                            <a href="#">retenvi.com</a>
+                            © 2025 MainCode
                         </span>
-                    </div>
-                    <div class="col-md-6">
-                        <ul class="list-inline ">
-                            <li class="list-inline-item">
-                                <a href="#">
-                                    privacy
-                                </a>
-                            </li>
-                            <li class="list-inline-item">
-                                <a href="#">
-                                    contact
-                                </a>
-                            </li>
-                            <li class="list-inline-item">
-                                <a href="#">
-                                    about
-                                </a>
-                            </li>
-                            <li class="list-inline-item">
-                                <a href="#">
-                                    faq
-                                </a>
-                            </li>
-                        </ul>
                     </div>
                 </div>
             </div>
