@@ -60,7 +60,6 @@
             width: 100%;
             max-width: 280px;
             height: 280px;  
-            object-fit: cover;
             object-position: center top;
             border-radius: 12px;
             box-shadow: 0 8px 25px rgba(0,0,0,0.1);
@@ -203,6 +202,8 @@
         .social-btn:hover {
             transform: translateY(-3px);
             box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+            text-decoration: none;
+            color: white;
         }
         
         .social-btn.linkedin { background-color: #0077b5; }
@@ -403,64 +404,10 @@
 </head>
 
 <body>
-    
-    <nav class="navbar navbar-hover navbar-expand-lg navbar-soft">
-        <div class="container">
-            <a class="navbar-brand" href="../template/">
-                <img src="images/logo-gold.png" alt="" class="img-fluid">
-            </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main_nav99">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="main_nav99">
-                <ul class="navbar-nav  mx-auto">
-                    <li class="nav-item"><a class='nav-link' href='nosotros.php'> Nosotros </a></li>
 
-                    <li class="nav-item"><a class='nav-link' href='proyectos.php'> Proyectos </a></li>
+    <!-- HEADER -->
+    <?php include "menu.php"?>
 
-                    <li class="nav-item"><a class='nav-link' href='inmobiliaria.php'> Inmobiliaria </a></li>
-
-                    <li class="nav-item"><a class='nav-link' href='contacto.php'> Declaratoria fábrica </a></li>
-                </ul>
-
-                <!-- Search bar.// -->
-                <ul class="navbar-nav">
-                    <li>
-                        <a href="#" class="btn btn-primary">
-                            <i class="fa fa-plus-circle mr-1"></i> Vender mi propiedad</a>
-                    </li>
-                </ul>
-                <!-- Search content bar.// -->
-                <div class="top-search navigation-shadow">
-                    <div class="container">
-                        <div class="input-group ">
-                            <form action="#">
-
-                                <div class="row no-gutters mt-3">
-                                    <div class="col">
-                                        <input class="form-control border-secondary border-right-0 rounded-0"
-                                            type="search" value="" placeholder="Search " id="example-search-input4">
-                                    </div>
-                                    <div class="col-auto">
-                                        <a class="btn btn-outline-secondary border-left-0 rounded-0 rounded-right"
-                                            href="/search-result.html">
-                                            <i class="fa fa-search"></i>
-                                        </a>
-                                    </div>
-                                </div>
-
-                            </form>
-                        </div>
-                    </div>
-                </div>
-                <!-- Search content bar.// -->
-            </div> <!-- navbar-collapse.// -->
-        </div>
-    </nav>
-    
-    <div class="clearfix"></div>
-
-    <!-- BREADCRUMB -->
     <div class="bg-theme-overlay">
         <section class="section__breadcrumb ">
             <div class="container">
@@ -472,7 +419,8 @@
             </div>
         </section>
     </div>
-    <!-- END BREADCRUMB -->
+    
+    <div class="clearfix"></div>
     
     <section class="projects__partner">
         <div class="container">

@@ -89,6 +89,7 @@ function guardarInfoModulo(){
     var formData = new FormData($("#module_independizacion_form")[0]);
 
     var editorHTMLContentD  = quill_d.getText().trim();
+    var descripcionHTML = quill_d.root.innerHTML;
 
     if (editorHTMLContentD.length === 0) {
         const Toast = Swal.mixin({
@@ -112,7 +113,7 @@ function guardarInfoModulo(){
         return false;
     } else {
 
-        formData.append("descripcion", editorHTMLContentD);
+        formData.append("descripcion", descripcionHTML);
 
         $.ajax({
             url: "../../controller/independizacion.php?op=registrar_info_modulo",

@@ -37,7 +37,7 @@
             <div class="container">
                 <div class="row d-flex justify-content-center">
                     <div class="col-md-8 text-center">
-                        <h2 class="text-white">Proyectos de arquitectura</h2>
+                        <h2 class="text-white">Inmobiliaria</h2>
                     </div>
                 </div>
             </div>
