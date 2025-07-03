@@ -39,6 +39,61 @@
             line-height: 1.5;
             margin: auto;
         }
+         .specialties-list {
+            
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .specialty-item {
+            display: flex;
+            align-items: flex-start;
+            padding: 10px 0;
+            margin-left: 30px;
+            border-bottom: 1px solid #f1f3f4;
+            transition: all 0.2s ease;
+        }
+        
+        .specialty-item:last-child {
+            border-bottom: none;
+        }
+        
+        .specialty-item:hover {
+            background-color: #f8f9ff;
+            margin: 0 -20px;
+            padding: 10px 20px;
+            border-radius: 8px;
+        }
+
+         .specialty-bullet {
+            width: 8px;
+            height: 8px;
+            background-color: #2c5aa0;
+            border-radius: 50%;
+            margin-right: 15px;
+            margin-top: 8px;
+            flex-shrink: 0;
+        }
+
+        .specialty-text {
+            font-size: 14px;
+            color: #495057;
+            line-height: 1.5;
+            word-wrap: break-word;
+            hyphens: auto;
+        }
+
+        .agent-container {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+            overflow: hidden;
+            margin: 20px 0;
+            display: flex;
+            min-height: 400px;
+        }
+
     </style>
     <!-- HEADER -->
     <?php include "menu.php"?>
@@ -63,14 +118,43 @@
                 <div class="col-lg-6">
                     <div class="title__leading">
                         <h2>¿Qué es la declaratoria de fábrica?</h2>
-                        <p>Es el acto registral mediante el cual se inscribe una edificación construida sobre un terreno en los Registros Públicos. Sirve para dejar constancia oficial de que sobre ese terreno ya existe una construcción.\nTen en cuenta que el terreno puede estar inscrito, pero si no has hecho la declaratoria, legalmente no existe la construcción que has levantado.\n<strong>¿Qué datos se registran?</strong></p><ul><li>Área construida por piso</li><li>Antigüedad de la edificación</li><li>Materiales</li><li>Uso (vivienda, comercio, etc.)</li><li>Planos visados</li><li>Licencia de construcción (si es reciente)</li></ul>
+                        <p style="text-align: justify;">Es el acto registral mediante el cual se inscribe una edificación construida sobre un terreno en los Registros Públicos. Sirve para dejar constancia oficial de que sobre ese terreno ya existe una construcción.<br>Ten en cuenta que el terreno puede estar inscrito, pero si no has hecho la declaratoria, legalmente no existe la construcción que has levantado.</p>
+
+                        <div><strong>¿Qué datos se registran?</strong></div><br>
+                        <ul class="specialties-list">
+                            <li class="specialty-item">
+                                <div class="specialty-bullet"></div>
+                                <div class="specialty-text">Área construida por piso</div>
+                            </li>
+                            <li class="specialty-item">
+                                <div class="specialty-bullet"></div>
+                                <div class="specialty-text">Antigüedad de la edificación</div>
+                            </li>
+                            <li class="specialty-item">
+                                <div class="specialty-bullet"></div>
+                                <div class="specialty-text">Materiales</div>
+                            </li>
+                            <li class="specialty-item">
+                                <div class="specialty-bullet"></div>
+                                <div class="specialty-text">Uso (vivienda, comercio, etc.)</div>
+                            </li>
+                            <li class="specialty-item">
+                                <div class="specialty-bullet"></div>
+                                <div class="specialty-text">Planos visados</div>
+                            </li>
+                            <li class="specialty-item">
+                                <div class="specialty-bullet"></div>
+                                <div class="specialty-text">Licencia de construcción (si es reciente)</div>
+                            </li>
+                        </ul>
                         
                     </div>
                 </div>
                 <div class="col-lg-6">
                     <div class="about__image">
                         <div class="about__image-bottom">
-                           <div class="about__image-top-hover">
+                           <div class="">
+                                <img src="images/fabrica.jpg" alt="" class="img-fluid">
                                 <img src="images/fabrica.jpg" alt="" class="img-fluid">
                             </div>
                         </div>
