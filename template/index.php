@@ -864,7 +864,7 @@
 
                 </div>
                 <div class="col-lg-3">
-                    <a href="#" class="btn btn-light text-uppercase ">solicitar cotización
+                    <a href="solicitud.php" class="btn btn-light text-uppercase ">solicitar cotización
                         <i class="fa fa-angle-right ml-3 arrow-btn "></i></a>
                 </div>
             </div>

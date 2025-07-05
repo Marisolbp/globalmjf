@@ -24,7 +24,7 @@
                     <!-- Search bar.// -->
                     <ul class="navbar-nav">
                         <li>
-                            <a href="#" class="btn btn-primary">
+                            <a href="solicitud.php" class="btn btn-primary">
                                 <i class="fa fa-plus-circle mr-1"></i> Vender mi propiedad</a>
                         </li>
                     </ul>
