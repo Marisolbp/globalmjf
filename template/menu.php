@@ -16,6 +16,8 @@
                         <li class="nav-item"><a class='nav-link' href='inmobiliaria.php'> Inmobiliaria </a></li>
 
                         <li class="nav-item"><a class='nav-link' href='declaratoria.php'> Declaratoria fábrica </a></li>
+
+                        <li class="nav-item"><a class='nav-link' href='independizacion.php'> Independización </a></li>
                     </ul>
 
 

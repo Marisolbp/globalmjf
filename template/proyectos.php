@@ -1000,7 +1000,6 @@
                                                             <div class="card__image-content">
                                                                 <div class="card__image-content-desc">
                                                                     <h6> Citra Garden Estate</h6>
-                                                                    <p class="mb-0"> $1300 / monthly</p>
                                                                 </div>
                                                                 <ul class="list-inline card__hidden-content">
                                                                     <li class="list-inline-item">
@@ -1052,7 +1051,6 @@
                                                             <div class="card__image-content">
                                                                 <div class="card__image-content-desc">
                                                                     <h6> Ample Apartment At Last Floor</h6>
-                                                                    <p class="mb-0"> $1300 / monthly</p>
                                                                 </div>
                                                                 <ul class="list-inline card__hidden-content">
                                                                     <li class="list-inline-item">
@@ -1106,7 +1104,6 @@
                                                             <div class="card__image-content">
                                                                 <div class="card__image-content-desc">
                                                                     <h6> Contemporary Apartment</h6>
-                                                                    <p class="mb-0"> $1300 / monthly</p>
                                                                 </div>
                                                                 <ul class="list-inline card__hidden-content">
                                                                     <li class="list-inline-item">
@@ -1158,7 +1155,6 @@
                                                             <div class="card__image-content">
                                                                 <div class="card__image-content-desc">
                                                                     <h6> Citra Garden Estate</h6>
-                                                                    <p class="mb-0"> $1300 / monthly</p>
                                                                 </div>
                                                                 <ul class="list-inline card__hidden-content">
                                                                     <li class="list-inline-item">
@@ -1212,7 +1208,6 @@
                                                             <div class="card__image-content">
                                                                 <div class="card__image-content-desc">
                                                                     <h6> Family Home For Sale</h6>
-                                                                    <p class="mb-0"> $1300 / monthly</p>
                                                                 </div>
                                                                 <ul class="list-inline card__hidden-content">
                                                                     <li class="list-inline-item">
@@ -1265,7 +1260,6 @@
                                                             <div class="card__image-content">
                                                                 <div class="card__image-content-desc">
                                                                     <h6> Citra Garden Estate</h6>
-                                                                    <p class="mb-0"> $1300 / monthly</p>
                                                                 </div>
                                                                 <ul class="list-inline card__hidden-content">
                                                                     <li class="list-inline-item">
@@ -1319,7 +1313,6 @@
                                                             <div class="card__image-content">
                                                                 <div class="card__image-content-desc">
                                                                     <h6> Luxury Villa With Pool</h6>
-                                                                    <p class="mb-0"> $1300 / monthly</p>
                                                                 </div>
                                                                 <ul class="list-inline card__hidden-content">
                                                                     <li class="list-inline-item">
@@ -1372,7 +1365,6 @@
                                                             <div class="card__image-content">
                                                                 <div class="card__image-content-desc">
                                                                     <h6> Citra Garden Estate</h6>
-                                                                    <p class="mb-0"> $1300 / monthly</p>
                                                                 </div>
                                                                 <ul class="list-inline card__hidden-content">
                                                                     <li class="list-inline-item">
@@ -1426,7 +1418,6 @@
                                                             <div class="card__image-content">
                                                                 <div class="card__image-content-desc">
                                                                     <h6> 184 Lexington Avenue</h6>
-                                                                    <p class="mb-0"> $1300 / monthly</p>
                                                                 </div>
                                                                 <ul class="list-inline card__hidden-content">
                                                                     <li class="list-inline-item">
@@ -1478,7 +1469,6 @@
                                                             <div class="card__image-content">
                                                                 <div class="card__image-content-desc">
                                                                     <h6> The Citizen Apartment 5th Floor</h6>
-                                                                    <p class="mb-0"> $1300 / monthly</p>
                                                                 </div>
                                                                 <ul class="list-inline card__hidden-content">
                                                                     <li class="list-inline-item">
@@ -1534,7 +1524,6 @@
                                                                 <div class="card__image-content-desc">
                                                                     <h6>
                                                                         Ample Apartment At Last Floor</h6>
-                                                                    <p class="mb-0"> $1300 / monthly</p>
                                                                 </div>
                                                                 <ul class="list-inline card__hidden-content">
                                                                     <li class="list-inline-item">
@@ -1586,7 +1575,6 @@
                                                             <div class="card__image-content">
                                                                 <div class="card__image-content-desc">
                                                                     <h6> Contemporary Apartment</h6>
-                                                                    <p class="mb-0"> $1300 / monthly</p>
                                                                 </div>
                                                                 <ul class="list-inline card__hidden-content">
                                                                     <li class="list-inline-item">
