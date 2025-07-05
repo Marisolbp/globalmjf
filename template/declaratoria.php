@@ -84,17 +84,110 @@
             hyphens: auto;
         }
 
-        .agent-container {
-            background: white;
-            border-radius: 15px;
-            box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+        .txt-description{
+            text-align: justify
+        }
+
+
+        .home__about .about__image {
+            position: relative;
+            min-height: 400px
+        }
+        .home__about .about__image-top {
+            position: absolute;
+            width: 50%;
+            left: 0;
+            bottom: -47%;
+            transform: translateY(-50%);
+            z-index: 1;
+            margin-bottom: 40px;
+        }
+
+        @media screen and (min-width: 320px) and (max-width: 575px) {
+            .home__about .about__image-top {
+                position: relative;
+                width: 100%;
+                bottom: 0;
+                transform: translateY(0);
+                border: 0;
+                margin-bottom: 15px
+            }
+        }
+
+        @media screen and (min-width: 576px) and (max-width: 768px) {
+            .home__about .about__image-top {
+                position: relative;
+                width: 100%;
+                bottom: 0;
+                transform: translateY(0);
+                border: 0
+            }
+        }
+
+        .home__about .about__image-top-hover {
+            background: #ffc31d;
             overflow: hidden;
-            margin: 20px 0;
-            display: flex;
-            min-height: 400px;
+            position: relative;
+            display: inline-block;
+            margin: 0 -1.5px
+        }
+
+        .home__about .about__image-top-hover img {
+            width: 100%;
+            transition: 0.5s ease all
+        }
+
+        .home__about .about__image-top-hover:hover img {
+            opacity: 0.6;
+            -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=60)";
+            filter: alpha(opacity=60);
+            transform: scale(1.1, 1.1)
+        }
+
+        .home__about .about__image-bottom {
+            position: absolute;
+            width: 88%;
+            right: 0;
+        }
+
+        @media screen and (min-width: 320px) and (max-width: 575px) {
+            .home__about .about__image-bottom {
+                position: relative;
+                width: 100%
+            }
+        }
+
+        @media screen and (min-width: 576px) and (max-width: 768px) {
+            .home__about .about__image-bottom {
+                position: relative;
+                width: 100%
+            }
+        }
+
+        .home__about .about__image-bottom-hover { 
+            background: #ffc31d;
+            overflow: hidden;
+            position: relative;
+            display: inline-block;
+            margin: 0 -1.5px
+        }
+
+        .home__about .about__image-bottom-hover img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            transition: 0.5s ease all
+        }
+
+        .home__about .about__image-bottom-hover:hover img {
+            opacity: 0.6;
+            -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=60)";
+            filter: alpha(opacity=60);
+            transform: scale(1.1, 1.1)
         }
 
     </style>
+
     <!-- HEADER -->
     <?php include "menu.php"?>
 
@@ -118,7 +211,13 @@
                 <div class="col-lg-6">
                     <div class="title__leading">
                         <h2>¿Qué es la declaratoria de fábrica?</h2>
-                        <p style="text-align: justify;">Es el acto registral mediante el cual se inscribe una edificación construida sobre un terreno en los Registros Públicos. Sirve para dejar constancia oficial de que sobre ese terreno ya existe una construcción.<br>Ten en cuenta que el terreno puede estar inscrito, pero si no has hecho la declaratoria, legalmente no existe la construcción que has levantado.</p>
+                        <p class="txt-description">
+                            Es el acto registral mediante el cual se inscribe una edificación construida
+                            sobre un terreno en los Registros Públicos. Sirve para dejar constancia 
+                            oficial de que sobre ese terreno ya existe una construcción.<br>
+                            Ten en cuenta que el terreno puede estar inscrito, pero si no has hecho la 
+                            declaratoria, legalmente no existe la construcción que has levantado.
+                        </p>
 
                         <div><strong>¿Qué datos se registran?</strong></div><br>
                         <ul class="specialties-list">
@@ -150,16 +249,23 @@
                         
                     </div>
                 </div>
+
                 <div class="col-lg-6">
                     <div class="about__image">
+                        <div class="about__image-top"> 
+                            <div class="about__image-top-hover">
+                                <img src="images/fabrica2.jpg" alt="" class="img-fluid">
+                            </div>
+
+                        </div>
                         <div class="about__image-bottom">
-                           <div class="">
-                                <img src="images/fabrica.jpg" alt="" class="img-fluid">
+                            <div class="about__image-bottom-hover">
                                 <img src="images/fabrica.jpg" alt="" class="img-fluid">
                             </div>
                         </div>
                     </div>
                 </div>
+
             </div>
         </div>
     </section>
@@ -170,27 +276,49 @@
                 <div class="col-lg-6">
                     <div class="title__leading">
                         <h2>¿Qué es la independización de una propiedad?</h2>
-                        <p>
+                        <p class="txt-description">
                             La independización es el proceso mediante el cual una edificación (por ejemplo, un edificio de varios
                             departamentos) se divide legalmente en unidades inmobiliarias independientes, cada una con su propia 
                             partida registral.
                         </p>
-                        <p>
+                        <p class="txt-description">
                             Se separan los espacios construidos (como departamentos, tiendas o estacionamientos) para que cada uno 
                             pueda venderse, alquilarse o hipotecarse por separado.
                         </p>
                         <p><strong>¿Qué se requiere?</strong></p>
-                        <ul>
-                            <li>Declaratoria de fábrica (previamente hecha)</li>
-                            <li>Minuta y escritura pública ante notario</li>
-                            <li>Inscripción en SUNARP</li>
+
+                        <ul class="specialties-list">
+                            <li class="specialty-item">
+                                <div class="specialty-bullet"></div>
+                                <div class="specialty-text">Declaratoria de fábrica (previamente hecha)</div>
+                            </li>
+                            <li class="specialty-item">
+                                <div class="specialty-bullet"></div>
+                                <div class="specialty-text">Minuta y escritura pública ante notario</div>
+                            </li>
+                            <li class="specialty-item">
+                                <div class="specialty-bullet"></div>
+                                <div class="specialty-text">Inscripción en SUNARP</div>
+                            </li>
                         </ul>
+    <hr>
+
                         <p><strong>¿Cuándo necesitas hacer esto?</strong></p>
-                        <ul>
-                            <li>Para vender un departamento dentro de un edificio</li>
-                            <li>Para alquilar o hipotecar una parte del inmueble</li>
-                            <li>Para formalizar una edificación antigua</li>
-                        </ul>                        
+                   
+                        <ul class="specialties-list">
+                            <li class="specialty-item">
+                                <div class="specialty-bullet"></div>
+                                <div class="specialty-text">Para vender un departamento dentro de un edificio</div>
+                            </li>
+                            <li class="specialty-item">
+                                <div class="specialty-bullet"></div>
+                                <div class="specialty-text">Para alquilar o hipotecar una parte del inmueble</div>
+                            </li>
+                            <li class="specialty-item">
+                                <div class="specialty-bullet"></div>
+                                <div class="specialty-text">Para formalizar una edificación antigua</div>
+                            </li>
+                        </ul>
                     </div>
                 </div>
                 <div class="col-lg-6">
