@@ -4579,8 +4579,8 @@ pre code {
 
 .container {
     width: 100%;
-   /*padding-right: 5px;
-    padding-left: 5px;*/
+    padding-right: 5px;
+    padding-left: 5px;
     margin-right: auto;
     margin-left: auto
 }
@@ -24519,6 +24519,7 @@ button.bg-dark:focus {
     text-align: center !important
 }
 
+
 @media (min-width: 576px) {
     .text-sm-left {
         text-align: left !important
@@ -33891,6 +33892,13 @@ body.offcanvas-active {
     font-family: "Open Sans", serif
 }
 
+.detail-consultas {
+    text-align: center;
+    margin: 20px 0 15px;
+    padding: 5px;
+    font-family: "Open Sans", serif
+}
+
 .property__detail-info h6 {
     font-family: "Open Sans", serif;
     margin: 15px 0
@@ -34321,6 +34329,15 @@ body.offcanvas-active {
     margin-right: 15px
 }
 
+.wrap__contact-form label {
+    font-size: 0.9375rem;
+}
+.input-light {
+    
+  background-color: #F9F9F8;
+  
+}
+
 .wrap__contact-form .wrap__contact-form-office .list-unstyled li span a {
     color: #000
 }
@@ -34619,6 +34636,15 @@ body.offcanvas-active {
     -ms-box-shadow: 0 2px 40px rgba(0, 0, 0, 0.08);
     box-shadow: 0 2px 40px rgba(0, 0, 0, 0.08)
 }
+
+ .container-form{
+    padding: 50px;       
+    border-radius:  8px;
+    background: white;
+    box-shadow: 2px 2px 40px rgba(0, 0, 0, 0.08)
+}
+
+
 
 
 

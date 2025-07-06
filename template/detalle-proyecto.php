@@ -46,17 +46,17 @@
                             <ul class="list-inline ">
                                 <li class="list-inline-item">
                                     <a href="#" class="text-white">
-                                        home
+                                        Casa
                                     </a>
                                 </li>
                                 <li class="list-inline-item">
                                     <a href="#" class="text-white">
-                                        property
+                                        Departamento
                                     </a>
                                 </li>
                                 <li class="list-inline-item">
                                     <a href="#" class="text-white">
-                                        single property
+                                        Terreno
                                     </a>
                                 </li>
 
@@ -310,102 +310,16 @@
                     </div>
                     <!-- END SLIDER IMAGE DETAIL -->
                 </div>
+
                 <div class="col-lg-4 pt-5">
-                    <!-- FORM FILTER -->
-                  
-                    <!-- END FORM FILTER -->
-                    <!-- FORM FILTER -->
-                    <div class="products__filter mb-30">
-                        <div class="products__filter__group">
-                            <div class="products__filter__header">
-
-                                <h5 class="text-center text-capitalize">simulation calculator </h5>
-                            </div>
-                            <div class="products__filter__body">
-                                <div class="form-group">
-                                    <label>Sale Price</label>
-
-                                    <div class="input-group">
-                                        <div class="input-group-prepend">
-                                            <span class="input-group-text">$</span>
-
-                                        </div>
-                                        <input type="text" class="form-control" placeholder="$130.000">
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label>Down Payment</label>
-                                    <div class="input-group">
-                                        <div class="input-group-prepend">
-                                            <span class="input-group-text">$</span>
-                                        </div>
-                                        <input type="text" class="form-control" placeholder="$6.000">
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label>Long Term (Years)</label>
-                                    <select class="select_option wide">
-
-                                        <option value="1">10</option>
-                                        <option value="2">15</option>
-                                        <option value="3">20</option>
-                                        <option value="4">25</option>
-                                    </select>
-
-                                </div>
-
-                                <div class="form-group">
-                                    <label>Interest Rate</label>
-
-                                    <div class="input-group">
-                                        <div class="input-group-prepend">
-                                            <span class="input-group-text">%</span>
-
-                                        </div>
-                                        <input type="text" class="form-control" placeholder="10%">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="products__filter__footer">
-                                <div class="form-group mb-0">
-                                    <button class="btn btn-primary text-capitalize btn-block"> calculate
-                                        <i class="fa fa-calculator ml-1"></i>
-                                    </button>
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- END FORM FILTER -->
+                   
                     <div class="sticky-top">
                         <!-- PROFILE AGENT -->
                         <div class="profile__agent mb-30">
                             <div class="profile__agent__group">
-
-                                <div class="profile__agent__header">
-                                    <div class="profile__agent__header-avatar">
-                                        <figure>
-                                            <img src="images/profile-blog.jpg" alt="" class="img-fluid">
-                                        </figure>
-
-                                        <ul class="list-unstyled mb-0">
-                                            <li>
-                                                <h5 class="text-capitalize">jhon doe</h5>
-                                            </li>
-                                            <li><a href="tel:123456"><i
-                                                        class="fa fa-phone-square mr-1"></i>(123)456-7890</a></li>
-                                            <li><a href="javascript:void(0)"><i class=" fa fa-building mr-1"></i>
-                                                    Company name</a>
-                                            </li>
-                                            <li> <a href="javascript:void(0)" class="text-primary">View My Listing</a>
-                                            </li>
-                                        </ul>
-
-
-                                    </div>
-
-                                </div>
+                                
+                                <h6 class="detail-consultas">Consultas</h6>
+                                
                                 <div class="profile__agent__body">
                                     <div class="form-group">
                                         <input type="text" class="form-control" placeholder="Your Name">
@@ -431,23 +345,12 @@
                             </div>
 
                         </div>
-                        <!-- END PROFILE AGENT -->
-                        <div class="download mb-0">
-                            <h5 class="text-center text-capitalize">Property Attachments</h5>
-                            <div class="download__item">
-                                <a href="#" target="_blank"><i class="fa fa-file-pdf-o mr-3"
-                                        aria-hidden="true"></i>Download Document.Pdf</a>
-                            </div>
-                            <div class="download__item">
-                                <a href="#" target="_blank"><i class="fa fa-file-word-o mr-3"
-                                        aria-hidden="true"></i>Presentation
-                                    2016-17.Doc</a>
-                            </div>
-                        </div>
 
 
                     </div>
+
                 </div>
+
                 <div class="col-lg-8">
                     <!-- DESCRIPTION -->
                     <div class="row">
@@ -500,28 +403,6 @@
                                         <div class="col-md-6 col-lg-6">
                                             <ul class="property__detail-info-list list-unstyled">
                                                 <li><b>Garage:</b> 1</li>
-                                                <li><b>Garage Size:</b> 458 SqFt</li>
-                                                <li><b>Year Built:</b> 2019-01-09</li>
-                                                <li><b>Property Type:</b> Full Family Home</li>
-                                                <li><b>Property Status:</b> For rent</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <h6 class="text-primary">Additional details</h6>
-                                    <div class="row">
-                                        <div class="col-md-6 col-lg-6">
-                                            <ul class="property__detail-info-list list-unstyled">
-                                                <li><b>Property ID:</b> RV151</li>
-                                                <li><b>Price:</b> $484,400</li>
-                                                <li><b>Property Size:</b> 1466 Sq Ft</li>
-                                                <li><b>Bedrooms:</b> 4</li>
-                                                <li><b>Bathrooms:</b> 2</li>
-                                            </ul>
-                                        </div>
-                                        <div class="col-md-6 col-lg-6">
-                                            <ul class="property__detail-info-list list-unstyled">
-                                                <li><b>Garage:</b> 1</li>
-                                                <li><b>Garage Size:</b> 458 SqFt</li>
                                                 <li><b>Year Built:</b> 2019-01-09</li>
                                                 <li><b>Property Type:</b> Full Family Home</li>
                                                 <li><b>Property Status:</b> For rent</li>
@@ -634,175 +515,7 @@
                                 </div>
                             </div>
                             <!-- END FLOR PLAN -->
-                          
-                            <!-- NEARBY -->
-                            <div class="single__detail-features">
-                                <h6 class="text-capitalize detail-heading">what's nearby</h6>
-                                <div class="single__detail-features-nearby">
-                                    <h6 class="text-capitalize"><span>
-                                            <i class="fa fa-building "></i></span>education</h6>
-                                    <ul class="list-unstyled">
-                                        <li>
-                                            <span>Eladia's Kids</span>
-                                            <p>2.5 km</p>
-                                        </li>
-                                        <li>
-                                            <span>Brooklyn Brainery</span>
-                                            <p>3.5 km</p>
 
-                                        </li>
-                                        <li>
-                                            <span>Wikdom Senior High Scool</span>
-                                            <p>2.5 km</p>
-                                        </li>
-
-                                    </ul>
-
-                                    <h6 class="text-capitalize"><span><i class="fa fa-ambulance"></i></span>health &
-                                        medical
-                                    </h6>
-                                    <ul class="list-unstyled">
-                                        <li>
-                                            <span>Eladia's Kids</span>
-                                            <p>2.5 km</p>
-                                        </li>
-                                        <li>
-                                            <span>Brooklyn Brainery</span>
-                                            <p>3.5 km</p>
-
-                                        </li>
-                                        <li>
-                                            <span>Wikdom Senior High Scool</span>
-                                            <p>2.5 km</p>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <!-- END NEARBY -->
-
-                            <!-- RATE US  WRITE -->
-                            <div class="single__detail-features">
-                                <h5 class="text-capitalize detail-heading">Rate us and Write a Review</h5>
-                                <div class="single__detail-features-review">
-
-                                    <div class="media mt-4">
-                                        <img class="mr-3 img-fluid rounded-circle" src="images/profile-blog.jpg" alt="">
-                                        <div class="media-body">
-                                            <h6 class="mt-0">Jhon doe</h6>
-                                            <span class="mb-3">Mei 13, 2020</span>
-                                            <ul class="list-inline">
-                                                <li class="list-inline-item">
-                                                    <i class="fa fa-star selected"></i>
-                                                    <i class="fa fa-star selected"></i>
-                                                    <i class="fa fa-star selected"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                </li>
-                                                <li class="list-inline-item">3/5</li>
-                                            </ul>
-                                            <p> Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque
-                                                ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus
-                                                viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla.
-                                                Donec
-                                                lacinia congue felis in faucibus.</p>
-
-                                            <div class="media mt-4">
-                                                <a class="pr-3" href="#">
-                                                    <img src="images/logo.jpg" alt="" class="img-fluid rounded-circle">
-                                                </a>
-                                                <div class="media-body">
-                                                    <h6 class="mt-0">Mark </h6>
-                                                    <span class="mb-3">Mei 13, 2020</span>
-                                                    <ul class="list-inline">
-                                                        <li class="list-inline-item">
-                                                            <i class="fa fa-star selected"></i>
-                                                            <i class="fa fa-star selected"></i>
-                                                            <i class="fa fa-star selected"></i>
-                                                            <i class="fa fa-star selected"></i>
-                                                            <i class="fa fa-star selected"></i>
-                                                        </li>
-                                                        <li class="list-inline-item">5/5</li>
-                                                    </ul>
-                                                    <p> Cras sit amet nibh libero, in gravida nulla. Nulla vel metus
-                                                        scelerisque ante sollicitudin. </p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="media mt-4">
-                                        <img class="mr-3 img-fluid rounded-circle" src="images/profile-blog.jpg" alt="">
-                                        <div class="media-body">
-                                            <h6 class="mt-0">Jhon Doe</h6>
-                                            <span class="mb-3">Mei 13, 2020</span>
-                                            <ul class="list-inline">
-                                                <li class="list-inline-item">
-                                                    <i class="fa fa-star selected"></i>
-                                                    <i class="fa fa-star selected"></i>
-                                                    <i class="fa fa-star selected"></i>
-                                                    <i class="fa fa-star selected"></i>
-                                                    <i class="fa fa-star selected"></i>
-                                                </li>
-                                                <li class="list-inline-item">5/5</li>
-                                            </ul>
-                                            <p> Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque
-                                                ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus
-                                                viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla.
-                                                Donec
-                                                lacinia congue felis in faucibus.</p>
-
-
-                                        </div>
-                                    </div>
-                                    <!-- COMMENT -->
-                                    <hr>
-                                    <div class="row">
-                                        <div class="col-md-12">
-                                            <p class="mb-2">Your rating for this listing:</p>
-                                            <ul class="list-inline">
-                                                <li class="list-inline-item">
-                                                    <i class="fa fa-star selected"></i>
-                                                    <i class="fa fa-star selected"></i>
-                                                    <i class="fa fa-star selected"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                </li>
-                                                <li class="list-inline-item">3/5</li>
-                                            </ul>
-                                            <div class="form-group">
-                                                <label>Your Name</label>
-                                                <input type="text" class="form-control" required="required">
-
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <div class="form-group">
-                                                <label>What's your Email?</label>
-                                                <input type="email" class="form-control" required="required">
-
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <div class="form-group">
-                                                <label>Subject</label>
-                                                <input type="text" class="form-control" required="required">
-
-                                            </div>
-                                        </div>
-                                        <div class="col-md-12">
-                                            <div class="form-group">
-                                                <label>Your message</label>
-                                                <textarea class="form-control" rows="4"></textarea>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <button type="submit" class="btn btn-primary float-right "> Submit review <i
-                                            class="fa fa-paper-plane ml-2"></i></button>
-                                    <!-- END COMMENT -->
-                                </div>
-                            </div>
-                            <!-- END RATE US  WRITE -->
                         </div>
                     </div>
                     <!-- END DESCRIPTION -->

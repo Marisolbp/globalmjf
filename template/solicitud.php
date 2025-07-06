@@ -27,12 +27,16 @@
     <link rel="apple-touch-icon" href="icon.png">
     <meta name="theme-color" content="#3454d1">
     <link href="./css/styles.css?8918068d71def746395d" rel="stylesheet">
+
 </head>
+
+
 
 <body>
     
     <!-- HEADER -->
     <?php include "menu.php"?>
+    
 
     <div class="bg-theme-overlay">
         <section class="section__breadcrumb ">
@@ -51,13 +55,13 @@
     <!-- Form contact -->
     <section class="wrap__contact-form bg-light">
         <div class="container">
-            <div class="row">
+            <div class="row container-form">
                 <div class="col-md-12">
                     <div class="row">
-                        <div class="col-md-3">
+                        <div class="col-md-4">
                             <div class="form-group form-group-name">
                                 <label>Documento <span class="required"></span></label>
-                                <select class="form-control" name="email" required="">
+                                <select class="form-control input-light" name="email" required="">
                                     <option>DNI</option>
                                     <option>Pasaporte</option>
                                     <option>RUC</option>
@@ -65,45 +69,45 @@
 
                             </div>
                         </div>
-                        <div class="col-md-3">
+                        <div class="col-md-4">
                             <div class="form-group form-group-name">
                                 <label>N° Documento <span class="required"></span></label>
-                                <input type="email" class="form-control" name="email" required="">
+                                <input type="email" class="form-control input-light" name="email" required="">
 
                             </div>
                         </div>
-                        <div class="col-md-3">
+                        <div class="col-md-4">
                             <div class="form-group form-group-name">
                                 <label>Nombre <span class="required"></span></label>
-                                <input type="text" class="form-control" name="name" required="">
+                                <input type="text" class="form-control input-light" name="name" required="">
 
                             </div>
                         </div>
-                        <div class="col-md-3">
+                        <div class="col-md-4">
                             <div class="form-group form-group-name">
                                 <label>Apellido <span class="required"></span></label>
-                                <input type="email" class="form-control" name="email" required="">
+                                <input type="email" class="form-control input-light" name="email" required="">
 
                             </div>
                         </div>
-                        <div class="col-md-3">
+                        <div class="col-md-4">
                             <div class="form-group form-group-name">
                                 <label>Email <span class="required"></span></label>
-                                <input type="text" class="form-control" name="name" required="">
+                                <input type="text" class="form-control input-light" name="name" required="">
 
                             </div>
                         </div>
-                        <div class="col-md-3">
+                        <div class="col-md-4">
                             <div class="form-group form-group-name">
                                 <label>Teléfono <span class="required"></span></label>
-                                <input type="email" class="form-control" name="email" required="">
+                                <input type="email" class="form-control input-light" name="email" required="">
 
                             </div>
                         </div>
-                        <div class="col-md-3">
+                        <div class="col-md-4">
                             <div class="form-group form-group-name">
                                 <label>¿Qué desea realizar? <span class="required"></span></label>
-                                <select class="form-control" name="email" required="">
+                                <select class="form-control input-light" name="email" required="">
                                     <option>Seleccione un opción</option>
                                     <option>Vender</option>
                                     <option>Alquilar</option>
@@ -111,31 +115,31 @@
 
                             </div>
                         </div>
-                        <div class="col-md-3">
+                        <div class="col-md-4">
                             <div class="form-group form-group-name">
                                 <label>Tipo de propiedad <span class="required"></span></label>
-                                <input type="email" class="form-control" name="email" required="">
+                                <input type="email" class="form-control input-light" name="email" required="">
 
                             </div>
                         </div>
                         <div class="col-md-4">
                             <div class="form-group form-group-name">
                                 <label>Departamento <span class="required"></span></label>
-                                <input type="email" class="form-control" name="email" required="">
+                                <input type="email" class="form-control input-light" name="email" required="">
 
                             </div>
                         </div>
                         <div class="col-md-4">
                             <div class="form-group form-group-name">
                                 <label>Provincia <span class="required"></span></label>
-                                <input type="email" class="form-control" name="email" required="">
+                                <input type="email" class="form-control input-light" name="email" required="">
 
                             </div>
                         </div>
                         <div class="col-md-4">
                             <div class="form-group form-group-name">
                                 <label>Distrito <span class="required"></span></label>
-                                <input type="email" class="form-control" name="email" required="">
+                                <input type="email" class="form-control input-light" name="email" required="">
 
                             </div>
                         </div>
@@ -143,17 +147,20 @@
                         <div class="col-md-12">
                             <div class="form-group">
                                 <label>Observaciones </label>
-                                <textarea class="form-control" rows="9" name="message"></textarea>
+                                <textarea class="form-control input-light" rows="9" name="message"></textarea>
                             </div>
-                            <div class="form-group float-right mb-0">
-                                <button type="submit" class="btn btn-primary btn-contact">Enviar datos</button>
-                            </div>
+
+                        </div>
+
+                        <div class="col-md-12 d-flex justify-content-center">
+                            <button type="submit" class="btn btn-primary btn-contact px-25 py-3">Enviar datos</button>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+
     <!-- End Form contact  -->
 
     <!-- Footer  -->

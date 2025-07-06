@@ -32,21 +32,14 @@
 <body>
 
     <style>
-        ul {
-            font-family: "Open Sans", sans-serif;
-            font-weight: 500;
-            color: #495057;
-            line-height: 1.5;
-            margin: auto;
-        }
-         .specialties-list {
-            
+       
+        .declaratoria-list {
             list-style: none;
             padding: 0;
             margin: 0;
         }
 
-        .specialty-item {
+        .declaratoria-item {
             display: flex;
             align-items: flex-start;
             padding: 10px 0;
@@ -55,18 +48,18 @@
             transition: all 0.2s ease;
         }
         
-        .specialty-item:last-child {
+        .declaratoria-item:last-child {
             border-bottom: none;
         }
         
-        .specialty-item:hover {
+        .declaratoria-item:hover {
             background-color: #f8f9ff;
             margin: 0 -20px;
             padding: 10px 20px;
             border-radius: 8px;
         }
 
-         .specialty-bullet {
+         .declaratoria-bullet {
             width: 8px;
             height: 8px;
             background-color: #2c5aa0;
@@ -76,7 +69,7 @@
             flex-shrink: 0;
         }
 
-        .specialty-text {
+        .declaratoria-text {
             font-size: 14px;
             color: #495057;
             line-height: 1.5;
@@ -148,6 +141,11 @@
             position: absolute;
             width: 88%;
             right: 0;
+            
+        }
+
+        .home__about .about__image-bottom .image-bottom-2{
+            margin-top: 120px
         }
 
         @media screen and (min-width: 320px) and (max-width: 575px) {
@@ -189,7 +187,7 @@
     </style>
 
     <!-- HEADER -->
-    <?php include "menu.php"?>
+    <?php include "menu.php"?> 
 
     <div class="bg-theme-overlay">
         <section class="section__breadcrumb ">
@@ -220,30 +218,30 @@
                         </p>
 
                         <div><strong>¿Qué datos se registran?</strong></div><br>
-                        <ul class="specialties-list">
-                            <li class="specialty-item">
-                                <div class="specialty-bullet"></div>
-                                <div class="specialty-text">Área construida por piso</div>
+                        <ul class="declaratoria-list">
+                            <li class="declaratoria-item">
+                                <div class="declaratoria-bullet"></div>
+                                <div class="declaratoria-text">Área construida por piso</div>
                             </li>
-                            <li class="specialty-item">
-                                <div class="specialty-bullet"></div>
-                                <div class="specialty-text">Antigüedad de la edificación</div>
+                            <li class="declaratoria-item">
+                                <div class="declaratoria-bullet"></div>
+                                <div class="declaratoria-text">Antigüedad de la edificación</div>
                             </li>
-                            <li class="specialty-item">
-                                <div class="specialty-bullet"></div>
-                                <div class="specialty-text">Materiales</div>
+                            <li class="declaratoria-item">
+                                <div class="declaratoria-bullet"></div>
+                                <div class="declaratoria-text">Materiales</div>
                             </li>
-                            <li class="specialty-item">
-                                <div class="specialty-bullet"></div>
-                                <div class="specialty-text">Uso (vivienda, comercio, etc.)</div>
+                            <li class="declaratoria-item">
+                                <div class="declaratoria-bullet"></div>
+                                <div class="declaratoria-text">Uso (vivienda, comercio, etc.)</div>
                             </li>
-                            <li class="specialty-item">
-                                <div class="specialty-bullet"></div>
-                                <div class="specialty-text">Planos visados</div>
+                            <li class="declaratoria-item">
+                                <div class="declaratoria-bullet"></div>
+                                <div class="declaratoria-text">Planos visados</div>
                             </li>
-                            <li class="specialty-item">
-                                <div class="specialty-bullet"></div>
-                                <div class="specialty-text">Licencia de construcción (si es reciente)</div>
+                            <li class="declaratoria-item">
+                                <div class="declaratoria-bullet"></div>
+                                <div class="declaratoria-text">Licencia de construcción (si es reciente)</div>
                             </li>
                         </ul>
                         
@@ -269,7 +267,7 @@
             </div>
         </div>
     </section>
-
+   
     <section class="home__about bg-light">
         <div class="container">
             <div class="row">
@@ -287,44 +285,50 @@
                         </p>
                         <p><strong>¿Qué se requiere?</strong></p>
 
-                        <ul class="specialties-list">
-                            <li class="specialty-item">
-                                <div class="specialty-bullet"></div>
-                                <div class="specialty-text">Declaratoria de fábrica (previamente hecha)</div>
+                        <ul class="declaratoria-list">
+                            <li class="declaratoria-item">
+                                <div class="declaratoria-bullet"></div>
+                                <div class="declaratoria-text">Declaratoria de fábrica (previamente hecha)</div>
                             </li>
-                            <li class="specialty-item">
-                                <div class="specialty-bullet"></div>
-                                <div class="specialty-text">Minuta y escritura pública ante notario</div>
+                            <li class="declaratoria-item">
+                                <div class="declaratoria-bullet"></div>
+                                <div class="declaratoria-text">Minuta y escritura pública ante notario</div>
                             </li>
-                            <li class="specialty-item">
-                                <div class="specialty-bullet"></div>
-                                <div class="specialty-text">Inscripción en SUNARP</div>
+                            <li class="declaratoria-item">
+                                <div class="declaratoria-bullet"></div>
+                                <div class="declaratoria-text">Inscripción en SUNARP</div>
                             </li>
                         </ul>
-    <hr>
+                    <hr>
 
                         <p><strong>¿Cuándo necesitas hacer esto?</strong></p>
                    
-                        <ul class="specialties-list">
-                            <li class="specialty-item">
-                                <div class="specialty-bullet"></div>
-                                <div class="specialty-text">Para vender un departamento dentro de un edificio</div>
+                        <ul class="declaratoria-list">
+                            <li class="declaratoria-item">
+                                <div class="declaratoria-bullet"></div>
+                                <div class="declaratoria-text">Para vender un departamento dentro de un edificio</div>
                             </li>
-                            <li class="specialty-item">
-                                <div class="specialty-bullet"></div>
-                                <div class="specialty-text">Para alquilar o hipotecar una parte del inmueble</div>
+                            <li class="declaratoria-item">
+                                <div class="declaratoria-bullet"></div>
+                                <div class="declaratoria-text">Para alquilar o hipotecar una parte del inmueble</div>
                             </li>
-                            <li class="specialty-item">
-                                <div class="specialty-bullet"></div>
-                                <div class="specialty-text">Para formalizar una edificación antigua</div>
+                            <li class="declaratoria-item">
+                                <div class="declaratoria-bullet"></div>
+                                <div class="declaratoria-text">Para formalizar una edificación antigua</div>
                             </li>
                         </ul>
                     </div>
                 </div>
                 <div class="col-lg-6">
                     <div class="about__image">
+                        <div class="about__image-top"> 
+                            <div class="about__image-top-hover">
+                                <img src="images/independizacion.jpg" alt="" class="img-fluid">
+                            </div>
+
+                        </div>
                         <div class="about__image-bottom">
-                           <div class="about__image-top-hover">
+                            <div class="about__image-bottom-hover image-bottom-2">
                                 <img src="images/independizacion.jpg" alt="" class="img-fluid">
                             </div>
                         </div>

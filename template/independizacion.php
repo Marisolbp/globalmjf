@@ -148,6 +148,7 @@
             position: absolute;
             width: 88%;
             right: 0;
+            margin-top: 120px;
         }
 
         @media screen and (min-width: 320px) and (max-width: 575px) {
@@ -196,7 +197,7 @@
             <div class="container">
                 <div class="row d-flex justify-content-center">
                     <div class="col-md-8 text-center">
-                        <h2 class="text-white ">Declaratoria de fábrica</h2>
+                        <h2 class="text-white ">Independización de propiedad</h2>
                     </div>
                 </div>
             </div>
@@ -204,71 +205,6 @@
     </div>
 
     <div class="clearfix"></div>
-
-    <section class="home__about">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6">
-                    <div class="title__leading">
-                        <h2>¿Qué es la declaratoria de fábrica?</h2>
-                        <p class="txt-description">
-                            Es el acto registral mediante el cual se inscribe una edificación construida
-                            sobre un terreno en los Registros Públicos. Sirve para dejar constancia 
-                            oficial de que sobre ese terreno ya existe una construcción.<br>
-                            Ten en cuenta que el terreno puede estar inscrito, pero si no has hecho la 
-                            declaratoria, legalmente no existe la construcción que has levantado.
-                        </p>
-
-                        <div><strong>¿Qué datos se registran?</strong></div><br>
-                        <ul class="specialties-list">
-                            <li class="specialty-item">
-                                <div class="specialty-bullet"></div>
-                                <div class="specialty-text">Área construida por piso</div>
-                            </li>
-                            <li class="specialty-item">
-                                <div class="specialty-bullet"></div>
-                                <div class="specialty-text">Antigüedad de la edificación</div>
-                            </li>
-                            <li class="specialty-item">
-                                <div class="specialty-bullet"></div>
-                                <div class="specialty-text">Materiales</div>
-                            </li>
-                            <li class="specialty-item">
-                                <div class="specialty-bullet"></div>
-                                <div class="specialty-text">Uso (vivienda, comercio, etc.)</div>
-                            </li>
-                            <li class="specialty-item">
-                                <div class="specialty-bullet"></div>
-                                <div class="specialty-text">Planos visados</div>
-                            </li>
-                            <li class="specialty-item">
-                                <div class="specialty-bullet"></div>
-                                <div class="specialty-text">Licencia de construcción (si es reciente)</div>
-                            </li>
-                        </ul>
-                        
-                    </div>
-                </div>
-
-                <div class="col-lg-6">
-                    <div class="about__image">
-                        <div class="about__image-top"> 
-                            <div class="about__image-top-hover">
-                                <img src="images/fabrica2.jpg" alt="" class="img-fluid">
-                            </div>
-
-                        </div>
-                        <div class="about__image-bottom">
-                            <div class="about__image-bottom-hover">
-                                <img src="images/fabrica.jpg" alt="" class="img-fluid">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
 
     <section class="home__about bg-light">
         <div class="container">
@@ -301,7 +237,7 @@
                                 <div class="specialty-text">Inscripción en SUNARP</div>
                             </li>
                         </ul>
-    <hr>
+                        <hr>
 
                         <p><strong>¿Cuándo necesitas hacer esto?</strong></p>
                    
@@ -323,8 +259,14 @@
                 </div>
                 <div class="col-lg-6">
                     <div class="about__image">
+                        <div class="about__image-top"> 
+                            <div class="about__image-top-hover">
+                                <img src="images/independizacion.jpg" alt="" class="img-fluid">
+                            </div>
+
+                        </div>
                         <div class="about__image-bottom">
-                           <div class="about__image-top-hover">
+                            <div class="about__image-bottom-hover">
                                 <img src="images/independizacion.jpg" alt="" class="img-fluid">
                             </div>
                         </div>
