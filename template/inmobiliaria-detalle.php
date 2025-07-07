@@ -30,46 +30,21 @@
 </head>
 
 <body>
-
     <!-- HEADER -->
     <?php include "menu.php"?>
 
-    <header>
-
-        <div class="bg-theme-overlay">
-            <!-- BREADCRUMB -->
-            <section class="section__breadcrumb ">
-                <div class="container">
-                    <div class="row d-flex justify-content-center">
-                        <div class="col-md-8 text-center">
-                            <h2 class="text-capitalize text-white ">single property</h2>
-                            <ul class="list-inline ">
-                                <li class="list-inline-item">
-                                    <a href="#" class="text-white">
-                                        Casa
-                                    </a>
-                                </li>
-                                <li class="list-inline-item">
-                                    <a href="#" class="text-white">
-                                        Departamento
-                                    </a>
-                                </li>
-                                <li class="list-inline-item">
-                                    <a href="#" class="text-white">
-                                        Terreno
-                                    </a>
-                                </li>
-
-                            </ul>
-                        </div>
+    <div class="bg-theme-overlay">
+        <section class="section__breadcrumb ">
+            <div class="container">
+                <div class="row d-flex justify-content-center">
+                    <div class="col-md-8 text-center">
+                        <h2 class="text-white">Detalle de inmobiliaria</h2>
                     </div>
                 </div>
-            </section>
-            <!-- END BREADCRUMB -->
-        </div>
-        <!-- END BREADCRUMB -->
-    </header>
-
+            </div>
+        </section>
+    </div>
+    <div class="clearfix"></div>
 
     <!-- SINGLE DETAIL -->
     <section class="single__Detail">
@@ -88,20 +63,6 @@
                             <div class="col-md-4 col-lg-4">
                                 <div class="single__detail-area-price">
                                     <h3 class="text-capitalize text-gray">$13.000/mo</h3>
-                                    <ul class="list-inline">
-                                        <li class="list-inline-item">
-                                            <a href="#" class="badge badge-primary p-2 rounded"><i
-                                                    class="fa fa-exchange"></i></a>
-                                        </li>
-                                        <li class="list-inline-item">
-                                            <a href="#" class="badge badge-primary p-2 rounded"><i
-                                                    class="fa fa-heart"></i></a>
-                                        </li>
-                                        <li class="list-inline-item">
-                                            <a href="#" class="badge badge-primary p-2 rounded"><i
-                                                    class="fa fa-print"></i></a>
-                                        </li>
-                                    </ul>
                                 </div>
                             </div>
                         </div>
@@ -253,9 +214,9 @@
                                         <h5 class="text-capitalize">$13,000/mo</h5>
                                     </div>
                                     <h4 class="text-capitalize">Luxury Family Home</h4>
-                                    <!-- <p class="text-uppercase">
-                    166 welling street, collingwood, vic 3066
-                </p> -->
+                                    <p class="text-uppercase">
+                                        166 welling street, collingwood, vic 3066
+                                    </p>
                                 </div>
                             </div>
                         </div>
@@ -308,19 +269,17 @@
                             </div>
                         </div>
                     </div>
-                    <!-- END SLIDER IMAGE DETAIL -->
                 </div>
-
                 <div class="col-lg-4 pt-5">
-                   
+                    
+                    <!-- END FORM FILTER -->
                     <div class="sticky-top">
                         <!-- PROFILE AGENT -->
                         <div class="profile__agent mb-30">
                             <div class="profile__agent__group">
-                                
-                                <h6 class="detail-consultas">Consultas</h6>
-                                
+
                                 <div class="profile__agent__body">
+                                    <h3 class="text-center">Contacto</h3>
                                     <div class="form-group">
                                         <input type="text" class="form-control" placeholder="Your Name">
                                     </div>
@@ -343,14 +302,9 @@
                                     </div>
                                 </div>
                             </div>
-
                         </div>
-
-
                     </div>
-
                 </div>
-
                 <div class="col-lg-8">
                     <!-- DESCRIPTION -->
                     <div class="row">
@@ -403,6 +357,28 @@
                                         <div class="col-md-6 col-lg-6">
                                             <ul class="property__detail-info-list list-unstyled">
                                                 <li><b>Garage:</b> 1</li>
+                                                <li><b>Garage Size:</b> 458 SqFt</li>
+                                                <li><b>Year Built:</b> 2019-01-09</li>
+                                                <li><b>Property Type:</b> Full Family Home</li>
+                                                <li><b>Property Status:</b> For rent</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <h6 class="text-primary">Additional details</h6>
+                                    <div class="row">
+                                        <div class="col-md-6 col-lg-6">
+                                            <ul class="property__detail-info-list list-unstyled">
+                                                <li><b>Property ID:</b> RV151</li>
+                                                <li><b>Price:</b> $484,400</li>
+                                                <li><b>Property Size:</b> 1466 Sq Ft</li>
+                                                <li><b>Bedrooms:</b> 4</li>
+                                                <li><b>Bathrooms:</b> 2</li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-md-6 col-lg-6">
+                                            <ul class="property__detail-info-list list-unstyled">
+                                                <li><b>Garage:</b> 1</li>
+                                                <li><b>Garage Size:</b> 458 SqFt</li>
                                                 <li><b>Year Built:</b> 2019-01-09</li>
                                                 <li><b>Property Type:</b> Full Family Home</li>
                                                 <li><b>Property Status:</b> For rent</li>
@@ -435,86 +411,51 @@
                                     <li>car parking </li>
                                 </ul>
                             </div>
-                            <!-- END FEATURES -->
 
-                            <!-- FLOR PLAN -->
+                            <!-- LOCATION -->
                             <div class="single__detail-features">
-                                <h6 class="text-capitalize detail-heading">floor plan</h6>
-                                <!-- FLOR PLAN IMAGE -->
-                                <div id="accordion" class="floorplan" role="tablist">
-                                    <div class="card">
-                                        <div class="card-header" role="tab" id="headingOne">
-                                            <a class="text-capitalize" data-toggle="collapse" href="#collapseOne"
-                                                aria-expanded="true" aria-controls="collapseOne">
-                                                first floor <span class="badge badge-light rounded p-1 ml-2">460 sq
-                                                    ft</span>
-                                            </a>
-                                        </div>
-                                        <div id="collapseOne" class="collapse show" role="tabpanel"
-                                            aria-labelledby="headingOne" data-parent="#accordion">
-                                            <div class="card-body">
-                                                <figure>
-                                                    <img src="images/floorplan.jpg" alt="" class="img-fluid">
-                                                </figure>
+                                <h6 class="text-capitalize detail-heading">location</h6>
+                                <!-- FILTER VERTICAL -->
+                                <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                                    <li class="nav-item">
+                                        <a class="nav-link active" id="pills-map-location-tab" data-toggle="pill"
+                                            href="#pills-map-location" role="tab" aria-controls="pills-map-location"
+                                            aria-selected="true">
+                                            <i class="fa fa-map-marker"></i>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" id="pills-street-view-tab" data-toggle="pill"
+                                            href="#pills-street-view" role="tab" aria-controls="pills-street-view"
+                                            aria-selected="false">
+                                            <i class="fa fa-street-view "></i></a>
+                                    </li>
 
-                                                Excepteur sint ocaec at cupdatat proident suntin culpa qui officia
-                                                deserunt mol anim id esa laborum
-                                                perspiciat.
-                                                Duis aute irure dolor reprehenderit in voluptate velit essle cillum
-                                                dolore eu fugiat nulla pariatur.
 
-                                            </div>
+                                </ul>
+                                <div class="tab-content" id="pills-tabContent">
+                                    <div class="tab-pane fade show active" id="pills-map-location" role="tabpanel"
+                                        aria-labelledby="pills-map-location-tab">
+                                        <div id="map-canvas">
+                                            <iframe class="h600 w100"
+                                                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d50446.89789906054!2d-122.41577600000001!3d37.791654!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xd473843de08ff793!2sBetter%20Property%20Management!5e0!3m2!1sen!2sus!4v1591226304089!5m2!1sen!2sus"
+                                                style="border:0;" allowfullscreen="" aria-hidden="false"
+                                                tabindex="0"></iframe>
                                         </div>
+
                                     </div>
-                                    <div class="card">
-                                        <div class="card-header" role="tab" id="headingTwo">
-
-                                            <a class="collapsed text-capitalize" data-toggle="collapse"
-                                                href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                                second floor <span class="badge badge-light rounded p-1 ml-2">460 sq
-                                                    ft</span>
-                                            </a>
-                                        </div>
-                                        <div id="collapseTwo" class="collapse" role="tabpanel"
-                                            aria-labelledby="headingTwo" data-parent="#accordion">
-                                            <div class="card-body">
-                                                <figure>
-                                                    <img src="images/floorplan2.jpg" alt="" class="img-fluid">
-                                                </figure>
-                                                They offers a host of logistic management services and supply chain . We
-                                                provide innovative solutions
-                                                with the best. tempor incididunt ut labore et dolor empor tempor
-                                                incididunt innovative solutions
-
-                                            </div>
-                                        </div>
+                                    <div class="tab-pane fade" id="pills-street-view" role="tabpanel"
+                                        aria-labelledby="pills-street-view-tab">
+                                        <iframe class="h600 w100"
+                                            src="https://www.google.com/maps/embed?pb=!4v1553797194458!6m8!1m7!1sR4K_5Z2wRHTk9el8KLTh9Q!2m2!1d36.82551718071267!2d-76.34864590837246!3f305.15097!4f0!5f0.7820865974627469"
+                                            style="border:0;" allowfullscreen></iframe>
                                     </div>
-                                    <div class="card">
-                                        <div class="card-header" role="tab" id="headingThree">
-                                            <a class="collapsed text-capitalize" data-toggle="collapse"
-                                                href="#collapseThree" aria-expanded="false"
-                                                aria-controls="collapseThree">
-                                                garage <span class="badge badge-light rounded p-1 ml-2">460 sq ft</span>
-                                            </a>
-                                        </div>
-                                        <div id="collapseThree" class="collapse" role="tabpanel"
-                                            aria-labelledby="headingThree" data-parent="#accordion">
-                                            <div class="card-body">
-                                                <figure>
-                                                    <img src="images/floorplan3.jpg" alt="" class="img-fluid">
-                                                </figure>
-                                                They offers a host of logistic management services and supply chain . We
-                                                provide innovative solutions
-                                                with the best. tempor incididunt ut labore et dolor empor tempor
-                                                incididunt innovative solutions
 
-                                            </div>
-                                        </div>
-                                    </div>
 
                                 </div>
+                                <!-- END FILTER VERTICAL -->
                             </div>
-                            <!-- END FLOR PLAN -->
+                            <!-- END LOCATION -->
 
                         </div>
                     </div>
@@ -1097,15 +1038,13 @@
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-9">
-                    <h2 class="text-uppercase text-white">Looking To Sell Or Rent Your Property?</h2>
-                    <p class="text-capitalize text-white">We Will Assist You In The Best And Comfortable Property
-                        Services
-                        For You
+                    <h2 class="text-uppercase text-white">¿Desea vender o alquilar su propiedad?</h2>
+                    <p class="text-white">Le ayudaremos con los mejores y más cómodos servicios inmobiliarios.
                     </p>
 
                 </div>
                 <div class="col-lg-3">
-                    <a href="#" class="btn btn-light text-uppercase ">request a quote
+                    <a href="#" class="btn btn-light text-uppercase ">solicitar cotización
                         <i class="fa fa-angle-right ml-3 arrow-btn "></i></a>
                 </div>
             </div>
@@ -1113,180 +1052,7 @@
     </section>
     <!-- END CALL TO ACTION -->
 
-    <!-- Footer  -->
-    <footer>
-        <div class="wrapper__footer bg-theme-footer">
-            <div class="container">
-                <div class="row">
-                    <!-- ADDRESS -->
-                    <div class="col-md-4">
-                        <div class="widget__footer">
-                            <figure>
-                                <img src="images/logo-blue.png" alt="" class="logo-footer">
-                            </figure>
-                            <p>
-                                Rethouse Real Estate is a premium Property template based on Bootstrap 4. Rethouse Real
-                                Estate helped thousands of clients to find the right property for their needs.
-
-                            </p>
-
-                            <ul class="list-unstyled mb-0 mt-3">
-                                <li> <b> <i class="fa fa-map-marker"></i></b><span>214 West Arnold St. New York, NY
-                                        10002</span> </li>
-                                <li> <b><i class="fa fa-phone-square"></i></b><span>(123) 345-6789</span> </li>
-                                <li> <b><i class="fa fa-phone-square"></i></b><span>(+100) 123 456 7890</span> </li>
-                                <li> <b><i class="fa fa-headphones"></i></b><span>support@realvilla.demo</span> </li>
-                                <li> <b><i class="fa fa-clock-o"></i></b><span>Mon - Sun / 9:00AM - 8:00PM</span> </li>
-                            </ul>
-                        </div>
-
-                    </div>
-                    <!-- END ADDRESS -->
-
-                    <!-- QUICK LINKS -->
-                    <div class="col-md-4">
-                        <div class="widget__footer">
-                            <h4 class="footer-title">Quick Links</h4>
-                            <div class="link__category-two-column">
-                                <ul class="list-unstyled ">
-                                    <li class="list-inline-item">
-                                        <a href="#">Commercial</a>
-                                    </li>
-                                    <li class="list-inline-item">
-                                        <a href="#">business</a>
-                                    </li>
-                                    <li class="list-inline-item">
-                                        <a href="#">House</a>
-                                    </li>
-                                    <li class="list-inline-item">
-                                        <a href="#">Residential</a>
-                                    </li>
-
-                                    <li class="list-inline-item">
-                                        <a href="#">Residential Tower</a>
-                                    </li>
-                                    <li class="list-inline-item">
-                                        <a href="#">Beverly Hills</a>
-                                    </li>
-                                    <li class="list-inline-item">
-                                        <a href="#">Los angeles</a>
-                                    </li>
-                                    <li class="list-inline-item">
-                                        <a href="#">The beach</a>
-                                    </li>
-                                    <li class="list-inline-item">
-                                        <a href="#">Property Listing</a>
-                                    </li>
-
-                                    <li class="list-inline-item">
-                                        <a href="#">Clasic</a>
-                                    </li>
-                                    <li class="list-inline-item">
-                                        <a href="#">Modern Home</a>
-                                    </li>
-
-                                    <li class="list-inline-item">
-                                        <a href="#">Luxury</a>
-                                    </li>
-                                    <li class="list-inline-item">
-                                        <a href="#">Beach Pasadena</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- END QUICK LINKS -->
-
-
-                    <!-- NEWSLETTERS -->
-                    <div class="col-md-4">
-                        <div class="widget__footer">
-                            <h4 class="footer-title">follow us </h4>
-                            <p class="mb-2">
-                                Follow us and stay in touch to get the latest news
-                            </p>
-                            <p>
-                                <button class="btn btn-social btn-social-o facebook mr-1">
-                                    <i class="fa fa-facebook-f"></i>
-                                </button>
-                                <button class="btn btn-social btn-social-o twitter mr-1">
-                                    <i class="fa fa-twitter"></i>
-                                </button>
-
-                                <button class="btn btn-social btn-social-o linkedin mr-1">
-                                    <i class="fa fa-linkedin"></i>
-                                </button>
-                                <button class="btn btn-social btn-social-o instagram mr-1">
-                                    <i class="fa fa-instagram"></i>
-                                </button>
-
-                                <button class="btn btn-social btn-social-o youtube mr-1">
-                                    <i class="fa fa-youtube"></i>
-                                </button>
-                            </p>
-                            <br>
-                            <h4 class="footer-title">newsletter</h4>
-                            <!-- Form Newsletter -->
-                            <div class="widget__form-newsletter ">
-                                <p>
-
-                                    Don’t miss to subscribe to our news feeds, kindly fill the form below
-                                </p>
-                                <div class="mt-3">
-                                    <input type="text" class="form-control mb-2" placeholder="Your email address">
-
-                                    <button class="btn btn-primary btn-block text-capitalize" type="button">subscribe
-
-                                    </button>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                    <!-- END NEWSLETTER -->
-                </div>
-            </div>
-        </div>
-
-        <!-- Footer Bottom -->
-        <div class="bg__footer-bottom-v1">
-            <div class="container">
-                <div class="row flex-column-reverse flex-md-row">
-                    <div class="col-md-6">
-                        <span>
-                            © 2020 Rethouse Real Estate - Premium real estate & theme &amp; theme by
-                            <a href="#">retenvi.com</a>
-                        </span>
-                    </div>
-                    <div class="col-md-6">
-                        <ul class="list-inline ">
-                            <li class="list-inline-item">
-                                <a href="#">
-                                    privacy
-                                </a>
-                            </li>
-                            <li class="list-inline-item">
-                                <a href="#">
-                                    contact
-                                </a>
-                            </li>
-                            <li class="list-inline-item">
-                                <a href="#">
-                                    about
-                                </a>
-                            </li>
-                            <li class="list-inline-item">
-                                <a href="#">
-                                    faq
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- End Footer  -->
-    </footer>
+    <?php include "footer.php";?>
 
     <!-- SCROLL TO TOP -->
     <a href="javascript:" id="return-to-top"><i class="fa fa-chevron-up"></i></a>
