@@ -31,61 +31,9 @@
 
 <body>
     
-    <nav class="navbar navbar-hover navbar-expand-lg navbar-soft">
-        <div class="container">
-            <a class="navbar-brand" href="../template/">
-                <img src="images/logo-gold.png" alt="" class="img-fluid">
-            </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main_nav99">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="main_nav99">
-                <ul class="navbar-nav  mx-auto">
-                    <li class="nav-item"><a class='nav-link' href='nosotros.php'> Nosotros </a></li>
+    <!-- HEADER -->
+    <?php include "menu.php"?>
 
-                    <li class="nav-item"><a class='nav-link' href='proyectos.php'> Proyectos </a></li>
-
-                    <li class="nav-item"><a class='nav-link' href='inmobiliaria.php'> Inmobiliaria </a></li>
-
-                    <li class="nav-item"><a class='nav-link' href='contacto.php'> Declaratoria fábrica </a></li>
-                </ul>
-
-
-                <!-- Search bar.// -->
-                <ul class="navbar-nav">
-                    <li>
-                        <a href="#" class="btn btn-primary">
-                            <i class="fa fa-plus-circle mr-1"></i> Vender mi propiedad</a>
-                    </li>
-                </ul>
-                <!-- Search content bar.// -->
-                <div class="top-search navigation-shadow">
-                    <div class="container">
-                        <div class="input-group ">
-                            <form action="#">
-
-                                <div class="row no-gutters mt-3">
-                                    <div class="col">
-                                        <input class="form-control border-secondary border-right-0 rounded-0"
-                                            type="search" value="" placeholder="Search " id="example-search-input4">
-                                    </div>
-                                    <div class="col-auto">
-                                        <a class="btn btn-outline-secondary border-left-0 rounded-0 rounded-right"
-                                            href="/search-result.html">
-                                            <i class="fa fa-search"></i>
-                                        </a>
-                                    </div>
-                                </div>
-
-                            </form>
-                        </div>
-                    </div>
-                </div>
-                <!-- Search content bar.// -->
-            </div> <!-- navbar-collapse.// -->
-        </div>
-    </nav>
-    <!-- CAROUSEL -->
     <div class="slider-container">
         <div class="container-slider-image-full  ">
             <div id="carouselExampleIndicators" class="carousel slide carousel-fade" data-ride="carousel">
@@ -208,7 +156,7 @@
                 <div class="col-md-8 col-lg-6 mx-auto">
                     <div class="title__head">
                         <h2 class="text-center text-capitalize">
-                            Propiedades
+                            Inmobiliaria
                         </h2>
                         <p class="text-center">Propiedades exclusivas seleccionadas por nuestro equipo.</p>
 
@@ -698,7 +646,7 @@
                     <div class="wrap-agent">
                         <div class="team-member">
                             <div class="team-img">
-                                <img alt="team member" class="img-fluid" src="images/milser1.png">
+                                <img alt="team member" class="img-fluid" src="images/01.png">
                             </div>
                             <div class="team-hover">
                                 <div class="desk">
@@ -749,7 +697,7 @@
                     <div class="wrap-agent">
                         <div class="team-member">
                             <div class="team-img">
-                                <img alt="team member" class="img-fluid w-100" src="images/angel2.png">
+                                <img alt="team member" class="img-fluid w-100" src="images/3.png">
                             </div>
                             <div class="team-hover">
                                 <div class="desk"> 
@@ -800,7 +748,7 @@
                     <div class="wrap-agent">
                         <div class="team-member">
                             <div class="team-img">
-                                <img alt="team member" class="img-fluid w-100" src="images/francisco3.png">
+                                <img alt="team member" class="img-fluid w-100" src="images/2.png">
                             </div>
                             <div class="team-hover">
                                 <div class="desk">

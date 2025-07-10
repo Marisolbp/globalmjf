@@ -1,5 +1,11 @@
+<style>
+    .navbar-soft .navbar-nav .nav-link {
+        color:#f6a700;
+    }
+</style>
+
 <header>
-    <nav class="navbar navbar-hover navbar-expand-lg navbar-soft">
+    <nav class="navbar navbar-hover navbar-expand-lg navbar-soft" style="background: #094152;">
             <div class="container">
                 <a class="navbar-brand" href="../template/">
                     <img src="images/logo-gold.png" alt="" class="img-fluid">

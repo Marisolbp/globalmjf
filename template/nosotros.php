@@ -481,7 +481,7 @@
                                 <!-- Foto del agente -->
                                 <div class="photo-container text-center">
                                     <div class="listing-badge">CAP 24160</div>
-                                    <img src="images/milser1.png" class="agent-photo">
+                                    <img src="images/01.png" class="agent-photo">
                                 </div>
                                 
                                 <!-- Información básica -->
@@ -577,7 +577,7 @@
                                 <!-- Foto del agente -->
                                 <div class="photo-container text-center">
                                     <div class="listing-badge">CAP 24178</div>
-                                    <img src="images/angel2.png" class="agent-photo" alt="Ángel Jiménez">
+                                    <img src="images/3.png" class="agent-photo" alt="Ángel Jiménez">
                                 </div>
 
                                 <!-- Información básica -->
@@ -645,14 +645,14 @@
 
             <div class="row">
                 <div class="col-12 col-xl-12">
-                        <div class="agent-container">
-                            <!-- Información del agente y contacto -->
-                            <div class="col-lg-4 d-flex">
-                                <div class="agent-card">
+                    <div class="agent-container">
+                        <!-- Información del agente y contacto -->
+                        <div class="col-lg-4 d-flex">
+                            <div class="agent-card">
                                     <!-- Foto del agente -->
                                     <div class="photo-container text-center">
                                         <div class="listing-badge">CAP 32029</div>
-                                        <img src="images/francisco3.png" class="agent-photo" alt="Francisco Milla">
+                                        <img src="images/2.png" class="agent-photo" alt="Francisco Milla">
                                     </div>
 
                                     <!-- Información básica -->
@@ -689,35 +689,100 @@
                                             </a>
                                         </div>
                                     </div>
-                                </div>
-                            </div>
-
-                            <!-- Sección de descripción -->
-                            <div class="col-lg-8 d-flex">
-                                <div class="description-section">
-                                    <h3 class="section-title">Descripción</h3>
-
-                                    <p class="description-text">
-                                        Es subgerente y socio cofundador de <strong>Global MJF Arquitectos</strong>. Se graduó de Arquitectura y Urbanismo Ambiental en la Universidad Científica del Sur. Ha participado en expotalleres y concursos de la universidad.
-                                    </p>
-                                    <p class="description-text">
-                                        Ha diseñado y construido más de 100 proyectos en sectores residenciales, comerciales y educativos. Ha realizado habilitaciones urbanas residenciales y comerciales, además del saneamiento físico legal de más de 100 propiedades en Lima Metropolitana.
-                                    </p>
-
-                                    <h4 class="specialties-title">Especialidades y Certificaciones:</h4>
-                                    <ul class="specialties-list">
-                                        <li class="specialty-item"><div class="specialty-bullet"></div><div class="specialty-text">Especialista en Construcción y Edificaciones</div></li>
-                                        <li class="specialty-item"><div class="specialty-bullet"></div><div class="specialty-text">Especialista en Habilitaciones Urbanas</div></li>
-                                        <li class="specialty-item"><div class="specialty-bullet"></div><div class="specialty-text">Especialista en Saneamiento físico legal</div></li>
-                                    </ul>
-                                </div>
                             </div>
                         </div>
+
+                        <!-- Sección de descripción -->
+                         <div class="col-lg-8 d-flex">
+                             <div class="description-section">
+                                 <h3 class="section-title">Descripción</h3>
+
+                                 <p class="description-text">
+                                     Es subgerente y socio cofundador de <strong>Global MJF Arquitectos</strong>. Se graduó de Arquitectura y Urbanismo Ambiental en la Universidad Científica del Sur. Ha participado en expotalleres y concursos de la universidad.
+                                 </p>
+                                 <p class="description-text">
+                                     Ha diseñado y construido más de 100 proyectos en sectores residenciales, comerciales y educativos. Ha realizado habilitaciones urbanas residenciales y comerciales, además del saneamiento físico legal de más de 100 propiedades en Lima Metropolitana.
+                                 </p>
+
+                                 <h4 class="specialties-title">Especialidades y Certificaciones:</h4>
+                                 <ul class="specialties-list">
+                                     <li class="specialty-item"><div class="specialty-bullet"></div><div class="specialty-text">Especialista en Construcción y Edificaciones</div></li>
+                                     <li class="specialty-item"><div class="specialty-bullet"></div><div class="specialty-text">Especialista en Habilitaciones Urbanas</div></li>
+                                     <li class="specialty-item"><div class="specialty-bullet"></div><div class="specialty-text">Especialista en Saneamiento físico legal</div></li>
+                                 </ul>
+                             </div>
+                         </div>
+                    </div>
                 </div>
             </div>
-
         </div>
     </section>
+
+    <!-- OUR TEAM -->
+    <section class="our__team">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-7">
+                    <div class="title__head">
+                        <h2 class="text-center">Apoyo emocional</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 col-lg-4" style="margin: auto;">
+                    <div class="wrap-agent">
+                        <div class="team-member">
+                            <div class="team-img">
+                                <img alt="team member" class="img-fluid" src="images/apoyo.jpg">
+                            </div>
+                            <div class="team-hover">
+                                <div class="desk">
+                                    <h5>
+                                        Arquitecto CAP 24160
+                                    </h5>
+                                    <p>
+                                        Broker inmobiliario
+                                    </p>
+                                    <a class="btn btn-primary" href="#">
+                                        Perfil profesional
+                                    </a>
+                                </div>
+                                <ul class="list-inline s-link mb-0">
+                                    <li class="list-inline-item">
+                                        <a href="#">
+                                            <i class="fa fa-facebook">
+                                            </i>
+                                        </a>
+                                    </li>
+                                    <li class="list-inline-item">
+                                        <a href="#">
+                                            <i class="fa fa-twitter">
+                                            </i>
+                                        </a>
+                                    </li>
+                                    <li class="list-inline-item">
+                                        <a href="#">
+                                            <i class="fa fa-google-plus">
+                                            </i>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="team-title">
+                                <h6>
+                                    Test
+                                </h6>
+                                <span>
+                                    Test
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- END TEAM -->
 
     <?php include "footer.php";?>
 

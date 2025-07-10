@@ -6551,8 +6551,8 @@ fieldset:disabled a.btn {
 
 .btn-primary {
     color: #fff;
-    background-color: #3454d1;
-    border-color: #3454d1
+    background-color: #f6a700;;
+    border-color: #f6a700;
 }
 
 .btn-primary:hover {
@@ -16976,14 +16976,14 @@ fieldset:disabled a.btn {
 
 .btn-primary {
     color: #fff;
-    background-color: #3454d1;
-    border-color: #3454d1
+    background-color: #f6a700;
+    border-color: #f6a700
 }
 
 .btn-primary:hover {
     color: #fff;
-    background-color: #2946b6;
-    border-color: #2742ab
+    background-color: #F59101;
+    border-color: #F59101;
 }
 
 .btn-primary:focus,
@@ -28846,7 +28846,7 @@ input[type="number"] {
 
 .card__image-filter .filterizr-filter .btn-filter:hover,
 .card__image-filter .filterizr-filter .filtr-active.btn-filter {
-    background-color: #3454d1;
+    background-color: #f6a700;
     color: #fff
 }
 
@@ -32779,7 +32779,11 @@ body.offcanvas-active {
     font-weight: 700;
     text-transform: uppercase;
     border: 2px solid transparent;
-    font-family: "Open Sans", sans-serif
+    font-family: "Open Sans", sans-serif;
+}
+
+.navbar-soft .navbar-nav .nav-item .nav-link:hover {
+    color: #f6a700;
 }
 
 @media screen and (min-width: 320px) and (max-width: 575px) {
@@ -32842,7 +32846,7 @@ body.offcanvas-active {
 
 .fixed-top .navbar-nav .nav-item .nav-link,
 .navbar-custom .navbar-nav .nav-item .nav-link {
-    color: #000
+    color: #f6a700;
 }
 
 .dropdown-toggle[data-toggle="dropdown"]:after {

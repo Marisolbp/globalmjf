@@ -1578,24 +1578,7 @@
     </section>
     <!-- END LISTING LIST -->
 
-    <!-- CALL TO ACTION -->
-    <section class="cta-v1 py-5">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-9">
-                    <h2 class="text-uppercase text-white">¿Desea vender o alquilar su propiedad?</h2>
-                    <p class="text-white">Le ayudaremos con los mejores y más cómodos servicios inmobiliarios.
-                    </p>
-
-                </div>
-                <div class="col-lg-3">
-                    <a href="#" class="btn btn-light text-uppercase ">solicitar cotización
-                        <i class="fa fa-angle-right ml-3 arrow-btn "></i></a>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- END CALL TO ACTION -->
+    
 
     <?php include "footer.php";?>
     
