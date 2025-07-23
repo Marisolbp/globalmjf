@@ -63,6 +63,9 @@ class Propiedad extends Conectar{
     ) {
         $conectar = parent::conexion();
         parent::set_names();
+
+        // Asegurar que la conexión use UTF-8
+        $conectar->exec("SET NAMES utf8mb4 COLLATE utf8mb4_unicode_ci");
     
         $sql = "INSERT INTO g_propi_venta(
             codigo, nombre, descrip,
@@ -89,7 +92,7 @@ class Propiedad extends Conectar{
         // Asignar parámetros
         $sql->bindValue(1, $codigo);
         $sql->bindValue(2, $nombre);
-        $sql->bindValue(3, $descrip);
+        $sql->bindValue(3, $descrip, PDO::PARAM_STR);
         $sql->bindValue(4, $id_depart);
         $sql->bindValue(5, $id_provin);
         $sql->bindValue(6, $id_distri);
@@ -210,6 +213,9 @@ class Propiedad extends Conectar{
         $conectar = parent::conexion();
         parent::set_names();
 
+        // Asegurar que la conexión use UTF-8MB4 para emojis
+        $conectar->exec("SET NAMES utf8mb4 COLLATE utf8mb4_unicode_ci");
+
         $sql = "UPDATE g_propi_venta SET
             codigo = ?, nombre = ?, descrip = ?,
             id_depart = ?, id_provin = ?, id_distri = ?,
@@ -234,8 +240,13 @@ class Propiedad extends Conectar{
             $usuario, $id
         ];
 
+        // Vincular parámetros con especial atención al campo descrip
         foreach ($params as $i => $val) {
-            $sql->bindValue($i + 1, $val);
+            if ($i == 2) { // índice 2 corresponde a $descrip
+                $sql->bindValue($i + 1, $val, PDO::PARAM_STR);
+            } else {
+                $sql->bindValue($i + 1, $val);
+            }
         }
 
         if ($sql->execute()) {
@@ -248,10 +259,36 @@ class Propiedad extends Conectar{
         echo json_encode($jsonData);
     }
 
+    public function listar_foto($id_propiedad){
+        $conectar = parent::conexion();
+        parent::set_names();
+        
+        $sql = "SELECT id, ruta_imagen, nombre_original, orden FROM g_propi_venta_foto WHERE id_propi = ? ORDER BY orden ASC";
+        $stmt = $conectar->prepare($sql);
+        $stmt->bindValue(1, $id_propiedad);
+        $stmt->execute();
+        
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+
+    public function verificar_archivo_existente($id_propiedad, $nombre_original) {
+        $conectar = parent::conexion();
+        parent::set_names();
+        
+        $sql_check = "SELECT COUNT(*) as total FROM g_propi_venta_foto WHERE nombre_original = ? AND id_propi = ?";
+        $stmt_check = $conectar->prepare($sql_check);
+        $stmt_check->bindValue(1, $nombre_original);
+        $stmt_check->bindValue(2, $id_propiedad);
+        $stmt_check->execute();
+        $resultado_check = $stmt_check->fetch();
+        
+        return $resultado_check['total'] > 0;
+    }
+
     public function obtener_ultimo_orden($id_propiedad){
         $conectar = parent::conexion();
         parent::set_names();
-        $sql = "SELECT COALESCE(MAX(orden), 0) AS ultimo_orden FROM g_propi_venta_foto WHERE id_propiedad = ?";
+        $sql = "SELECT COALESCE(MAX(orden), 0) AS ultimo_orden FROM g_propi_venta_foto WHERE id_propi = ?";
         $stmt = $conectar->prepare($sql);
         $stmt->bindValue(1, $id_propiedad);
         $stmt->execute();
@@ -259,51 +296,25 @@ class Propiedad extends Conectar{
         return (int)$resultado["ultimo_orden"];
     }
 
-    public function listar_foto($id_propiedad){
-        $conectar= parent::conexion();
-        parent::set_names();
-        $sql="SELECT
-            id,
-            id_propi,
-            nombre,
-            foto,
-            orden
-            FROM 
-            g_propi_venta_foto
-            WHERE id_propi = ?
-            ORDER BY orden DESC";
-        // $sql="call sp_l_usuario_01()"
-        $sql = $conectar->prepare($sql);
-        $sql->bindValue(1, $id_propiedad);
-        $sql->execute();
-        return $resultado=$sql->fetchAll();
-    }
-
-    public function registrar_foto($id_propi, $foto, $nombre, $orden) {
+    public function registrar_foto($id_propi, $ruta_imagen, $nombre_original, $orden) {
         $conectar = parent::conexion();
         parent::set_names();
-    
-        $sql_check = "SELECT COUNT(*) as total FROM g_propi_venta_foto WHERE nombre = ?";
-        $stmt_check = $conectar->prepare($sql_check);
-        $stmt_check->bindValue(1, $nombre);
-        $stmt_check->execute();
-        $resultado_check = $stmt_check->fetch();
-    
-        if ($resultado_check['total'] > 0) {
-            return ['success' => 2]; // Archivo duplicado
-        } else {
-            $sql_ins = "INSERT INTO g_propi_venta_foto (id_propi, foto, nombre, orden) VALUES (?, ?, ?, ?)";
+
+        try {
+            $sql_ins = "INSERT INTO g_propi_venta_foto (id_propi, ruta_imagen, nombre_original, orden) VALUES (?, ?, ?, ?)";
             $sql_ins = $conectar->prepare($sql_ins);
             $sql_ins->bindValue(1, $id_propi);
-            $sql_ins->bindValue(2, $foto, PDO::PARAM_LOB);
-            $sql_ins->bindValue(3, $nombre);
+            $sql_ins->bindValue(2, $ruta_imagen);
+            $sql_ins->bindValue(3, $nombre_original);
             $sql_ins->bindValue(4, $orden);
-    
+
             if ($sql_ins->execute()) {
                 return ['success' => 1]; // Éxito
             } else {
                 return ['success' => 0]; // Error
             }
+        } catch (Exception $e) {
+            return ['success' => 0]; // Error
         }
     }
 

@@ -254,3 +254,66 @@ function eliminarFoto(id){
           }
       });
 }
+
+function editarTexto(id){
+
+    $.post("../../controller/slider.php?op=obtener_titulo", { id: id }, function (data) {
+        data = JSON.parse(data);
+        $('#titulo').val(data.titulo);
+        $('#subtitulo').val(data.subtitulo);        
+    });
+
+    $('#id_slider').val(id)
+    $('#modal_texto_slider').modal('show');
+}
+
+function guardarTexto(){
+
+    var formData = new FormData($("#texto_slider_form")[0]);
+
+    $.ajax({
+        url: "../../controller/slider.php?op=actualizar_texto",
+        type: "POST",
+        data: formData,
+        contentType: false,
+        processData: false,
+        success: function (datos) {
+            if (datos.success == 1) {
+
+                $('#modal_texto_slider').modal('hide');
+
+                const Toast = Swal.mixin({
+                    toast: true,
+                    position: "top-end",
+                    showConfirmButton: false,
+                    timer: 2000,
+                    timerProgressBar: true,
+                    onOpen: (toast) => {
+                        toast.addEventListener("mouseenter", Swal.stopTimer);
+                        toast.addEventListener("mouseleave", Swal.resumeTimer);
+                    },
+                });
+                Toast.fire({
+                    icon: "success",
+                    title: 'Slider actualizado',
+                });
+            } else {
+                const Toast = Swal.mixin({
+                    toast: true,
+                    position: "top-end",
+                    showConfirmButton: false,
+                    timer: 2000,
+                    timerProgressBar: true,
+                    onOpen: (toast) => {
+                        toast.addEventListener("mouseenter", Swal.stopTimer);
+                        toast.addEventListener("mouseleave", Swal.resumeTimer);
+                    },
+                });
+                Toast.fire({
+                    icon: "error",
+                    title: "Error, algo salió mal",
+                });
+            }
+        },
+    });
+}

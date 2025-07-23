@@ -80,6 +80,39 @@ if(isset($_SESSION["id"])){
                                                             </div>
                                                         </div>
                                                         <div class="col-md-1">
+                                                            <label>Facebook</label>
+                                                        </div>
+                                                        <div class="col-md-5 form-group ">
+                                                            <div class="position-relative has-icon-left">
+                                                                <input type="text" id="facebook" class="form-control" name="facebook" placeholder="Faceook">
+                                                                <div class="form-control-position">
+                                                                    <i class="bx bxl-facebook"></i>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-1">
+                                                            <label>LinkedIn</label>
+                                                        </div>
+                                                        <div class="col-md-5 form-group ">
+                                                            <div class="position-relative has-icon-left">
+                                                                <input type="text" id="linkedin" class="form-control" name="linkedin" placeholder="LinkedIn">
+                                                                <div class="form-control-position">
+                                                                    <i class="bx bxl-linkedin"></i>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-1">
+                                                            <label>Instagram</label>
+                                                        </div>
+                                                        <div class="col-md-5 form-group ">
+                                                            <div class="position-relative has-icon-left">
+                                                                <input type="text" id="instagram" class="form-control" name="instagram" placeholder="Instagram">
+                                                                <div class="form-control-position">
+                                                                    <i class="bx bxl-instagram"></i>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-1">
                                                             <label>Dirección</label>
                                                         </div>
                                                         <div class="col-md-5 form-group ">
@@ -90,7 +123,7 @@ if(isset($_SESSION["id"])){
                                                                 </div>
                                                             </div>
                                                         </div>
-                                                        <div class="col-md-1">
+                                                        <!-- <div class="col-md-1">
                                                             <label>Longitud</label>
                                                         </div>
                                                         <div class="col-md-2 form-group ">
@@ -111,7 +144,7 @@ if(isset($_SESSION["id"])){
                                                                     <i class="bx bx-map"></i>
                                                                 </div>
                                                             </div>
-                                                        </div>
+                                                        </div> -->
                                                         <div class="col-12 d-flex justify-content-end">
                                                             <button type="button" onclick="return guardarInfoGeneral()" class="btn btn-primary">
                                                                 <i class="bx bx-check d-block d-sm-none"></i>
@@ -124,6 +157,13 @@ if(isset($_SESSION["id"])){
                                             <div class="tab-pane" id="nosotros" aria-labelledby="profile-tab" role="tabpanel">
                                                 <form method="post" id="nosotros_form">
                                                     <div class="row">
+                                                        <div class="col-md-1">
+                                                            <label>¿Quiénes somos?</label>
+                                                        </div>
+                                                        <div class="col-md-11 form-group ">
+                                                            <div id="snow-editor-qs" style="height: 150px;">
+                                                            </div>
+                                                        </div>
                                                         <div class="col-md-1">
                                                             <label>Misión</label>
                                                         </div>

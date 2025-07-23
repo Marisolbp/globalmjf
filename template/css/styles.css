@@ -24861,6 +24861,8 @@ a.text-dark:focus {
     -webkit-transform: translate3d(0px, 0px, 0px)
 }
 
+
+
 .owl-carousel .owl-wrapper,
 .owl-carousel .owl-item {
     -webkit-backface-visibility: hidden;
@@ -24878,6 +24880,12 @@ a.text-dark:focus {
     -webkit-backface-visibility: hidden;
     -webkit-tap-highlight-color: transparent;
     -webkit-touch-callout: none
+}
+
+@media screen and (max-width: 768px) {
+    .slider__image__detail-thumb-two .owl-item {
+        width: 78.75px !important;
+    }
 }
 
 .owl-carousel .owl-item img {
@@ -28153,8 +28161,6 @@ input[type="number"] {
 
 .h-250 img {
     height: 250px;
-    -o-object-fit: cover;
-    object-fit: cover
 }
 
 .card__box {
@@ -28244,8 +28250,6 @@ input[type="number"] {
 .card__image-header img.img-transition {
     max-width: 100%;
     width: 100%;
-    -o-object-fit: cover;
-    object-fit: cover;
     transition: all 400ms linear 0s
 }
 
@@ -30112,8 +30116,6 @@ input[type="number"] {
     height: 640px;
     width: 100%;
     max-width: 100%;
-    -o-object-fit: cover;
-    object-fit: cover;
     position: relative
 }
 
@@ -30230,8 +30232,6 @@ input[type="number"] {
     height: 118px;
     width: 100%;
     max-width: 100%;
-    -o-object-fit: cover;
-    object-fit: cover;
     position: relative
 }
 

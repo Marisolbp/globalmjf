@@ -46,9 +46,14 @@ switch($_GET["op"]){
                 $sub_array[] = '<a class="badge badge-pill badge-light-danger" style="cursor:pointer" onClick="Activar('.$row["id"].');">Inactivo</a>';
             }
 
-            $sub_array[] = '<div style="margin:auto;" class="badge-circle badge-circle-sm badge-circle-light-warning">
-                                <a class="badge-circle badge-circle-sm badge-circle-light-warning" style="cursor:pointer" onClick="editarRegistro('."'".$row['id']."'".');"><i class="bx bx-edit-alt font-size-base"></i>
-                            </div>';
+            $sub_array[] = '<div class="dropup">
+                               <span class="bx bx-dots-vertical-rounded font-medium-3 dropdown-toggle nav-hide-arrow cursor-pointer" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" role="menu">
+                               </span>
+                               <div class="dropdown-menu dropdown-menu-right dropdown-menu-end">
+                                   <a class="dropdown-item" style="cursor:pointer;" onClick="editarRegistro(\'' . $row['id'] . '\');"><i class="bx bx-edit-alt mr-1"></i> Editar</a>
+                                   <a class="dropdown-item" style="cursor:pointer;" onClick="verEspecialidad(\'' . $row['id'] . '\');"><i class="bx bx-images mr-1"></i> Especialidades</a>
+                               </div>
+                           </div>';
 
 
             $data[] = $sub_array;
@@ -71,7 +76,7 @@ switch($_GET["op"]){
             $fotoBlob = file_get_contents($_FILES['foto0']['tmp_name']);
         }
 
-        $miembro->registrar($_POST['nombre'], $_POST['apellido'], $_POST['puesto'],$_POST['linkedin'], $_POST['instagram'], $_POST['correo'], $_POST['descrip'], $_POST['orden'], $estado, $fotoBlob, $_SESSION['usuario']);
+        $miembro->registrar($_POST['nombre'], $_POST['apellido'], $_POST['codcap'], $_POST['puesto'], $_POST['detapuesto'], $_POST['linkedin'], $_POST['instagram'], $_POST['correo'], $_POST['contacto'], $_POST['descrip'], $_POST['orden'], $estado, $fotoBlob, $_SESSION['usuario']);
         break;
 
     case "obtener":
@@ -81,8 +86,11 @@ switch($_GET["op"]){
                 $output["id"]           = $row["id"];
                 $output["nombre"]       = $row["nombre"];
                 $output["apellido"]     = $row["apellido"];
+                $output["codcap"]       = $row["codcap"];
                 $output["puesto"]       = $row["puesto"];
+                $output["detapuesto"]   = $row["detapuesto"];
                 $output["correo"]       = $row["correo"];
+                $output["contacto"]     = $row["contacto"];
                 $output["linkedin"]     = $row["linkedin"];
                 $output["instagram"]    = $row["instagram"];
                 $output["descrip"]      = $row["descrip"];
@@ -104,8 +112,7 @@ switch($_GET["op"]){
             $fotoBlob = file_get_contents($_FILES['foto0']['tmp_name']);
         }
     
-
-        $miembro->editar($_POST['codigo'], $_POST['nombre'], $_POST['apellido'], $_POST['puesto'],$_POST['linkedin'], $_POST['instagram'], $_POST['correo'], $_POST['descrip'], $_POST['orden'], $estado, $fotoBlob, $_SESSION['usuario']);
+        $miembro->editar($_POST['codigo'], $_POST['nombre'], $_POST['apellido'], $_POST['codcap'], $_POST['puesto'], $_POST['detapuesto'], $_POST['linkedin'], $_POST['instagram'], $_POST['correo'], $_POST['contacto'], $_POST['descrip'], $_POST['orden'], $estado, $fotoBlob, $_SESSION['usuario']);
         break;
     
     case "actualizar_orden":
@@ -113,5 +120,37 @@ switch($_GET["op"]){
         $orden = $_POST["orden"];
         $respuesta = $miembro->actualizar_orden($id, $orden);
         echo json_encode($respuesta);
+        break;
+
+    case "listar_especialidad":
+        $datos=$miembro->listar_especialidad($_POST['id_miembro']);
+        $data= Array();
+        foreach($datos as $row){
+            $sub_array = array();
+
+            $sub_array[] = $row["especialidad"];
+
+            $sub_array[] = '<div style="margin:auto;" class="badge-circle badge-circle-sm badge-circle-light-danger">
+                                <a class="badge-circle badge-circle-sm badge-circle-light-warning" style="cursor:pointer" onClick="return eliminarEspecialidad('."'".$row['id']."'".');"><i class="bx bx-trash font-size-base"></i>
+                            </div>';
+
+
+            $data[] = $sub_array;
+        }
+
+        $results = array(
+            "sEcho"=>1,
+            "iTotalRecords"=>count($data),
+            "iTotalDisplayRecords"=>count($data),
+            "aaData"=>$data);
+        echo json_encode($results);
+        break;
+
+    case "registrar_especialidad":
+        $miembro->registrar_especialidad($_POST['id_miembro'], $_POST['especialidad']);
+        break;
+    
+    case "eliminar_especialidad":
+        $miembro->eliminar_especialidad($_POST['id']);
         break;
 }

@@ -56,6 +56,7 @@ switch($_GET["op"]){
         }
         break;
 
+    /* 
     case "registrar":
 
         $estado = $_POST['estado_real'];
@@ -78,7 +79,6 @@ switch($_GET["op"]){
         break;
 
     case "editar":
-
         $estado = $_POST['estado_real'];
         $independizacion->editar($_POST['codigo'], $_POST['nombre'], $_POST['id_distri'], $_POST['area'], $estado,  $_SESSION['usuario']);
         break;
@@ -165,9 +165,10 @@ switch($_GET["op"]){
     
     case "eliminar":
         $independizacion->eliminar($_POST['id']);
-        break;
+        break; 
+    */
 
-    case "registrar_info_modulo":
+    case "registrar_declaratoria":
 
         $descripcion = $_POST['descripcion'];
         $usuario = $_SESSION['usuario'];
@@ -176,9 +177,25 @@ switch($_GET["op"]){
         $datos = $independizacion->get_ifo_modulo();
 
         if (empty($datos)) {
-            $independizacion->registrar_ifo_modulo($descripcion, $usuario);
+            $independizacion->registrar_declaratoria($descripcion, $usuario);
         } else {
-            $independizacion->editar_ifo_modulo($descripcion, $usuario);
+            $independizacion->editar_declaratoria($descripcion, $usuario);
+        }
+
+        break;
+    
+    case "registrar_independizacion":
+
+        $descrip_indep = $_POST['descrip_indep'];
+        $usuario = $_SESSION['usuario'];
+
+        // Verificamos si ya existe algún registro en la tabla
+        $datos = $independizacion->get_ifo_modulo();
+
+        if (empty($datos)) {
+            $independizacion->registrar_independizacion($descrip_indep, $usuario);
+        } else {
+            $independizacion->editar_independizacion($descrip_indep, $usuario);
         }
 
         break;

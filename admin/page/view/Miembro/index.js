@@ -136,6 +136,8 @@ $('#estado').on('change', function () {
 });
 
 function nuevoMiembro(){
+    $('#codigo').val(""); 
+
     $('#estado').prop('checked', true); 
     
     $('#lblTitle').html('Nuevo registro');
@@ -148,9 +150,12 @@ function guardarRegistro(){
         "#nombre",
         "#apellido",
         "#puesto",
+        "#detapuesto",
+        "#codcap",
         "#linkedin",
         "#instagram",
         "#correo",
+        "#contacto",
         "#descrip",
         "#orden"
     ];
@@ -223,6 +228,7 @@ function guardarRegistro(){
         contentType: false,
         processData: false,
         success: function (datos) {
+            console.log(datos);  
             if (datos.success == 1) {
 
                 cerrarModal()
@@ -278,8 +284,11 @@ function editarRegistro(id){
         data = JSON.parse(data);
         $('#nombre').val(data.nombre);
         $('#apellido').val(data.apellido);
+        $('#codcap').val(data.codcap);
         $('#puesto').val(data.puesto);  
+        $('#detapuesto').val(data.detapuesto);
         $('#correo').val(data.correo);
+        $('#contacto').val(data.contacto);
         $('#linkedin').val(data.linkedin);
         $('#instagram').val(data.instagram);
         $('#descrip').val(data.descrip);
@@ -327,4 +336,173 @@ function cerrarModal(){
     $("#miembro_form")[0].reset();
 
     myDropzone.removeAllFiles(true); // Limpiar Dropzone
+}
+
+function verEspecialidad(id){
+    listar_especialidad(id)
+
+    $('#id_miembro').val(id)
+    $('#modal_especialidad').modal('show');
+}
+
+function listar_especialidad(id){
+    tabla_esp=$('#data_especialidad').dataTable({
+        "aProcessing": true,
+        "aServerSide": true,
+        "searching": false,
+        lengthChange: false,
+        colReorder: true,
+        "ordering": false,
+        columnDefs: [
+            { width: "80%", targets: 0, className: 'text-left'},
+            { width: "20%", targets: 1, className: 'text-center'}
+        ],
+        "ajax":{
+            url: '../../controller/miembro.php?op=listar_especialidad',
+            type : "post",
+            dataType : "json",
+            data: {id_miembro : id},						
+            error: function(e){
+                console.log(e.responseText);	
+            }
+        },
+        "bDestroy": true,
+        "responsive": true,
+        "bInfo":true,
+        "iDisplayLength": 10,
+        "autoWidth": false,
+        "language": {
+            "sProcessing":     "Procesando...",
+            "sLengthMenu":     "Mostrar _MENU_ registros",
+            "sZeroRecords":    "No se encontraron resultados",
+            "sEmptyTable":     "Ningún dato disponible en esta tabla",
+            "sInfo":           "Mostrando un total de _TOTAL_ registros",
+            "sInfoEmpty":      "Mostrando un total de 0 registros",
+            "sInfoFiltered":   "(filtrado de un total de _MAX_ registros)",
+            "sInfoPostFix":    "",
+            "sSearch":         "Buscar:",
+            "sUrl":            "",
+            "sInfoThousands":  ",",
+            "sLoadingRecords": "Cargando...",
+            "oPaginate": {
+                "sFirst":    "Primero",
+                "sLast":     "Último",
+                "sNext":     "Siguiente",
+                "sPrevious": "Anterior"
+            },
+            "oAria": {
+                "sSortAscending":  ": Activar para ordenar la columna de manera ascendente",
+                "sSortDescending": ": Activar para ordenar la columna de manera descendente"
+            }
+        }     
+    }).DataTable();
+}
+
+function guardarEspecialidad(){
+
+    var formData = new FormData($("#miembro_especialidad_form")[0]);
+    const campos = [
+        "#especialidad"
+    ];
+  
+    for (let i = 0; i < campos.length; i++) {
+      if ($(campos[i]).val().trim() === "") {
+
+        const Toast = Swal.mixin({
+          toast: true,
+          position: "top-end",
+          showConfirmButton: false,
+          timer: 2000,
+          timerProgressBar: true,
+          didOpen: (toast) => {
+            toast.addEventListener("mouseenter", Swal.stopTimer);
+            toast.addEventListener("mouseleave", Swal.resumeTimer);
+          },
+        });
+  
+        Toast.fire({
+          icon: "warning",
+          title: "Ingrese una especialidad o certificación",
+        });
+  
+        $(campos[i]).focus();
+        return false;
+      }
+    }
+
+    $.ajax({
+            url: "../../controller/miembro.php?op=registrar_especialidad",
+            type: "POST",
+            data: formData,
+            contentType: false,
+            processData: false,
+            success: function (datos) {
+                if (datos.success == 1) {
+                    
+                    $("#miembro_especialidad_form")[0].reset();
+
+                    $('#data_especialidad').DataTable().ajax.reload();
+
+                    const Toast = Swal.mixin({
+                        toast: true,
+                        position: "top-end",
+                        showConfirmButton: false,
+                        timer: 2000,
+                        timerProgressBar: true,
+                        onOpen: (toast) => {
+                            toast.addEventListener("mouseenter", Swal.stopTimer);
+                            toast.addEventListener("mouseleave", Swal.resumeTimer);
+                        },
+                    });
+                    Toast.fire({
+                        icon: "success",
+                        title: 'Especialidad registrada correctamente',
+                    });
+                } else {
+                    const Toast = Swal.mixin({
+                        toast: true,
+                        position: "top-end",
+                        showConfirmButton: false,
+                        timer: 2000,
+                        timerProgressBar: true,
+                        onOpen: (toast) => {
+                            toast.addEventListener("mouseenter", Swal.stopTimer);
+                            toast.addEventListener("mouseleave", Swal.resumeTimer);
+                        },
+                    });
+                    Toast.fire({
+                        icon: "error",
+                        title: "Error, algo salió mal",
+                    });
+                }
+            },
+    });
+}
+
+function eliminarEspecialidad(id){
+    swal({
+        title: "Atención",
+        text: "¿Desea elimiar especialidad?",
+        type: "warning",
+        showCancelButton: true,
+        confirmButtonClass: "btn-warning",
+        confirmButtonText: "Si",
+        cancelButtonText: "No",
+        closeOnConfirm: false
+      },
+      function(isConfirm) {
+          if (isConfirm) {
+              $.post("../../controller/miembro.php?op=eliminar_especialidad", {id : id}, function (data) {
+              }); 
+    
+              $('#data_especialidad').DataTable().ajax.reload();	
+    
+              swal({
+                  title: "Correcto",
+                  text: "Especialidad eliminada",
+                  type: "success",
+                  confirmButtonClass: "btn-success"
+              });
+          }
+      });
 }

@@ -6,19 +6,19 @@
                 <div class="col-md-4">
                     <div class="widget__footer">
                         <figure>
-                            <img src="images/logo-blue.png" alt="" class="logo-footer">
+                            <img src="images/logo-gold.png" alt="" class="logo-footer">
                         </figure>
                         <p>
-                            Rethouse Real Estate is a premium Property template based on Bootstrap 4. Rethouse Real
-                            Estate helped thousands of clients to find the right property for their needs.
+                            En Global MJF Arquitectos creamos espacios que inspiran y generan valor. 
+                            Brindamos servicios en diseño de planos, venta de propiedades y gestión 
+                            legal con declaratoria de fábrica e independizaciones, acompañándote en 
+                            todo el proceso con profesionalismo y confianza.
                         </p>
                         <ul class="list-unstyled mb-0 mt-3">
-                            <li> <b> <i class="fa fa-map-marker"></i></b><span>214 West Arnold St. New York, NY
+                            <li> <b> <i class="fa fa-map-marker"></i></b><span id="location">214 West Arnold St. New York, NY
                                     10002</span> </li>
-                            <li> <b><i class="fa fa-phone-square"></i></b><span>(123) 345-6789</span> </li>
-                            <li> <b><i class="fa fa-phone-square"></i></b><span>(+100) 123 456 7890</span> </li>
-                            <li> <b><i class="fa fa-headphones"></i></b><span>support@realvilla.demo</span> </li>
-                            <li> <b><i class="fa fa-clock-o"></i></b><span>Mon - Sun / 9:00AM - 8:00PM</span> </li>
+                            <li> <b><i class="fa fa-phone-square"></i></b><span id="contact">(123) 345-6789</span> </li>
+                            <li> <b><i class="fa fa-envelope"></i></b><span id="email">support@realvilla.demo</span> </li>
                         </ul>
                     </div>
                 </div>
@@ -26,47 +26,26 @@
                 <!-- QUICK LINKS -->
                 <div class="col-md-4">
                     <div class="widget__footer">
-                        <h4 class="footer-title">Quick Links</h4>
+                        <h4 class="footer-title">Acceso Rápido</h4>
                         <div class="link__category-two-column">
                             <ul class="list-unstyled ">
                                 <li class="list-inline-item">
-                                    <a href="#">Commercial</a>
+                                    <a href="nosotros.php">Nosotros</a>
                                 </li>
                                 <li class="list-inline-item">
-                                    <a href="#">business</a>
+                                    <a href="proyectos.php">Proyectos</a>
                                 </li>
                                 <li class="list-inline-item">
-                                    <a href="#">House</a>
+                                    <a href="inmobiliaria.php">Inmobiliaria</a>
                                 </li>
                                 <li class="list-inline-item">
-                                    <a href="#">Residential</a>
+                                    <a href="declaratoria.php">Declaratoria Fábrica</a>
                                 </li>
                                 <li class="list-inline-item">
-                                    <a href="#">Residential Tower</a>
+                                    <a href="solicitud.php">Solicitud</a>
                                 </li>
                                 <li class="list-inline-item">
-                                    <a href="#">Beverly Hills</a>
-                                </li>
-                                <li class="list-inline-item">
-                                    <a href="#">Los angeles</a>
-                                </li>
-                                <li class="list-inline-item">
-                                    <a href="#">The beach</a>
-                                </li>
-                                <li class="list-inline-item">
-                                    <a href="#">Property Listing</a>
-                                </li>
-                                <li class="list-inline-item">
-                                    <a href="#">Clasic</a>
-                                </li>
-                                <li class="list-inline-item">
-                                    <a href="#">Modern Home</a>
-                                </li>
-                                <li class="list-inline-item">
-                                    <a href="#">Luxury</a>
-                                </li>
-                                <li class="list-inline-item">
-                                    <a href="#">Beach Pasadena</a>
+                                    <a href="contacto.php">Contacto</a>
                                 </li>
                             </ul>
                         </div>
@@ -76,40 +55,22 @@
                 <!-- NEWSLETTERS -->
                 <div class="col-md-4">
                     <div class="widget__footer">
-                        <h4 class="footer-title">follow us </h4>
+                        <h4 class="footer-title">Síguenos </h4>
                         <p class="mb-2">
-                            Follow us and stay in touch to get the latest news
+                            Síguenos y mantente en contacto para recibir las últimas novedades.
                         </p>
                         <p>
-                            <button class="btn btn-social btn-social-o facebook mr-1">
-                                <i class="fa fa-facebook-f"></i>
-                            </button>
-                            <button class="btn btn-social btn-social-o twitter mr-1">
-                                <i class="fa fa-twitter"></i>
-                            </button>
-                            <button class="btn btn-social btn-social-o linkedin mr-1">
-                                <i class="fa fa-linkedin"></i>
-                            </button>
-                            <button class="btn btn-social btn-social-o instagram mr-1">
-                                <i class="fa fa-instagram"></i>
-                            </button>
-                            <button class="btn btn-social btn-social-o youtube mr-1">
-                                <i class="fa fa-youtube"></i>
-                            </button>
+                            <a id="btn-facebook" target="_blank" class="btn btn-social btn-social-o facebook mr-1">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a id="btn-linkedin" target="_blank" class="btn btn-social btn-social-o linkedin mr-1">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a id="btn-instagram" target="_blank" class="btn btn-social btn-social-o instagram mr-1">
+                                <i class="fab fa-instagram"></i>
+                            </a>
                         </p>
                         <br>
-                        <h4 class="footer-title">newsletter</h4>
-                        <!-- Form Newsletter -->
-                        <div class="widget__form-newsletter ">
-                            <p>
-                                Don’t miss to subscribe to our news feeds, kindly fill the form below
-                            </p>
-                            <div class="mt-3">
-                                <input type="text" class="form-control mb-2" placeholder="Your email address">
-                                <button class="btn btn-primary btn-block text-capitalize" type="button">subscribe
-                                </button>
-                            </div>
-                        </div>
                     </div>
                 </div>
                 <!-- END NEWSLETTER -->
@@ -117,7 +78,7 @@
         </div>
     </div>
     <!-- Footer Bottom -->
-    <div class="bg__footer-bottom-v1"
+    <div class="bg__footer-bottom-v1">
             <div class="container">
                 <div class="row flex-column-reverse flex-md-row">
                     <div class="col-md-6">
@@ -130,3 +91,26 @@
     </div>
     <!-- End Footer  -->
 </footer>
+
+<script>
+    function obtenerFooter(){
+        $.post("./controller/principal.php?op=informacion_principal", function(data) {
+            data = JSON.parse(data);
+        
+            $("#location").html(data.direccion);
+            $("#contact").html(data.numero);
+            $("#email").html(data.correo);
+
+            // Si solo tienes el usuario, arma la URL completa
+            if (data.facebook) {
+                $("#btn-facebook").attr("href", `https://www.facebook.com/${data.facebook}`);
+            }
+            if (data.linkedin) {
+                $("#btn-linkedin").attr("href", `https://www.linkedin.com/in/${data.linkedin}`);
+            }
+            if (data.instagram) {
+                $("#btn-instagram").attr("href", `https://www.instagram.com/${data.instagram}`);
+            }
+        });
+    }
+</script>

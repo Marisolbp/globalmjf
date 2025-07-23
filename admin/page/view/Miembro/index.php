@@ -160,6 +160,7 @@ if(isset($_SESSION["id"])){
     <?php include "../MainJs/js.php"; ?>
 
     <?php include "modal.php"; ?>
+    <?php include "especialidad.php"; ?>
 
     <script type="text/javascript" src="index.js"></script>
     

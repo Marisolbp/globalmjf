@@ -27,6 +27,8 @@
     <link rel="apple-touch-icon" href="icon.png">
     <meta name="theme-color" content="#3454d1">
     <link href="./css/styles.css?8918068d71def746395d" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/css/all.min.css">
 </head>
 
 <body>
@@ -203,18 +205,14 @@
 
     <div class="clearfix"></div>
 
-    <section class="home__about">
+    <section class="home__about bg-light">
         <div class="container">
             <div class="row">
                 <div class="col-lg-6">
                     <div class="title__leading">
                         <h2>¿Qué es la declaratoria de fábrica?</h2>
-                        <p class="txt-description">
-                            Es el acto registral mediante el cual se inscribe una edificación construida
-                            sobre un terreno en los Registros Públicos. Sirve para dejar constancia 
-                            oficial de que sobre ese terreno ya existe una construcción.<br>
-                            Ten en cuenta que el terreno puede estar inscrito, pero si no has hecho la 
-                            declaratoria, legalmente no existe la construcción que has levantado.
+                        <p class="txt-description" id="descrip_decla">
+                            
                         </p>
 
                         <div><strong>¿Qué datos se registran?</strong></div><br>
@@ -268,20 +266,14 @@
         </div>
     </section>
    
-    <section class="home__about bg-light">
+    <section class="home__about">
         <div class="container">
             <div class="row">
                 <div class="col-lg-6">
                     <div class="title__leading">
                         <h2>¿Qué es la independización de una propiedad?</h2>
-                        <p class="txt-description">
-                            La independización es el proceso mediante el cual una edificación (por ejemplo, un edificio de varios
-                            departamentos) se divide legalmente en unidades inmobiliarias independientes, cada una con su propia 
-                            partida registral.
-                        </p>
-                        <p class="txt-description">
-                            Se separan los espacios construidos (como departamentos, tiendas o estacionamientos) para que cada uno 
-                            pueda venderse, alquilarse o hipotecarse por separado.
+                        <p class="txt-description" id="descrip_indep">
+                            
                         </p>
                         <p><strong>¿Qué se requiere?</strong></p>
 
@@ -329,7 +321,7 @@
                         </div>
                         <div class="about__image-bottom">
                             <div class="about__image-bottom-hover image-bottom-2">
-                                <img src="images/independizacion.jpg" alt="" class="img-fluid">
+                                <img src="images/independizacion2.jpg" alt="" class="img-fluid">
                             </div>
                         </div>
                     </div>
@@ -338,185 +330,60 @@
         </div>
     </section>
 
-    <!-- Footer  -->
-    <footer>
-        <div class="wrapper__footer bg-theme-footer">
-            <div class="container">
-                <div class="row">
-                    <!-- ADDRESS -->
-                    <div class="col-md-4">
-                        <div class="widget__footer">
-                            <figure>
-                                <img src="images/logo-blue.png" alt="" class="logo-footer">
-                            </figure>
-                            <p>
-                                Rethouse Real Estate is a premium Property template based on Bootstrap 4. Rethouse Real
-                                Estate helped thousands of clients to find the right property for their needs.
+    <!-- Form contact -->
+    <section class="wrap__contact-form bg-light">
+        <div class="container">
+            <div class="row container-form">
+                <div class="col-md-12">
+                    <div class="row">
+                        
+                        <div class="col-md-6">
+                            <div class="form-group form-group-name">
+                                <label>Nombre <span class="required"></span></label>
+                                <input type="email" class="form-control input-light" name="email" required="">
 
-                            </p>
-
-                            <ul class="list-unstyled mb-0 mt-3">
-                                <li> <b> <i class="fa fa-map-marker"></i></b><span>214 West Arnold St. New York, NY
-                                        10002</span> </li>
-                                <li> <b><i class="fa fa-phone-square"></i></b><span>(123) 345-6789</span> </li>
-                                <li> <b><i class="fa fa-phone-square"></i></b><span>(+100) 123 456 7890</span> </li>
-                                <li> <b><i class="fa fa-headphones"></i></b><span>support@realvilla.demo</span> </li>
-                                <li> <b><i class="fa fa-clock-o"></i></b><span>Mon - Sun / 9:00AM - 8:00PM</span> </li>
-                            </ul>
-                        </div>
-
-                    </div>
-                    <!-- END ADDRESS -->
-
-                    <!-- QUICK LINKS -->
-                    <div class="col-md-4">
-                        <div class="widget__footer">
-                            <h4 class="footer-title">Quick Links</h4>
-                            <div class="link__category-two-column">
-                                <ul class="list-unstyled ">
-                                    <li class="list-inline-item">
-                                        <a href="#">Commercial</a>
-                                    </li>
-                                    <li class="list-inline-item">
-                                        <a href="#">business</a>
-                                    </li>
-                                    <li class="list-inline-item">
-                                        <a href="#">House</a>
-                                    </li>
-                                    <li class="list-inline-item">
-                                        <a href="#">Residential</a>
-                                    </li>
-
-                                    <li class="list-inline-item">
-                                        <a href="#">Residential Tower</a>
-                                    </li>
-                                    <li class="list-inline-item">
-                                        <a href="#">Beverly Hills</a>
-                                    </li>
-                                    <li class="list-inline-item">
-                                        <a href="#">Los angeles</a>
-                                    </li>
-                                    <li class="list-inline-item">
-                                        <a href="#">The beach</a>
-                                    </li>
-                                    <li class="list-inline-item">
-                                        <a href="#">Property Listing</a>
-                                    </li>
-
-                                    <li class="list-inline-item">
-                                        <a href="#">Clasic</a>
-                                    </li>
-                                    <li class="list-inline-item">
-                                        <a href="#">Modern Home</a>
-                                    </li>
-
-                                    <li class="list-inline-item">
-                                        <a href="#">Luxury</a>
-                                    </li>
-                                    <li class="list-inline-item">
-                                        <a href="#">Beach Pasadena</a>
-                                    </li>
-                                </ul>
                             </div>
                         </div>
-                    </div>
-                    <!-- END QUICK LINKS -->
+                        <div class="col-md-6">
+                            <div class="form-group form-group-name">
+                                <label>Correo <span class="required"></span></label>
+                                <input type="text" class="form-control input-light" name="name" required="">
 
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="form-group form-group-name">
+                                <label>Asunto <span class="required"></span></label>
+                                <input type="email" class="form-control input-light" name="email" required="">
 
-                    <!-- NEWSLETTERS -->
-                    <div class="col-md-4">
-                        <div class="widget__footer">
-                            <h4 class="footer-title">follow us </h4>
-                            <p class="mb-2">
-                                Follow us and stay in touch to get the latest news
-                            </p>
-                            <p>
-                                <button class="btn btn-social btn-social-o facebook mr-1">
-                                    <i class="fa fa-facebook-f"></i>
-                                </button>
-                                <button class="btn btn-social btn-social-o twitter mr-1">
-                                    <i class="fa fa-twitter"></i>
-                                </button>
+                            </div>
+                        </div>
 
-                                <button class="btn btn-social btn-social-o linkedin mr-1">
-                                    <i class="fa fa-linkedin"></i>
-                                </button>
-                                <button class="btn btn-social btn-social-o instagram mr-1">
-                                    <i class="fa fa-instagram"></i>
-                                </button>
-
-                                <button class="btn btn-social btn-social-o youtube mr-1">
-                                    <i class="fa fa-youtube"></i>
-                                </button>
-                            </p>
-                            <br>
-                            <h4 class="footer-title">newsletter</h4>
-                            <!-- Form Newsletter -->
-                            <div class="widget__form-newsletter ">
-                                <p>
-
-                                    Donâ€™t miss to subscribe to our news feeds, kindly fill the form below
-                                </p>
-                                <div class="mt-3">
-                                    <input type="text" class="form-control mb-2" placeholder="Your email address">
-
-                                    <button class="btn btn-primary btn-block text-capitalize" type="button">subscribe
-
-                                    </button>
-                                </div>
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label>Consulta </label>
+                                <textarea class="form-control input-light" rows="9" name="message"></textarea>
                             </div>
 
                         </div>
-                    </div>
-                    <!-- END NEWSLETTER -->
-                </div>
-            </div>
-        </div>
 
-        <!-- Footer Bottom -->
-        <div class="bg__footer-bottom-v1">
-            <div class="container">
-                <div class="row flex-column-reverse flex-md-row">
-                    <div class="col-md-6">
-                        <span>
-                            Â© 2020 Rethouse Real Estate - Premium real estate & theme &amp; theme by
-                            <a href="#">retenvi.com</a>
-                        </span>
-                    </div>
-                    <div class="col-md-6">
-                        <ul class="list-inline ">
-                            <li class="list-inline-item">
-                                <a href="#">
-                                    privacy
-                                </a>
-                            </li>
-                            <li class="list-inline-item">
-                                <a href="#">
-                                    contact
-                                </a>
-                            </li>
-                            <li class="list-inline-item">
-                                <a href="#">
-                                    about
-                                </a>
-                            </li>
-                            <li class="list-inline-item">
-                                <a href="#">
-                                    faq
-                                </a>
-                            </li>
-                        </ul>
+                        <div class="col-md-12 d-flex justify-content-center">
+                            <button type="submit" class="btn btn-primary btn-contact px-25 py-3">Enviar datos</button>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- End Footer  -->
-    </footer>
+    </section>
+
+    <?php include "footer.php";?>
 
     <!-- SCROLL TO TOP -->
     <a href="javascript:" id="return-to-top"><i class="fa fa-chevron-up"></i></a>
     <!-- END SCROLL TO TOP -->
     <script src="./js/index.bundle.js?8918068d71def746395d"></script>
+
+    <script src="declaratoria.js"></script>
 </body>
 
 </html>

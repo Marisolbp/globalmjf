@@ -193,18 +193,18 @@ class Independizacion extends Conectar{
         $conectar = parent::conexion();
         parent::set_names();
     
-        $sql = "SELECT * FROM m_independizacion LIMIT 1";
+        $sql = "SELECT * FROM m_independizacion WHERE descrip_decla IS NOT NULL OR descrip_indep IS NOT NULL LIMIT 1";
         $stmt = $conectar->prepare($sql);
         $stmt->execute();
     
         return $stmt->fetch(PDO::FETCH_ASSOC); // Devuelve solo un registro
     }
 
-    public function registrar_ifo_modulo($descripcion, $usuario){
+    public function registrar_declaratoria($descripcion, $usuario){
         $conectar = parent::conexion();
         parent::set_names();
     
-        $sql = "INSERT INTO m_independizacion (descripcion, fec_crea, usu_crea, fec_actu, usu_actu) 
+        $sql = "INSERT INTO m_independizacion (descrip_decla, fec_crea, usu_crea, fec_actu, usu_actu) 
                 VALUES (?, NOW(), ?, NOW(), ?)";
         $stmt = $conectar->prepare($sql);
         $stmt->bindValue(1, $descripcion);
@@ -226,12 +226,64 @@ class Independizacion extends Conectar{
         echo json_encode($jsonData);
     }
     
-    public function editar_ifo_modulo($descripcion, $usuario){
+    public function editar_declaratoria($descripcion, $usuario){
         $conectar = parent::conexion();
         parent::set_names();
     
         $sql = "UPDATE m_independizacion 
-                SET descripcion = ?, fec_actu = NOW(), usu_actu = ? 
+                SET descrip_decla = ?, fec_actu = NOW(), usu_actu = ? 
+                LIMIT 1";
+        $stmt = $conectar->prepare($sql);
+        $stmt->bindValue(1, $descripcion);
+        $stmt->bindValue(2, $usuario);
+    
+        try {
+            if ($stmt->execute()) {
+                $jsonData['success'] = 1;
+            } else {
+                $jsonData['success'] = 0;
+            }
+        } catch (PDOException $e) {
+            $jsonData['success'] = 0;
+            $jsonData['error'] = $e->getMessage();
+        }
+    
+        header('Content-type: application/json; charset=utf-8');
+        echo json_encode($jsonData);
+    }
+
+    public function registrar_independizacion($descripcion, $usuario){
+        $conectar = parent::conexion();
+        parent::set_names();
+    
+        $sql = "INSERT INTO m_independizacion (descrip_indep, fec_crea, usu_crea, fec_actu, usu_actu) 
+                VALUES (?, NOW(), ?, NOW(), ?)";
+        $stmt = $conectar->prepare($sql);
+        $stmt->bindValue(1, $descripcion);
+        $stmt->bindValue(2, $usuario);
+        $stmt->bindValue(3, $usuario);
+    
+        try {
+            if ($stmt->execute()) {
+                $jsonData['success'] = 1;
+            } else {
+                $jsonData['success'] = 0;
+            }
+        } catch (PDOException $e) {
+            $jsonData['success'] = 0;
+            $jsonData['error'] = $e->getMessage();
+        }
+    
+        header('Content-type: application/json; charset=utf-8');
+        echo json_encode($jsonData);
+    }
+    
+    public function editar_independizacion($descripcion, $usuario){
+        $conectar = parent::conexion();
+        parent::set_names();
+    
+        $sql = "UPDATE m_independizacion 
+                SET descrip_indep = ?, fec_actu = NOW(), usu_actu = ? 
                 LIMIT 1";
         $stmt = $conectar->prepare($sql);
         $stmt->bindValue(1, $descripcion);

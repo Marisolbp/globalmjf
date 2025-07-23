@@ -47,6 +47,16 @@
                                     </div>
 
                                     <div class="col-md-3 col-sm-12">
+                                        <h6>N° Habitaciones</h6>
+                                        <fieldset class="form-group position-relative has-icon-left">
+                                            <input type="text" class="form-control" id="ndormit" name="ndormit">
+                                            <div class="form-control-position">
+                                                <i class="bx bx-home"></i>
+                                            </div>
+                                        </fieldset>
+                                    </div>
+
+                                    <div class="col-md-3 col-sm-12">
                                         <h6>N° Baños</h6>
                                         <fieldset class="form-group position-relative has-icon-left">
                                             <input type="text" class="form-control" id="nbanos" name="nbanos">
@@ -59,7 +69,7 @@
                                     <div class="col-md-3 col-sm-12">
                                         <h6>Área</h6>
                                         <div class="input-group">
-                                            <input type="text" class="form-control" id="area" name="area">
+                                            <input type="text" class="form-control text-start input-mask" id="area" name="area" data-inputmask="'alias': 'numeric', 'groupSeparator': ',', 'digits': 2, 'digitsOptional': false, 'placeholder': '0'">
                                             <div class="input-group-append">
                                                 <span class="input-group-text">m²</span>
                                             </div>

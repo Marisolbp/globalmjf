@@ -82,4 +82,40 @@ class Slider extends Conectar{
             return ["success" => 0];
         }
     }
+
+    public function obtener_titulo_x_id($id){
+        $conectar= parent::conexion();
+        parent::set_names();
+        $sql="SELECT 
+            titulo,
+            subtitulo
+            FROM 
+            m_foto_slider
+            WHERE id = ?";
+        $sql=$conectar->prepare($sql);
+        $sql->bindValue(1,$id);
+        $sql->execute();
+        return $resultado=$sql->fetchAll();
+    }
+
+    public function actualizar_texto($titulo, $subtitulo, $id_slider){
+
+        $conectar= parent::conexion();
+        parent::set_names();
+
+        $sql = "UPDATE m_foto_slider SET titulo=?, subtitulo=? WHERE id=?";
+        $sql = $conectar->prepare($sql);
+        $sql->bindValue(1, $titulo);
+        $sql->bindValue(2, $subtitulo);
+        $sql->bindValue(3, $id_slider);
+    
+        if($sql->execute()){
+            $jsonData['success'] = 1;
+        } else {
+            $jsonData['success'] = 0;
+        }
+    
+        header('Content-type: application/json; charset=utf-8');
+        echo json_encode($jsonData);
+    }
 }

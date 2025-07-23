@@ -60,9 +60,12 @@ $(document).ready(function(){
     
             $("#numero").val(info.numero);
             $("#correo").val(info.correo);
+            $("#facebook").val(info.facebook);
+            $("#linkedin").val(info.linkedin);
+            $("#instagram").val(info.instagram);
             $("#direccion").val(info.direccion);
-            $("#longitud").val(info.longitud);
-            $("#latitud").val(info.latitud);
+            /* $("#longitud").val(info.longitud);
+            $("#latitud").val(info.latitud); */
             // Si usas Quill:
             /* quill_m.root.innerHTML = info.mision || "";
             quill_v.root.innerHTML = info.vision || ""; */
@@ -76,6 +79,7 @@ $(document).ready(function(){
     
         if (datos.success === 1) {
             const info = datos.data;
+            quill_qs.root.innerHTML = info.quienes_somos || "";
             quill_m.root.innerHTML = info.mision || "";
             quill_v.root.innerHTML = info.vision || "";
         } else {
@@ -83,6 +87,19 @@ $(document).ready(function(){
         }
     });
 });
+
+const quill_qs = new Quill('#snow-editor-qs', {
+    modules: {
+        toolbar: [
+            [{ header: [1, 2, false] }],
+            ['bold', 'italic', 'underline'],
+            ['image', 'code-block'],
+            [{ list: 'ordered' }, { list: 'bullet' }],
+        ],
+    },
+    placeholder: '¿Quiénes somos?',
+    theme: 'snow', // or 'bubble'
+    });
 
 const quill_m = new Quill('#snow-editor-m', {
     modules: {
@@ -116,8 +133,6 @@ function guardarInfoGeneral(){
         "#numero",
         "#correo",
         "#direccion",
-        "#longitud",
-        "#latitud"
     ];
   
     for (let i = 0; i < campos.length; i++) {
@@ -194,10 +209,31 @@ function guardarInfoGeneral(){
 function guardarInfoNosotros(){
     var formData = new FormData($("#nosotros_form")[0]);
 
+    var editorHTMLContentQS = quill_qs.getText().trim();
     var editorHTMLContentM  = quill_m.getText().trim();
     var editorHTMLContentV  = quill_v.getText().trim();
 
-    if (editorHTMLContentM.length === 0) {
+    if (editorHTMLContentQS.length === 0) {
+        const Toast = Swal.mixin({
+            toast: true,
+            position: "top-end",
+            showConfirmButton: false,
+            timer: 2000,
+            timerProgressBar: true,
+            didOpen: (toast) => {
+              toast.addEventListener("mouseenter", Swal.stopTimer);
+              toast.addEventListener("mouseleave", Swal.resumeTimer);
+            },
+          });
+    
+          Toast.fire({
+            icon: "warning",
+            title: "Complete el campo ¿Quiénes somos?",
+          });
+
+        quill_qs.focus(); // Enfoca el editor si está vacío
+        return false;
+    } else if (editorHTMLContentM.length === 0) {
         const Toast = Swal.mixin({
             toast: true,
             position: "top-end",
@@ -239,6 +275,7 @@ function guardarInfoNosotros(){
         return false;
     } else {
 
+        formData.append("qsomos", editorHTMLContentQS);
         formData.append("mision", editorHTMLContentM);
         formData.append("vision", editorHTMLContentV);
 

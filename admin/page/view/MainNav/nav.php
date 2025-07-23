@@ -25,10 +25,10 @@
                 <li id="liIndependizacion" class="<?php if (isset($active4)) { echo $active4; } ?> nav-item"><a href="../Independizacion/"><i class="menu-livicon" data-icon="flag"></i><span class="menu-title" data-i18n="Kanban">Independización</span></a>
                 </li>
 
-                <li id="liPropiedad" class="<?php if (isset($active5)) { echo $active5; } ?> nav-item"><a href="../Propiedad/"><i class="menu-livicon" data-icon="home"></i><span class="menu-title" data-i18n="Kanban">Propiedades en venta</span></a>
+                <li id="liPropiedad" class="<?php if (isset($active5)) { echo $active5; } ?> nav-item"><a href="../Inmobiliaria/"><i class="menu-livicon" data-icon="home"></i><span class="menu-title" data-i18n="Kanban">Inmobiliaria</span></a>
                 </li>
 
-                <li id="liProyecto" class="<?php if (isset($active6)) { echo $active6; } ?> nav-item"><a href="../Proyecto/"><i class="menu-livicon" data-icon="home"></i><span class="menu-title" data-i18n="Kanban">Proyectos arquitectura</span></a>
+                <li id="liProyecto" class="<?php if (isset($active6)) { echo $active6; } ?> nav-item"><a href="../Proyecto/"><i class="menu-livicon" data-icon="home"></i><span class="menu-title" data-i18n="Kanban">Proyectos</span></a>
                 </li>
 
 

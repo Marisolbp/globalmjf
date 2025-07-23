@@ -247,6 +247,7 @@ create table m_distrito(
 
 INSERT INTO m_distrito (id_depart, id_provin, nombre) VALUES
 (15, 135, 'Ana María del Mar'),
+(15, 135, 'Ate'),
 (15, 135, 'Barranco'),
 (15, 135, 'Breña'),
 (15, 135, 'Carabayllo'),
@@ -292,9 +293,10 @@ create table m_tipo_propiedad(
 INSERT INTO m_tipo_propiedad (nombre, estado) VALUES
 ('Casa', 'A'),
 ('Departamento', 'A'),
-('Terrno', 'A');
+('Terreno', 'A');
 
 create table m_nosotros(
+    quienes_somos text,
     vision text,
     mision text,
     fec_crea date,
@@ -311,7 +313,8 @@ create table m_nosotros_valores(
 
 create table m_independizacion(
     id int primary key auto_increment not null,
-    descripcion text,
+    descrip_decla text,
+    descrip_indep text,
     fec_crea date,
     usu_crea varchar(30),
     fec_actu date,
@@ -321,6 +324,9 @@ create table m_independizacion(
 create table m_configuracion(
     numero varchar(20),
     correo varchar(100),
+    facebook varchar(200),
+    linkedin varchar(200),
+    instagram varchar(200),
     direccion varchar(250),
     longitud varchar(50),
     latitud varchar(50),
@@ -333,6 +339,8 @@ create table m_configuracion(
 create table m_foto_slider(
     id int primary key auto_increment not null,
     foto blob not null,
+    titulo text,
+    subtitulo text,
     nombre varchar(50) not null,
     orden int not null,
     fec_crea date,
@@ -360,10 +368,13 @@ create table m_miembro(
     nombre varchar(100) not null,
     apellido varchar(100) not null,
     puesto varchar(100) not null,
+    detapuesto varchar(250) not null,
+    codcap varchar(20) not null,
     linkedin varchar(200),
     instagram varchar(200),
     correo varchar(100),
-    foto blob not null,
+    contacto varchar(20),
+    foto longblob not null,
     descrip text, 
     orden int not null,
     estado char(1) not null,
@@ -373,10 +384,19 @@ create table m_miembro(
     usu_actu varchar(30)
 );
 
+create table m_miembro_especialidad(
+    id int primary key auto_increment not null,
+    id_miembro int not null,
+    FOREIGN KEY (id_miembro) REFERENCES m_miembro(id),
+    especialidad varchar(250) not null
+);
+
 create table g_solicitud(
     id int primary key auto_increment not null,
     nombre varchar(100) not null,
     apellido varchar(100) not null,
+    tip_doc varchar(10) not null,
+    email varchar(100),
     dni varchar(10) not null,
     telefono varchar(10) not null,
     modalidad char(1) not null,
@@ -396,7 +416,7 @@ create table g_solicitud(
     usu_actu varchar(30)
 );
 
-create table g_independizacion(
+/* create table g_independizacion(
     id int primary key auto_increment not null,
     nombre varchar(250) not null,
     id_distri int not null,
@@ -416,14 +436,15 @@ create table g_independizacion_foto(
     foto blob not null,
     nombre varchar(50) not null,
     orden int not null
-);
+); */
 
 create table g_proyec_arqui(
     id int primary key auto_increment not null,
     nombre varchar(250) not null,
     descrip text,
-    npisos int not null,
-    nbanos int not null,
+    npisos int,
+    ndormit int,
+    nbanos int,
     area varchar(20) not null,
     id_t_prop int not null,
     FOREIGN KEY (id_t_prop) REFERENCES m_tipo_propiedad(id),
@@ -438,8 +459,8 @@ create table g_proyec_arqui_foto(
     id int primary key auto_increment not null,
     id_proyec int not null,
     FOREIGN KEY (id_proyec) REFERENCES g_proyec_arqui(id),
-    foto blob not null,
-    nombre varchar(50) not null,
+    ruta_imagen varchar(300) not null,
+    nombre_original varchar(255) not null,
     orden int not null
 );
 
@@ -484,12 +505,11 @@ CREATE TABLE g_propi_venta (
     FOREIGN KEY (id_t_prop) REFERENCES m_tipo_propiedad(id)
 );
 
-
-create table g_propi_venta_foto(
+CREATE TABLE g_propi_venta_foto(
     id int primary key auto_increment not null,
     id_propi int not null,
     FOREIGN KEY (id_propi) REFERENCES g_propi_venta(id),
-    foto blob not null,
-    nombre varchar(50) not null,
+    ruta_imagen varchar(300) not null,
+    nombre_original varchar(255) not null,
     orden int not null
 );

@@ -28,8 +28,7 @@
     <meta name="theme-color" content="#3454d1">
     <link href="./css/styles.css?8918068d71def746395d" rel="stylesheet">
 
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-    
+    <link rel="stylesheet" href="css/css/all.min.css">
     <style>
         body {
             background-color: #f8f9fa;
@@ -428,12 +427,7 @@
                 <div class="col-md-8 col-lg-6">
                     <div class="title__head">
                         <h2 class="text-center">¿Quiénes somos?</h2>
-                        <p style="text-align: justify;"> En Global MJF Arquitectos nos dedicamos a diseñar espacios que inspiran
-                            y generan valor. Ofrecemos servicios especializados en diseño de planos, 
-                            venta de propiedades, y gestión legal mediante declaratoria de fábrica e 
-                            independizaciones. Nuestro compromiso es acompañarte en cada etapa de tu 
-                            proyecto con profesionalismo, confianza y soluciones integrales.
-                        </p>
+                        <p style="text-align: justify;" id="quienes-somos"> </p>
                     </div>
                 </div>
             </div>
@@ -442,11 +436,7 @@
                 <div class="col-md-8 col-lg-6">
                     <div class="title__head">
                         <h2 class="text-center">Misión</h2>
-                        <p style="text-align: justify;"> Creamos oportunidades, edificamos futuro y diseñamos sueños, brindando un 
-                            excelente servicio a nuestros clientes con una visión estratégica y pasión 
-                            por el detalle, porque entendemos que cada metro cuadrado es una inversión 
-                            que transforma vidas
-                        </p>
+                        <p style="text-align: justify;" id="mision"> </p>
                     </div>
                 </div>
             </div>
@@ -454,9 +444,7 @@
                 <div class="col-md-8 col-lg-6">
                     <div class="title__head">
                         <h2 class="text-center">Visión</h2>
-                        <p style="text-align: justify;"> Ser la constructora e inmobiliaria más influyente y confiable a nivel 
-                            nacional e internacional, siendo sinónimo de calidad, innovación y sostenibilidad.
-                        </p>
+                        <p style="text-align: justify;" id="vision"> </p>
                     </div>
                 </div>
             </div>
@@ -472,248 +460,8 @@
                     </div>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-12 col-xl-12">
-                    <div class="agent-container">
-                        <!-- Información del agente y contacto -->
-                        <div class="col-lg-4 d-flex">
-                            <div class="agent-card">
-                                <!-- Foto del agente -->
-                                <div class="photo-container text-center">
-                                    <div class="listing-badge">CAP 24160</div>
-                                    <img src="images/01.png" class="agent-photo">
-                                </div>
-                                
-                                <!-- Información básica -->
-                                <div class="agent-info">
-                                    <h2 class="agent-name">MILSER LLANOS CADENILLAS</h2>
-                                    <p class="agent-title">Arquitecto, broker inmobiliario y especialista en saneamiento físico-legal de inmuebles.</p>
-
-                                    <ul class="contact-list">
-                                        <li class="contact-item">
-                                            <div class="contact-icon">
-                                                <i class="fas fa-phone"></i>
-                                            </div>
-                                            <div class="contact-text">
-                                                <a href="tel:+51987654321">+51 907 877 361</a>
-                                            </div>
-                                        </li>
-                                        <li class="contact-item">
-                                            <div class="contact-icon">
-                                                <i class="fas fa-envelope"></i>
-                                            </div>
-                                            <div class="contact-text">
-                                                <a href="mailto:milser@globalmjf.com">arq.mllanos@gmail.com</a>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                    
-                                    <!-- Botones sociales -->
-                                    <div class="social-buttons">                                        
-                                        <a href="#" class="social-btn linkedin">
-                                            <i class="fab fa-linkedin-in"></i>
-                                        </a>
-                                        <a href="#" class="social-btn instagram">
-                                            <i class="fab fa-instagram"></i>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <!-- Sección de descripción -->
-                        <div class="col-lg-8 d-flex">
-                            <div class="description-section">
-                                <h3 class="section-title">Descripción</h3>
-                                
-                                <p class="description-text">
-                                    Es CEO de <strong>Global MJF Arquitectos</strong>. Se graduó de la carrera de Arquitectura y Urbanismo Ambiental en la Universidad Científica del Sur. Ha ganado 4 premios por concursos dirigidos por la Universidad y el Colegio de Arquitectos del Perú.
-                                </p>
-                                
-                                <p class="description-text">
-                                    Ha diseñado más de un millón de m² en sectores residenciales, hoteles, centros comerciales, culturales y educativos.
-                                </p>
-                                
-                                <h4 class="specialties-title">Especialidades y Certificaciones:</h4>
-                                
-                                <ul class="specialties-list">
-                                    <li class="specialty-item">
-                                        <div class="specialty-bullet"></div>
-                                        <div class="specialty-text">Especialista en Saneamiento físico legal</div>
-                                    </li>
-                                    <li class="specialty-item">
-                                        <div class="specialty-bullet"></div>
-                                        <div class="specialty-text">Especialista en Valorización y Liquidación de Obras</div>
-                                    </li>
-                                    <li class="specialty-item">
-                                        <div class="specialty-bullet"></div>
-                                        <div class="specialty-text">Especialista en Supervisión de Obras</div>
-                                    </li>
-                                    <li class="specialty-item">
-                                        <div class="specialty-bullet"></div>
-                                        <div class="specialty-text">Agente Inmobiliario 19592-PJ-MVCS</div>
-                                    </li>
-                                    <li class="specialty-item">
-                                        <div class="specialty-bullet"></div>
-                                        <div class="specialty-text">Especialista en Asesoría y Gestión Inmobiliaria</div>
-                                    </li>
-                                    <li class="specialty-item">
-                                        <div class="specialty-bullet"></div>
-                                        <div class="specialty-text">Arquitecto Verificador SUNARP CIV N°017267VCZRIX</div>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-12 col-xl-12">
-                    <div class="agent-container">
-                        <!-- Información del agente y contacto -->
-                        <div class="col-lg-4 d-flex">
-                            <div class="agent-card">
-                                <!-- Foto del agente -->
-                                <div class="photo-container text-center">
-                                    <div class="listing-badge">CAP 24178</div>
-                                    <img src="images/3.png" class="agent-photo" alt="Ángel Jiménez">
-                                </div>
-
-                                <!-- Información básica -->
-                                <div class="agent-info">
-                                    <h2 class="agent-name">ANGEL JIMÉNEZ PALMA</h2>
-                                    <p class="agent-title">Arquitecto especialista en diseño de interiores.</p>
-
-                                    <ul class="contact-list">
-                                        <li class="contact-item">
-                                            <div class="contact-icon">
-                                                <i class="fas fa-phone"></i>
-                                            </div>
-                                            <div class="contact-text">
-                                                <a href="tel:+51987654321">+51 966 324 455</a>
-                                            </div>
-                                        </li>
-                                        <li class="contact-item">
-                                            <div class="contact-icon">
-                                                <i class="fas fa-envelope"></i>
-                                            </div>
-                                            <div class="contact-text">
-                                                <a href="mailto:milser@globalmjf.com">arq.angeljimenez@gmail.com</a>
-                                            </div>
-                                        </li>
-                                    </ul>                               
-
-                                    <!-- Botones sociales -->
-                                    <div class="social-buttons">                                        
-                                        <a href="#" class="social-btn linkedin">
-                                            <i class="fab fa-linkedin-in"></i>
-                                        </a>
-                                        <a href="#" class="social-btn instagram">
-                                            <i class="fab fa-instagram"></i>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Sección de descripción -->
-                        <div class="col-lg-8 d-flex">
-                            <div class="description-section">
-                                <h3 class="section-title">Descripción</h3>
-
-                                <p class="description-text">
-                                    Es subgerente y socio cofundador de <strong>Global MJF Arquitectos</strong>. Arquitecto colegiado y habilitado con el CAP 24178. Ganador del fondo Investiga Lima, graduado en el tercio superior. Ganador de expo talleres y concursos dirigidos por la Universidad Científica del Sur.
-                                </p>
-                                <p class="description-text">
-                                    Ha diseñado más de 100 mil m² en sectores residenciales, centros comerciales y educativos. Ha realizado saneamiento físico legal de más de 120 propiedades en Lima Metropolitana.
-                                </p>
-
-                                <h4 class="specialties-title">Especialidades y Certificaciones:</h4>
-                                <ul class="specialties-list">
-                                    <li class="specialty-item"><div class="specialty-bullet"></div><div class="specialty-text">Especialista en Saneamiento físico legal</div></li>
-                                    <li class="specialty-item"><div class="specialty-bullet"></div><div class="specialty-text">Especialista en Diseño de Interiores</div></li>
-                                    <li class="specialty-item"><div class="specialty-bullet"></div><div class="specialty-text">Especialista en Visualización Arquitectónica</div></li>
-                                    <li class="specialty-item"><div class="specialty-bullet"></div><div class="specialty-text">Especialista en Asesoría Universitaria</div></li>
-                                    <li class="specialty-item"><div class="specialty-bullet"></div><div class="specialty-text">Especialista en Ejecución de Obras Urbanas</div></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-12 col-xl-12">
-                    <div class="agent-container">
-                        <!-- Información del agente y contacto -->
-                        <div class="col-lg-4 d-flex">
-                            <div class="agent-card">
-                                    <!-- Foto del agente -->
-                                    <div class="photo-container text-center">
-                                        <div class="listing-badge">CAP 32029</div>
-                                        <img src="images/2.png" class="agent-photo" alt="Francisco Milla">
-                                    </div>
-
-                                    <!-- Información básica -->
-                                    <div class="agent-info">
-                                        <h2 class="agent-name">FRANCISCO MILLA AGAPE</h2>
-                                        <p class="agent-title">Arquitecto especialista en construcción.</p>
-
-                                        <ul class="contact-list">
-                                            <li class="contact-item">
-                                                <div class="contact-icon">
-                                                    <i class="fas fa-phone"></i>
-                                                </div>
-                                                <div class="contact-text">
-                                                    <a href="tel:+51987654321">+51 966 324 455</a>
-                                                </div>
-                                            </li>
-                                            <li class="contact-item">
-                                                <div class="contact-icon">
-                                                    <i class="fas fa-envelope"></i>
-                                                </div>
-                                                <div class="contact-text">
-                                                    <a href="mailto:milser@globalmjf.com">arq.franciscomilla@gmail.com</a>
-                                                </div>
-                                            </li>
-                                        </ul>  
-
-                                        <!-- Botones sociales -->
-                                        <div class="social-buttons">                                        
-                                            <a href="#" class="social-btn linkedin">
-                                                <i class="fab fa-linkedin-in"></i>
-                                            </a>
-                                            <a href="#" class="social-btn instagram">
-                                                <i class="fab fa-instagram"></i>
-                                            </a>
-                                        </div>
-                                    </div>
-                            </div>
-                        </div>
-
-                        <!-- Sección de descripción -->
-                         <div class="col-lg-8 d-flex">
-                             <div class="description-section">
-                                 <h3 class="section-title">Descripción</h3>
-
-                                 <p class="description-text">
-                                     Es subgerente y socio cofundador de <strong>Global MJF Arquitectos</strong>. Se graduó de Arquitectura y Urbanismo Ambiental en la Universidad Científica del Sur. Ha participado en expotalleres y concursos de la universidad.
-                                 </p>
-                                 <p class="description-text">
-                                     Ha diseñado y construido más de 100 proyectos en sectores residenciales, comerciales y educativos. Ha realizado habilitaciones urbanas residenciales y comerciales, además del saneamiento físico legal de más de 100 propiedades en Lima Metropolitana.
-                                 </p>
-
-                                 <h4 class="specialties-title">Especialidades y Certificaciones:</h4>
-                                 <ul class="specialties-list">
-                                     <li class="specialty-item"><div class="specialty-bullet"></div><div class="specialty-text">Especialista en Construcción y Edificaciones</div></li>
-                                     <li class="specialty-item"><div class="specialty-bullet"></div><div class="specialty-text">Especialista en Habilitaciones Urbanas</div></li>
-                                     <li class="specialty-item"><div class="specialty-bullet"></div><div class="specialty-text">Especialista en Saneamiento físico legal</div></li>
-                                 </ul>
-                             </div>
-                         </div>
-                    </div>
-                </div>
+            <div class="row" id="nuestro-equipo">
+                
             </div>
         </div>
     </section>
@@ -735,46 +483,13 @@
                             <div class="team-img">
                                 <img alt="team member" class="img-fluid" src="images/apoyo.jpg">
                             </div>
-                            <div class="team-hover">
-                                <div class="desk">
-                                    <h5>
-                                        Arquitecto CAP 24160
-                                    </h5>
-                                    <p>
-                                        Broker inmobiliario
-                                    </p>
-                                    <a class="btn btn-primary" href="#">
-                                        Perfil profesional
-                                    </a>
-                                </div>
-                                <ul class="list-inline s-link mb-0">
-                                    <li class="list-inline-item">
-                                        <a href="#">
-                                            <i class="fa fa-facebook">
-                                            </i>
-                                        </a>
-                                    </li>
-                                    <li class="list-inline-item">
-                                        <a href="#">
-                                            <i class="fa fa-twitter">
-                                            </i>
-                                        </a>
-                                    </li>
-                                    <li class="list-inline-item">
-                                        <a href="#">
-                                            <i class="fa fa-google-plus">
-                                            </i>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
                             <div class="team-title">
                                 <h6>
-                                    Test
+                                    Khalil Munir
                                 </h6>
-                                <span>
-                                    Test
-                                </span>
+                                <p>
+                                    Especialista Emocional
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -790,6 +505,8 @@
     <a href="javascript:" id="return-to-top"><i class="fa fa-chevron-up"></i></a>
     <!-- END SCROLL TO TOP -->
     <script src="./js/index.bundle.js?8918068d71def746395d"></script>
+
+    <script src="nosotros.js"></script>
 </body>
 
 </html>

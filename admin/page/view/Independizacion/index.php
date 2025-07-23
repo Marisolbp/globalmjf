@@ -117,19 +117,52 @@ if(isset($_SESSION["id"])){
                             <div class="card">
                                 <div class="card-content">
                                     <div class="card-body">
+                                        <ul class="nav nav-tabs" role="tablist">
+                                            <li class="nav-item">
+                                                <a class="nav-link active" id="home-tab" data-toggle="tab" href="#declaratoria" aria-controls="home" role="tab" aria-selected="true">
+                                                    <i class="bx bx-home align-middle"></i>
+                                                    <span class="align-middle">Declaratoria de fábrica</span>
+                                                </a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link" id="profile-tab" data-toggle="tab" href="#independizacion" aria-controls="home" role="tab" aria-selected="false">
+                                                    <i class="bx bx-user align-middle"></i>
+                                                    <span class="align-middle">Independización</span>
+                                                </a>
+                                            </li>
+                                        </ul>
                                         <div class="tab-content">
-                                            <div class="tab-pane active" id="general" aria-labelledby="home-tab" role="tabpanel">
-                                                <form method="post" id="module_independizacion_form">
+                                            <div class="tab-pane active" id="declaratoria" aria-labelledby="home-tab" role="tabpanel">
+                                                <form method="post" id="module_declaratoria_form">
                                                     <div class="row">
-                                                        <div class="col-md-1">
-                                                            <label>Descripción</label>
+                                                        <div class="col-md-2">
+                                                            <label>¿Qué es la declaratoria de fábrica?</label>
                                                         </div>
-                                                        <div class="col-md-11 form-group ">
+                                                        <div class="col-md-10 form-group ">
                                                             <div id="snow-editor-d" style="height: 150px;">
                                                             </div>
                                                         </div>
                                                         <div class="col-12 d-flex justify-content-end">
-                                                            <button type="button" onclick="return guardarInfoModulo()" class="btn btn-primary">
+                                                            <button type="button" onclick="return guardarDeclaratoria()" class="btn btn-primary">
+                                                                <i class="bx bx-check d-block d-sm-none"></i>
+                                                                <span class="d-none d-sm-block">Guardar</span>
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                            <div class="tab-pane" id="independizacion" aria-labelledby="home-tab" role="tabpanel">
+                                                <form method="post" id="module_independizacion_form">
+                                                    <div class="row">
+                                                        <div class="col-md-2">
+                                                            <label>¿Qué es la independización de una propiedad?</label>
+                                                        </div>
+                                                        <div class="col-md-10 form-group ">
+                                                            <div id="snow-editor-i" style="height: 150px;">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-12 d-flex justify-content-end">
+                                                            <button type="button" onclick="return guardarIndependizacion()" class="btn btn-primary">
                                                                 <i class="bx bx-check d-block d-sm-none"></i>
                                                                 <span class="d-none d-sm-block">Guardar</span>
                                                             </button>
@@ -144,15 +177,14 @@ if(isset($_SESSION["id"])){
                         </div>
                     </div>
                 </section>
-                <!--/ Zero configuration table -->
             </div>
-            <div class="content-body">
+            <!-- <div class="content-body">
                 <div class="row">
                     <div class="col-12">
                         <button type="button" type="button" onclick="return nuevoRegistro()" class="btn mr-1 mb-1 btn-primary">Nuevo</button>
                     </div>
                 </div>
-                <!-- Zero configuration table -->
+
                 <section id="basic-datatable">
                     <div class="row">
                         <div class="col-12">
@@ -181,8 +213,8 @@ if(isset($_SESSION["id"])){
                         </div>
                     </div>
                 </section>
-                <!--/ Zero configuration table -->
-            </div>
+
+            </div> -->
         </div>
     </div>
     <!-- END: Content-->

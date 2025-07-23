@@ -14,7 +14,7 @@
                                         <div class="row">
                                             <input type="hidden" id="codigo" name="codigo">
                                             <div class="col-md-6 col-sm-12">
-                                                <h6>Nombres</h6>
+                                                <h6>Nombres *</h6>
                                                 <fieldset class="form-group position-relative has-icon-left">
                                                     <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombres">
                                                     <div class="form-control-position">
@@ -24,7 +24,7 @@
                                             </div>
 
                                             <div class="col-md-6 col-sm-12">
-                                                <h6>Apellido</h6>
+                                                <h6>Apellido *</h6>
                                                 <fieldset class="form-group position-relative has-icon-left">
                                                     <input type="text" class="form-control" id="apellido" name="apellido" placeholder="Apellidos">
                                                     <div class="form-control-position">
@@ -34,7 +34,17 @@
                                             </div>
 
                                             <div class="col-md-6 col-sm-12">
-                                                <h6>Puesto</h6>
+                                                <h6>CAP *</h6>
+                                                <fieldset class="form-group position-relative has-icon-left">
+                                                    <input type="text" class="form-control" id="codcap" name="codcap" placeholder="CAP">
+                                                    <div class="form-control-position">
+                                                        <i class="bx bx-briefcase"></i>
+                                                    </div>
+                                                </fieldset>
+                                            </div>
+
+                                            <div class="col-md-6 col-sm-12">
+                                                <h6>Puesto *</h6>
                                                 <fieldset class="form-group position-relative has-icon-left">
                                                     <input type="text" class="form-control" id="puesto" name="puesto" placeholder="Puesto">
                                                     <div class="form-control-position">
@@ -43,12 +53,32 @@
                                                 </fieldset>
                                             </div>
 
+                                            <div class="col-md-12 col-sm-12">
+                                                <h6>Detalle puesto *</h6>
+                                                <fieldset class="form-group position-relative has-icon-left">
+                                                    <input type="text" class="form-control" id="detapuesto" name="detapuesto" placeholder="Detalle puesto">
+                                                    <div class="form-control-position">
+                                                        <i class="bx bx-briefcase"></i>
+                                                    </div>
+                                                </fieldset>
+                                            </div>
+
                                             <div class="col-md-6 col-sm-12">
-                                                <h6>Correo</h6>
+                                                <h6>Correo *</h6>
                                                 <fieldset class="form-group position-relative has-icon-left">
                                                     <input type="text" class="form-control" id="correo" name="correo" placeholder="Correo">
                                                     <div class="form-control-position">
                                                         <i class="bx bx-envelope"></i>
+                                                    </div>
+                                                </fieldset>
+                                            </div>
+
+                                            <div class="col-md-6 col-sm-12">
+                                                <h6>Contacto</h6>
+                                                <fieldset class="form-group position-relative has-icon-left">
+                                                    <input type="text" class="form-control" id="contacto" name="contacto" placeholder="Contacto">
+                                                    <div class="form-control-position">
+                                                        <i class="bx bx-phone"></i>
                                                     </div>
                                                 </fieldset>
                                             </div>
@@ -74,14 +104,14 @@
                                             </div>
                                             
                                             <div class="col-md-12 col-sm-12">
-                                                <h6>Descripción</h6>
+                                                <h6>Descripción *</h6>
                                                 <fieldset class="form-group">
                                                     <textarea class="form-control" id="descrip" name="descrip" rows="3" placeholder="Descripción"></textarea>
                                                 </fieldset>
                                             </div>
 
                                             <div class="col-md-3 col-sm-6">
-                                                <h6>Orden</h6>
+                                                <h6>Orden *</h6>
                                                 <fieldset class="form-group position-relative has-icon-left">
                                                     <input type="text" class="form-control" id="orden" name="orden" placeholder="Orden">
                                                     <div class="form-control-position">

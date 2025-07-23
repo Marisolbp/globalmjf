@@ -7,11 +7,7 @@ switch($_GET["op"]){
 
     case "registrar_general":
 
-        if ($_POST['numero'] == "") {
-            $general->registrar_general($_POST['numero'], $_POST['correo'], $_POST['direccion'], $_POST['longitud'], $_POST['latitud'], $_SESSION['usuario']);
-        } else {
-            $general->editar_general($_POST['numero'], $_POST['correo'], $_POST['direccion'], $_POST['longitud'], $_POST['latitud'], $_SESSION['usuario']);
-        }
+        $general->registrar_general($_POST['numero'], $_POST['correo'], $_POST['facebook'], $_POST['linkedin'], $_POST['instagram'], $_POST['direccion'], $_SESSION['usuario']);
 
         break;
 
@@ -33,6 +29,7 @@ switch($_GET["op"]){
 
     case "registrar_nosotros":
 
+        $qsomos = $_POST['qsomos'];
         $mision = $_POST['mision'];
         $vision = $_POST['vision'];
         $usuario = $_SESSION['usuario'];
@@ -41,9 +38,9 @@ switch($_GET["op"]){
         $datos = $general->get_nosotros();
 
         if (empty($datos)) {
-            $general->registrar_nosotros($mision, $vision, $usuario);
+            $general->registrar_nosotros($qsomos, $mision, $vision, $usuario);
         } else {
-            $general->editar_nosotros($mision, $vision, $usuario);
+            $general->editar_nosotros($qsomos, $mision, $vision, $usuario);
         }
 
         break;

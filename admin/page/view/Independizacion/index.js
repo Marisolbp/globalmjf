@@ -9,12 +9,25 @@ const quill_d = new Quill('#snow-editor-d', {
             [{ list: 'ordered' }, { list: 'bullet' }],
         ],
     },
-    placeholder: 'Descripción de módulo',
+    placeholder: 'Declaratoria de fábrica',
+    theme: 'snow', // or 'bubble'
+    });
+
+const quill_i = new Quill('#snow-editor-i', {
+    modules: {
+        toolbar: [
+            [{ header: [1, 2, false] }],
+            ['bold', 'italic', 'underline'],
+            ['image', 'code-block'],
+            [{ list: 'ordered' }, { list: 'bullet' }],
+        ],
+    },
+    placeholder: 'Independización',
     theme: 'snow', // or 'bubble'
     });
 
 $(document).ready(function(){
-    tabla=$('#data_independizacion').dataTable({
+    /* tabla=$('#data_independizacion').dataTable({
         "aProcessing": true,
         "aServerSide": true,
         "searching": true,
@@ -65,28 +78,29 @@ $(document).ready(function(){
                 "sSortDescending": ": Activar para ordenar la columna de manera descendente"
             }
         }     
-    }).DataTable();
+    }).DataTable(); */
 
-    $('#estado').prop('checked', true); 
+    /* $('#estado').prop('checked', true); 
 
     $.post("../../controller/ubicacion.php?op=combo_dist",function(data, status){
         $('#id_distri').html(data);
-    });
+    }); */
 
     $.post("../../controller/independizacion.php?op=obtener_descripcion", function(response) {
         const datos = JSON.parse(response);
     
         if (datos.success === 1) {
             const info = datos.data;
-            quill_d.root.innerHTML = info.descripcion || "";
+            quill_d.root.innerHTML = info.descrip_decla || "";
+            quill_i.root.innerHTML = info.descrip_indep || "";
         } else {
             console.log("No hay datos previos en la configuración.");
         }
     });
 });
 
-function guardarInfoModulo(){
-    var formData = new FormData($("#module_independizacion_form")[0]);
+function guardarDeclaratoria(){
+    var formData = new FormData($("#module_declaratoria_form")[0]);
 
     var editorHTMLContentD  = quill_d.getText().trim();
     var descripcionHTML = quill_d.root.innerHTML;
@@ -116,7 +130,7 @@ function guardarInfoModulo(){
         formData.append("descripcion", descripcionHTML);
 
         $.ajax({
-            url: "../../controller/independizacion.php?op=registrar_info_modulo",
+            url: "../../controller/independizacion.php?op=registrar_declaratoria",
             type: "POST",
             data: formData,
             contentType: false,
@@ -162,7 +176,84 @@ function guardarInfoModulo(){
     }
 }
 
-$('#estado').on('change', function () {
+function guardarIndependizacion(){
+    var formData = new FormData($("#module_independizacion_form")[0]);
+
+    var editorHTMLContentD  = quill_i.getText().trim();
+    var descripcionHTML = quill_i.root.innerHTML;
+
+    if (editorHTMLContentD.length === 0) {
+        const Toast = Swal.mixin({
+            toast: true,
+            position: "top-end",
+            showConfirmButton: false,
+            timer: 2000,
+            timerProgressBar: true,
+            didOpen: (toast) => {
+              toast.addEventListener("mouseenter", Swal.stopTimer);
+              toast.addEventListener("mouseleave", Swal.resumeTimer);
+            },
+          });
+    
+          Toast.fire({
+            icon: "warning",
+            title: "Complete la descripción",
+          });
+
+        quill_v.focus(); // Enfoca el editor si está vacío
+        return false;
+    } else {
+
+        formData.append("descrip_indep", descripcionHTML);
+
+        $.ajax({
+            url: "../../controller/independizacion.php?op=registrar_independizacion",
+            type: "POST",
+            data: formData,
+            contentType: false,
+            processData: false,
+            success: function (datos) {
+                if (datos.success == 1) {
+
+                    const Toast = Swal.mixin({
+                    toast: true,
+                    position: "top-end",
+                    showConfirmButton: false,
+                    timer: 2000,
+                    timerProgressBar: true,
+                    onOpen: (toast) => {
+                        toast.addEventListener("mouseenter", Swal.stopTimer);
+                        toast.addEventListener("mouseleave", Swal.resumeTimer);
+                    },
+                    });
+                    Toast.fire({
+                    icon: "success",
+                    title: "Información actualizada",
+                    });
+
+                } else {
+                    const Toast = Swal.mixin({
+                        toast: true,
+                        position: "top-end",
+                        showConfirmButton: false,
+                        timer: 2000,
+                        timerProgressBar: true,
+                        onOpen: (toast) => {
+                        toast.addEventListener("mouseenter", Swal.stopTimer);
+                        toast.addEventListener("mouseleave", Swal.resumeTimer);
+                        },
+                    });
+                    Toast.fire({
+                        icon: "error",
+                        title: "Error, algo salió mal",
+                    });
+                }
+            },
+        });
+    }
+}
+
+/* $('#estado').on('change', function () {
     if ($(this).is(':checked')) {
         $('#estado_real').val('A');
         $('#lblEstado').text('Activo');
@@ -170,16 +261,16 @@ $('#estado').on('change', function () {
         $('#estado_real').val('I');
         $('#lblEstado').text('Inactivo');
     }
-});
+}); */
 
-function nuevoRegistro(){
+/* function nuevoRegistro(){
     $('#estado').prop('checked', true); 
     
     $('#lblTitle').html('Nuevo registro');
     $('#modal_independizacion').modal('show');
-}
+} */
 
-function guardarRegistro(){
+/* function guardarRegistro(){
     var formData = new FormData($("#independizacion_form")[0]);
     const campos = [
         "#nombre",
@@ -274,9 +365,9 @@ function guardarRegistro(){
             }
         },
     });
-}
+} */
 
-function editarRegistro(id){
+/* function editarRegistro(id){
     $('#lblTitle').html('Editar registro');
     $('#modal_independizacion').modal('show');
 
@@ -296,9 +387,9 @@ function editarRegistro(id){
         }
         
     });
-}
+} */
 
-function cerrarModal(){
+/* function cerrarModal(){
     $('#modal_independizacion').modal('hide'); 
     
     $("#independizacion_form")[0].reset();
@@ -306,17 +397,17 @@ function cerrarModal(){
     $('#modal_foto_indep').modal('hide'); 
 
     myDropzone.removeAllFiles(true); // Limpiar Dropzone
-}
+} */
 
-function registrarFoto(id){
+/* function registrarFoto(id){
 
     listarFoto(id)
 
     $('#id_indep').val(id)
     $('#modal_foto_indep').modal('show');
-}
+} */
 
-$(document).on('change', '.input-orden', function () {
+/* $(document).on('change', '.input-orden', function () {
     let nuevoOrden = $(this).val();
     let id = $(this).data('id');
 
@@ -333,9 +424,9 @@ $(document).on('change', '.input-orden', function () {
             }
         }
     });
-});
+}); */
 
-function listarFoto(id){
+/* function listarFoto(id){
     tabla_foto=$('#data_foto_independizacion').dataTable({
         "aProcessing": true,
         "aServerSide": true,
@@ -388,10 +479,9 @@ function listarFoto(id){
             }
         }     
     }).DataTable();
-}
+} */
 
-// Inicializar Dropzone
-Dropzone.autoDiscover = false;
+/* Dropzone.autoDiscover = false;
 
 var myDropzone = new Dropzone("#upload-form", {
     url: "../../controller/independizacion.php?op=registrar", // Solo para inicializar
@@ -430,9 +520,9 @@ var myDropzone = new Dropzone("#upload-form", {
         window.dropzoneInstance = this;
 
     }
-});
+}); */
 
-function gardarFoto(){
+/* function gardarFoto(){
     var formData = new FormData($("#independizacion_foto_form")[0]);
 
     if (myDropzone.files.length === 0) {
@@ -527,9 +617,9 @@ function gardarFoto(){
             },
         });
     }
-}
+} */
 
-function eliminarFoto(id){
+/* function eliminarFoto(id){
     swal({
         title: "Atención",
         text: "¿Desea elimiar foto?",
@@ -555,4 +645,4 @@ function eliminarFoto(id){
               });
           }
       });
-}
+} */

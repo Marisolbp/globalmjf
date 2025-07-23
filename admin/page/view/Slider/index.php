@@ -156,6 +156,8 @@ if(isset($_SESSION["id"])){
 
     <?php include "modal.php"; ?>
 
+    <?php include "texto.php"; ?>
+
     <script type="text/javascript" src="index.js"></script>
     
 </body>

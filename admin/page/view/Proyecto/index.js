@@ -22,13 +22,14 @@ $(document).ready(function(){
         colReorder: true,
         "ordering": false,
         columnDefs: [
-            { width: "30%", targets: 0, className: 'text-left'},
+            { width: "20%", targets: 0, className: 'text-left'},
             { width: "10%", targets: 1, className: 'text-center'},
             { width: "10%", targets: 2, className: 'text-center'},
             { width: "10%", targets: 3, className: 'text-center'},
-            { width: "15%", targets: 4, className: 'text-center'},
+            { width: "10%", targets: 4, className: 'text-center'},
             { width: "15%", targets: 5, className: 'text-center'},
-            { width: "10%", targets: 6, className: 'text-center'}
+            { width: "15%", targets: 6, className: 'text-center'},
+            { width: "10%", targets: 7, className: 'text-center'}
         ],
         "ajax":{
             url: '../../controller/proyecto.php?op=listar',
@@ -88,9 +89,12 @@ $('#estado').on('change', function () {
 
 function nuevoRegistro(){
     $('#estado').prop('checked', true); 
-    
+
     $('#lblTitle').html('Nuevo registro');
     $('#modal_proyecto').modal('show');
+
+    $("#codigo").val('');
+    quill_d.setText('');
 }
 
 function guardarRegistro(){
@@ -98,8 +102,6 @@ function guardarRegistro(){
     const campos = [
         "#nombre",
         "#id_t_prop",
-        "#npisos",
-        "#nbanos",
         "#area"
     ];
   
@@ -128,7 +130,7 @@ function guardarRegistro(){
       }
     }
 
-    var editorHTMLContentD  = quill_d.getText().trim();
+    var editorHTMLContentD = quill_d.root.innerHTML.trim();
 
     if (editorHTMLContentD.length === 0) {
         const Toast = Swal.mixin({
@@ -148,7 +150,7 @@ function guardarRegistro(){
             title: "Complete la descripción",
           });
 
-        quill_v.focus(); // Enfoca el editor si está vacío
+        quill_d.focus(); // Enfoca el editor si está vacío
         return false;
     } else {
         formData.append("descrip", editorHTMLContentD);
@@ -173,6 +175,8 @@ function guardarRegistro(){
                 if (datos.success == 1) {
 
                     cerrarModal()
+
+                    quill_d.setText('');
 
                     $("#proyecto_form")[0].reset();
                     $("#select2-id_t_prop-container").empty(); 
@@ -230,6 +234,7 @@ function editarRegistro(id){
         $("#id_t_prop").val(data.id_t_prop);
         $("#select2-id_t_prop-container").html(data.tipo);
         $('#npisos').val(data.npisos);
+        $('#ndormit').val(data.ndormit);
         $('#nbanos').val(data.nbanos);
         $('#area').val(data.area);
 
@@ -290,7 +295,7 @@ function listarFoto(id){
         colReorder: true,
         "ordering": false,
         columnDefs: [
-            { width: "30%", targets: 0, className: 'text-left'},
+            { width: "35%", targets: 0, className: 'text-left'},
             { width: "35%", targets: 1, className: 'text-center'},
             { width: "25%", targets: 2, className: 'text-center'},
             { width: "5%", targets: 3, className: 'text-center'}

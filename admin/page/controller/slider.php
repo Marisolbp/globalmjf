@@ -22,10 +22,14 @@ switch($_GET["op"]){
                             data-id="'.$row["id"].'" 
                             style="width: 50px; margin: 0 auto;">';
 
-            $sub_array[] = '<div style="margin:auto;" class="badge-circle badge-circle-sm badge-circle-light-danger">
-                                <a class="badge-circle badge-circle-sm badge-circle-light-warning" style="cursor:pointer" onClick="return eliminarFoto('."'".$row['id']."'".');"><i class="bx bx-trash font-size-base"></i>
-                            </div>';
-
+            $sub_array[] = '<div class="dropup">
+                               <span class="bx bx-dots-vertical-rounded font-medium-3 dropdown-toggle nav-hide-arrow cursor-pointer" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" role="menu">
+                               </span>
+                               <div class="dropdown-menu dropdown-menu-right dropdown-menu-end">
+                                   <a class="dropdown-item" style="cursor:pointer;" onClick="editarTexto(\'' . $row['id'] . '\');"><i class="bx bx-edit-alt mr-1"></i> Texto</a>
+                                   <a class="dropdown-item" style="cursor:pointer;" onClick="return eliminarFoto('."'".$row['id']."'".');"><i class="bx bx-trash mr-1"></i> Eliminar</a>
+                               </div>
+                           </div>';
 
             $data[] = $sub_array;
         }
@@ -87,6 +91,21 @@ switch($_GET["op"]){
         $orden = $_POST["orden"];
         $respuesta = $slider->actualizar_orden($id, $orden);
         echo json_encode($respuesta);
+        break;
+
+    case "obtener_titulo":
+        $datos = $slider->obtener_titulo_x_id($_POST["id"]);
+        if (is_array($datos) == true and count($datos) > 0) {
+           foreach ($datos as $row) {
+                $output["titulo"]     = $row["titulo"];
+                $output["subtitulo"]  = $row["subtitulo"];
+            }
+            echo json_encode($output);
+        }
+        break;
+
+    case "actualizar_texto":   
+        $slider->actualizar_texto($_POST['titulo'], $_POST['subtitulo'], $_POST['id_slider']);
         break;
 
 }
