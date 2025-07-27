@@ -9,7 +9,7 @@
     <meta name="description" content="Rethouse - Real Estate HTML Template">
     <meta name="keywords" content="Real Estate, Property, Directory Listing, Marketing, Agency" />
     <meta name="author" content="mardianto - retenvi.com">
-    <title>Rethouse - Real Estate HTML Template</title>
+    <title>Global MJF Arquitectos</title>
 
     <!-- Facebook and Twitter integration -->
     <meta property="og:title" content="" />
@@ -25,6 +25,7 @@
     <link rel="manifest" href="site.webmanifest">
     <!-- favicon.ico in the root directory -->
     <link rel="apple-touch-icon" href="icon.png">
+    <link rel="shortcut icon"  href="imagen/logo-gold.png">
     <meta name="theme-color" content="#3454d1">
     <link href="./css/styles.css?8918068d71def746395d" rel="stylesheet">
     
@@ -35,7 +36,6 @@
             max-width: 100%;
             margin: 0 auto;
         }
-
         .main-image-container {
             position: relative;
             width: 100%;
@@ -45,13 +45,11 @@
             box-shadow: 0 4px 15px rgba(0,0,0,0.1);
             margin-bottom: 5px;
         }
-
         .main-image {
             width: 100%;
             height: 100%;
             transition: opacity 0.3s ease;
         }
-
         .nav-arrow {
             position: absolute;
             top: 50%;
@@ -69,20 +67,16 @@
             transition: all 0.3s ease;
             z-index: 10;
         }
-
         .nav-arrow:hover {
             background: rgba(0,0,0,0.8);
             transform: translateY(-50%) scale(1.1);
         }
-
         .nav-arrow.prev {
             left: 15px;
         }
-
         .nav-arrow.next {
             right: 15px;
         }
-
         .property-info {
             position: absolute;
             bottom: 0;
@@ -93,7 +87,6 @@
             padding: 30px 20px 20px;
             border-radius: 0 0 10px 10px;
         }
-
         .property-badge {
             background: #094152;
             color: white;
@@ -103,23 +96,19 @@
             display: inline-block;
             margin-bottom: 10px;
         }
-
         .property-price {
             font-size: 24px;
             font-weight: bold;
             margin-bottom: 5px;
         }
-
         .property-title {
             font-size: 18px;
             margin-bottom: 0;
         }
-
         .thumbnails-container {
             position: relative;
             overflow: hidden;
         }
-
         .thumbnails-wrapper {
             display: flex;
             gap: 10px;
@@ -129,11 +118,9 @@
             scrollbar-width: none;
             -ms-overflow-style: none;
         }
-
         .thumbnails-wrapper::-webkit-scrollbar {
             display: none;
         }
-
         .thumbnail {
             flex: 0 0 120px;
             height: 80px;
@@ -144,22 +131,18 @@
             border: 3px solid transparent;
             position: relative;
         }
-
         .thumbnail:hover {
             transform: scale(1.05);
             border-color: #094152;
         }
-
         .thumbnail.active {
             border-color: #094152;
             box-shadow: 0 0 10px rgba(0,123,255,0.5);
         }
-
         .thumbnail img {
             width: 100%;
             height: 100%;
         }
-
         .thumbnail-overlay {
             position: absolute;
             top: 0;
@@ -170,15 +153,12 @@
             opacity: 0;
             transition: opacity 0.3s ease;
         }
-
         .thumbnail:hover .thumbnail-overlay {
             opacity: 1;
         }
-
         .thumbnail.active .thumbnail-overlay {
             opacity: 0;
         }
-
         .scroll-button {
             position: absolute;
             top: 50%;
@@ -196,19 +176,15 @@
             transition: all 0.3s ease;
             z-index: 10;
         }
-
         .scroll-button:hover {
             background: rgba(0,0,0,0.8);
         }
-
         .scroll-button.left {
             left: 0;
         }
-
         .scroll-button.right {
             right: 0;
         }
-
         .image-counter {
             position: absolute;
             top: 15px;
@@ -220,55 +196,51 @@
             font-size: 12px;
             font-weight: bold;
         }
-
         @media (max-width: 768px) {
             .main-image-container {
                 height: 300px;
             }
-            
             .nav-arrow {
                 width: 40px;
                 height: 40px;
             }
-            
             .property-info {
                 padding: 20px 15px 15px;
             }
-            
             .property-price {
                 font-size: 20px;
             }
-            
             .property-title {
                 font-size: 16px;
             }
-            
             .thumbnail {
                 flex: 0 0 100px;
                 height: 70px;
             }
         }
-
         .carousel-container {
             position: relative;
             overflow: hidden;
             width: 100%;
         }
-
         .carrusel-wrapper {
             display: flex;
             gap: 20px; /* Espacio entre tarjetas */
             transition: transform 0.5s ease;
             padding: 0px 10px; /* Un poco de espacio interno opcional */
         }
-
         .carrusel-wrapper > div {
             width: calc(100% / 3);
             flex-shrink: 0;
         }
-        
+
+        .input-error {
+            border: 2px solid #EF5350 !important;
+        }        
     </style>
 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 
 <body>
@@ -352,34 +324,36 @@
                 </div>
                 <div class="col-lg-4 pt-5">
                     <div class="sticky-top">
-                        <!-- PROFILE AGENT -->
-                        <div class="profile__agent mb-30">
-                            <div class="profile__agent__group">
-                                <div class="profile__agent__body">
-                                    <h3 class="text-center">Contacto</h3>
-                                    <div class="form-group">
-                                        <input type="text" class="form-control" placeholder="Nombres">
+                        <form method="post" id="inmobiliaira_form">
+                            <div class="profile__agent mb-30">
+                                <div class="profile__agent__group">
+                                    <div class="profile__agent__body">
+                                        <h3 class="text-center">Contacto</h3>
+                                        <input type="hidden" id="id_inmobiliaria" name="id_inmobiliaria">
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" name="nombre" required="" placeholder="Nombres">
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" name="telefono" required="" placeholder="N° Teléfono">
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" name="correo" required="" placeholder="Correo" >
+                                        </div>
+                                        <div class="form-group mb-0">
+                                            <textarea class="form-control required" name="mensaje" rows="5" required=""
+                                                placeholder="Mensaje"></textarea>
+                                        </div>
                                     </div>
-                                    <div class="form-group">
-                                        <input type="text" class="form-control" placeholder="N° Teléfono">
-                                    </div>
-                                    <div class="form-group">
-                                        <input type="text" class="form-control" placeholder="Correo">
-                                    </div>
-                                    <div class="form-group mb-0">
-                                        <textarea class="form-control required" rows="5" required="required"
-                                            placeholder="Mensaje"></textarea>
-                                    </div>
-                                </div>
-                                <div class="profile__agent__footer">
-                                    <div class="form-group mb-0">
-                                        <button class="btn btn-primary text-capitalize btn-block"> 
-                                            Enviar 
-                                        </button>
+                                    <div class="profile__agent__footer">
+                                        <div class="form-group mb-0">
+                                            <button type="button" onclick="return enviarFormulario()" class="btn btn-primary text-capitalize btn-block"> 
+                                                Enviar 
+                                            </button>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </form>
                     </div>
                 </div>
                 <div class="col-lg-8">
@@ -493,12 +467,18 @@
 
                 </div>
                 <div class="col-lg-3">
-                    <a href="#" class="btn btn-light text-uppercase ">solicitar cotización</a>
+                    <a href="solicitud.php" class="btn btn-light text-uppercase ">solicitar cotización</a>
                 </div>
             </div>
         </div>
     </section>
     <!-- END CALL TO ACTION -->
+
+    <div id="loader" style="display:none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; 
+        background: rgba(255,255,255,0.7); z-index: 9999; display: flex; align-items: center; justify-content: center;">
+        <div class="spinner-border text-primary" role="status">
+        </div>
+    </div>
 
     <?php include "footer.php";?>
 

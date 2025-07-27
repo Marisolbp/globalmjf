@@ -8,7 +8,9 @@ class Solicitud extends Conectar{
             g_solicitud.id, 
             g_solicitud.nombre,
             g_solicitud.apellido,
+            g_solicitud.tip_doc,
             g_solicitud.dni,
+            g_solicitud.email,
             g_solicitud.telefono,
             g_solicitud.modalidad,
             CASE  g_solicitud.modalidad
@@ -35,7 +37,9 @@ class Solicitud extends Conectar{
             g_solicitud.id,
             g_solicitud.nombre,
             g_solicitud.apellido,
+            g_solicitud.tip_doc,
             g_solicitud.dni,
+            g_solicitud.email,
             g_solicitud.telefono,
             g_solicitud.modalidad,
             CASE  g_solicitud.modalidad

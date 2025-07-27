@@ -22,6 +22,8 @@ $(document).ready(function(){
     
     let id_inmobiliaria = $.urlParam('v');
 
+    $('#id_inmobiliaria').val(id_inmobiliaria)
+
     $.post("./controller/inmobiliaria.php?op=info_propiedad", { id: id_inmobiliaria }, function(data) {
         data = JSON.parse(data);
         $('#title_proyect').html(data.nombre);
@@ -183,6 +185,8 @@ $(document).ready(function(){
         iniciarCarrusel(); // iniciar scroll cuando ya se insertó el HTML
     });
 
+    $("#loader").fadeOut()
+
     obtenerFooter()
 });
 
@@ -321,3 +325,78 @@ function iniciarCarrusel() {
 
     setInterval(moveNext, 5000);
 }
+
+function enviarFormulario() {
+    let formData = new FormData($("#inmobiliaira_form")[0]);
+    let esValido = true; // ✅ Asegúrate de inicializarlo
+
+    $("#inmobiliaira_form [required]").each(function () {
+        if ($.trim($(this).val()) === "") {
+            $(this).addClass("input-error");
+            esValido = false;
+        } else {
+            $(this).removeClass("input-error");
+        }
+    });
+
+    if (!esValido) {
+        return false;
+    }
+
+    $("#loader").fadeIn();
+
+    $.ajax({
+        url: "./controller/inmobiliaria.php?op=enviar_formulario",
+        type: "POST",
+        data: formData,
+        contentType: false,
+        processData: false,
+        success: function (datos) {
+            console.log(datos);  
+            if (datos.success == 1) {
+
+                // Ocultar loader al finalizar
+                $("#loader").fadeOut();
+
+                $("#inmobiliaira_form")[0].reset();
+
+                Swal.fire({
+                    title: 'Formulario enviado!',
+                    text: 'Gracias por tu interés. Nos pondremos en contacto contigo pronto.',
+                    icon: 'success',
+                    confirmButtonText: 'Aceptar',
+                    customClass: {
+                        confirmButton: 'btn btn-primary'
+                    },
+                    buttonsStyling: false
+                });
+
+            } else {
+
+                $("#loader").fadeOut();
+
+                Swal.fire({
+                    title: 'Error',
+                    text: 'Hubo un problema al enviar el formulario. Intenta nuevamente.',
+                    icon: 'error',
+                    confirmButtonText: 'Aceptar',
+                    customClass: {
+                        confirmButton: 'btn btn-danger'
+                    },
+                    buttonsStyling: false
+                });
+            }
+        },
+    });
+
+    return true;
+}
+
+// Elimina el borde rojo cuando el usuario comienza a escribir o seleccionar
+$(document).ready(function () {
+    $("#inmobiliaira_form").on("input change", "[required]", function () {
+        if ($.trim($(this).val()) !== "") {
+            $(this).removeClass("input-error");
+        }
+    });
+});

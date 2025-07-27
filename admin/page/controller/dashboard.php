@@ -4,8 +4,8 @@ require_once("../model/Dashboard.php");
 $dashboard = new Dashboard();
 
 switch($_GET["op"]){   
-    case "obtener_solicitudes_activas":
-        $datos = $dashboard->obtener_solicitudes_activas();
+    case "obtener_solicitudes_pendientes":
+        $datos = $dashboard->obtener_solicitudes_pendientes();
         
         foreach ($datos as $row) {
             $output["total_solicitudes"] = $row["total_solicitudes"];

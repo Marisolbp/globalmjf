@@ -9,7 +9,7 @@
     <meta name="description" content="Rethouse - Real Estate HTML Template">
     <meta name="keywords" content="Real Estate, Property, Directory Listing, Marketing, Agency" />
     <meta name="author" content="mardianto - retenvi.com">
-    <title>Rethouse - Real Estate HTML Template</title>
+    <title>Global MJF Arquitectos</title>
 
     <!-- Facebook and Twitter integration -->
     <meta property="og:title" content="" />
@@ -26,17 +26,27 @@
     <!-- favicon.ico in the root directory -->
     <link rel="apple-touch-icon" href="icon.png">
     <meta name="theme-color" content="#3454d1">
+    <link rel="shortcut icon"  href="imagen/logo-gold.png">
     <link href="./css/styles.css?8918068d71def746395d" rel="stylesheet">
 
     <link rel="stylesheet" href="css/css/all.min.css">
+    <style>
+        .input-error {
+            border: 2px solid #EF5350 !important;
+        }
+    </style>
 
+    <!-- SweetAlert2 CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+
+    <!-- SweetAlert2 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 
 <body>
     
     <!-- HEADER -->
     <?php include "menu.php"?>
-    
 
     <div class="bg-theme-overlay">
         <section class="section__breadcrumb ">
@@ -56,116 +66,123 @@
     <section class="wrap__contact-form bg-light">
         <div class="container">
             <div class="row container-form">
-                <div class="col-md-12">
-                    <div class="row">
-                        <div class="col-md-4">
-                            <div class="form-group form-group-name">
-                                <label>Documento <span class="required"></span></label>
-                                <select class="form-control input-light" id="tip_doc" name="tip_doc" required="">
-                                    <option value="DNI">DNI</option>
-                                    <option value="Pasaporte">Pasaporte</option>
-                                    <option value="RUC">RUC</option>
-                                </select>
+                <form method="post" id="solicitud_form">
+                    <div class="col-md-12">
+                        <div class="row">
+                            <div class="col-md-2">
+                                <div class="form-group form-group-name">
+                                    <label>Documento <span class="required"></span></label>
+                                    <select class="form-control input-light" id="tip_doc" name="tip_doc" required="">
+                                        <option value="DNI" selected>DNI</option>
+                                        <option value="Pasaporte">Pasaporte</option>
+                                        <option value="RUC">RUC</option>
+                                    </select>
+
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <div class="form-group form-group-name">
+                                    <label>N° Documento(*) <span class="required"></span></label>
+                                    <input type="text" class="form-control input-light" id="dni" name="dni" required="">
+
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group form-group-name">
+                                    <label>Nombre(*) <span class="required"></span></label>
+                                    <input type="text" class="form-control input-light" id="nombre" name="nombre" required="">
+
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group form-group-name">
+                                    <label>Apellido(*) <span class="required"></span></label>
+                                    <input type="text" class="form-control input-light" id="apellido" name="apellido" required="">
+
+                                </div>
+                            </div>
+                            <div class="col-md-8">
+                                <div class="form-group form-group-name">
+                                    <label>Email(*) <span class="required"></span></label>
+                                    <input type="email" class="form-control input-light" id="email" name="email" required="">
+
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group form-group-name">
+                                    <label>Teléfono(*) <span class="required"></span></label>
+                                    <input type="text" class="form-control input-light" id="telefono" name="telefono" required="">
+
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group form-group-name">
+                                    <label>¿Qué desea realizar? <span class="required"></span></label>
+                                    <select class="form-control input-light" id="modalidad" name="modalidad" required="">
+                                        <option value="">Seleccione un opción</option>
+                                        <option value="V">Vender</option>
+                                        <option value="A">Alquilar</option>
+                                    </select>
+
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group form-group-name">
+                                    <label>Tipo de propiedad <span class="required"></span></label>
+                                    <select class="form-control input-light" id="id_t_prop" name="id_t_prop" required="">
+                                        
+                                    </select>
+
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group form-group-name">
+                                    <label>Departamento <span class="required"></span></label>
+                                    <select class="form-control input-light" id="id_depart" name="id_depart" required="">
+                                        
+                                    </select>
+
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group form-group-name">
+                                    <label>Provincia <span class="required"></span></label>
+                                    <select class="form-control input-light" id="id_provin" name="id_provin" required="">
+                                        
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group form-group-name">
+                                    <label>Distrito <span class="required"></span></label>
+                                    <select class="form-control input-light" id="id_distri" name="id_distri" required="">
+                                        
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label>Observaciones </label>
+                                    <textarea class="form-control input-light" rows="9" id="detalle" name="detalle" required=""></textarea>
+                                </div>
 
                             </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="form-group form-group-name">
-                                <label>N° Documento <span class="required"></span></label>
-                                <input type="text" class="form-control input-light" id="dni" name="dni" required="">
 
+                            <div class="col-md-12 d-flex justify-content-center">
+                                <button type="button" onclick="return registrarSolicitud()" class="btn btn-primary btn-contact px-25 py-3">Enviar datos</button>
                             </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="form-group form-group-name">
-                                <label>Nombre <span class="required"></span></label>
-                                <input type="text" class="form-control input-light" id="nombre" name="nombre" required="">
-
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="form-group form-group-name">
-                                <label>Apellido <span class="required"></span></label>
-                                <input type="text" class="form-control input-light" id="apellido" name="apellido" required="">
-
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="form-group form-group-name">
-                                <label>Email <span class="required"></span></label>
-                                <input type="email" class="form-control input-light" id="email" name="email" required="">
-
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="form-group form-group-name">
-                                <label>Teléfono <span class="required"></span></label>
-                                <input type="text" class="form-control input-light" id="telefono" name="telefono" required="">
-
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="form-group form-group-name">
-                                <label>¿Qué desea realizar? <span class="required"></span></label>
-                                <select class="form-control input-light" id="modalidad" name="modalidad" required="">
-                                    <option value="">Seleccione un opción</option>
-                                    <option value="V">Vender</option>
-                                    <option value="A">Alquilar</option>
-                                </select>
-
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="form-group form-group-name">
-                                <label>Tipo de propiedad <span class="required"></span></label>
-                                <select class="form-control input-light" id="id_t_prop" name="id_t_prop" required="">
-                                    
-                                </select>
-
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="form-group form-group-name">
-                                <label>Departamento <span class="required"></span></label>
-                                <select class="form-control input-light" id="id_depart" name="id_depart" required="">
-                                    
-                                </select>
-
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="form-group form-group-name">
-                                <label>Provincia <span class="required"></span></label>
-                                <select class="form-control input-light" id="id_provin" name="id_provin" required="">
-                                    
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="form-group form-group-name">
-                                <label>Distrito <span class="required"></span></label>
-                                <select class="form-control input-light" id="id_distri" name="id_distri" required="">
-                                    
-                                </select>
-                            </div>
-                        </div>
-
-                        <div class="col-md-12">
-                            <div class="form-group">
-                                <label>Observaciones </label>
-                                <textarea class="form-control input-light" rows="9" id="detalle" name="detalle"></textarea>
-                            </div>
-
-                        </div>
-
-                        <div class="col-md-12 d-flex justify-content-center">
-                            <button type="submit" class="btn btn-primary btn-contact px-25 py-3">Enviar datos</button>
                         </div>
                     </div>
-                </div>
+                </form>
             </div>
         </div>
     </section>
+
+    <div id="loader" style="display:none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; 
+        background: rgba(255,255,255,0.7); z-index: 9999; display: flex; align-items: center; justify-content: center;">
+        <div class="spinner-border text-primary" role="status">
+        </div>
+    </div>
 
     <!-- End Form contact  -->
 

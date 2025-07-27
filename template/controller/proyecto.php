@@ -6,8 +6,31 @@ require_once("../model/Proyecto.php");
 $proyecto = new Proyecto();
 
 switch ($_GET["op"]) {
+
+    case "combo_pisos":
+        $datos = $proyecto->combo_pisos();
+        if(is_array($datos)==true and count($datos)>0){
+            $html= "<option value='' data-display='Pisos'>Pisos</option>";
+            foreach($datos as $row){
+                $html.= "<option value='".$row['npisos']."'>".$row['npisos']."</option>";
+            }
+            echo $html;
+        }
+        break;
+    
+    case "combo_dormitorios":
+        $datos = $proyecto->combo_dormitorios();
+        if(is_array($datos)==true and count($datos)>0){
+            $html= "<option value='' data-display='Pisos'>Dormitorios</option>";
+            foreach($datos as $row){
+                $html.= "<option value='".$row['ndormit']."'>".$row['ndormit']."</option>";
+            }
+            echo $html;
+        }
+        break;
+
     case "mostrar_proyectos":
-        $datos = $proyecto->listar_proyectos();
+        $datos = $proyecto->listar_proyectos($_POST);
         $html = '';
 
         foreach ($datos as $row) {
@@ -133,4 +156,7 @@ switch ($_GET["op"]) {
         echo $html;
         break;
 
+    case "enviar_formulario":
+        $proyecto->enviar_formulario($_POST['id_proyecto'], $_POST['nombre'], $_POST['telefono'], $_POST['correo'], $_POST['mensaje']);
+        break;
 }

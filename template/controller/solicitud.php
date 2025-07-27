@@ -46,5 +46,10 @@ switch($_GET["op"]){
             }
             echo $html;
         }
-        break; 
+        break;
+    
+    case "registrar_solicitud":
+        $solicitud->registrar_solicitud($_POST['tip_doc'],$_POST['dni'],$_POST['nombre'],$_POST['apellido'],$_POST['email'],
+        $_POST['telefono'],$_POST['modalidad'],$_POST['id_t_prop'],$_POST['id_depart'],$_POST['id_provin'],$_POST['id_distri'],$_POST['detalle']);
+        break;
 }

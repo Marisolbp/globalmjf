@@ -9,7 +9,7 @@
     <meta name="description" content="Rethouse - Real Estate HTML Template">
     <meta name="keywords" content="Real Estate, Property, Directory Listing, Marketing, Agency" />
     <meta name="author" content="mardianto - retenvi.com">
-    <title>Rethouse - Real Estate HTML Template</title>
+    <title>Global MJF Arquitectos</title>
 
     <!-- Facebook and Twitter integration -->
     <meta property="og:title" content="" />
@@ -25,10 +25,18 @@
     <link rel="manifest" href="site.webmanifest">
     <!-- favicon.ico in the root directory -->
     <link rel="apple-touch-icon" href="icon.png">
+    <link rel="shortcut icon"  href="imagen/logo-gold.png">
     <meta name="theme-color" content="#3454d1">
     <link href="./css/styles.css?8918068d71def746395d" rel="stylesheet">
 
     <link rel="stylesheet" href="css/css/all.min.css">
+
+    <!-- SweetAlert2 CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+
+    <!-- SweetAlert2 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 </head>
 
 <body>
@@ -186,6 +194,10 @@
             transform: scale(1.1, 1.1)
         }
 
+        .input-error {
+            border: 2px solid #EF5350 !important;
+        }
+
     </style>
 
     <!-- HEADER -->
@@ -334,47 +346,54 @@
     <section class="wrap__contact-form bg-light">
         <div class="container">
             <div class="row container-form">
-                <div class="col-md-12">
-                    <div class="row">
-                        
-                        <div class="col-md-6">
-                            <div class="form-group form-group-name">
-                                <label>Nombre <span class="required"></span></label>
-                                <input type="email" class="form-control input-light" name="email" required="">
+                <form method="post" id="declaratoria_form">
+                    <div class="col-md-12">
+                        <div class="row">
+                            
+                            <div class="col-md-6">
+                                <div class="form-group form-group-name">
+                                    <label>Nombre <span class="required"></span></label>
+                                    <input type="text" class="form-control input-light" name="nombre" required="">
 
+                                </div>
                             </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-group form-group-name">
-                                <label>Correo <span class="required"></span></label>
-                                <input type="text" class="form-control input-light" name="name" required="">
+                            <div class="col-md-6">
+                                <div class="form-group form-group-name">
+                                    <label>Correo <span class="required"></span></label>
+                                    <input type="email" class="form-control input-light" name="correo" required="">
 
+                                </div>
                             </div>
-                        </div>
-                        <div class="col-md-12">
-                            <div class="form-group form-group-name">
-                                <label>Asunto <span class="required"></span></label>
-                                <input type="email" class="form-control input-light" name="email" required="">
-
-                            </div>
-                        </div>
-
-                        <div class="col-md-12">
-                            <div class="form-group">
-                                <label>Consulta </label>
-                                <textarea class="form-control input-light" rows="9" name="message"></textarea>
+                            <div class="col-md-12">
+                                <div class="form-group form-group-name">
+                                    <label>Asunto <span class="required"></span></label>
+                                    <input type="text" class="form-control input-light" name="asunto" required="">
+                                </div>
                             </div>
 
-                        </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label>Consulta </label>
+                                    <textarea class="form-control input-light" rows="9" name="consulta" required=""></textarea>
+                                </div>
 
-                        <div class="col-md-12 d-flex justify-content-center">
-                            <button type="submit" class="btn btn-primary btn-contact px-25 py-3">Enviar datos</button>
+                            </div>
+
+                            <div class="col-md-12 d-flex justify-content-center">
+                                <button type="button" onclick="return enviarFormulario()" class="btn btn-primary btn-contact px-25 py-3">Enviar datos</button>
+                            </div>
                         </div>
                     </div>
-                </div>
+                </form>
             </div>
         </div>
     </section>
+
+    <div id="loader" style="display:none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; 
+        background: rgba(255,255,255,0.7); z-index: 9999; display: flex; align-items: center; justify-content: center;">
+        <div class="spinner-border text-primary" role="status">
+        </div>
+    </div>
 
     <?php include "footer.php";?>
 

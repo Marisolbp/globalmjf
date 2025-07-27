@@ -93,10 +93,14 @@ function verSolicitud(id){
     $.post("../../controller/solicitud.php?op=obtener", { id: id }, function (data) {
         data = JSON.parse(data);
 
+        $('#tip_doc').val(data.tip_doc);
+        $('#dni').val(data.dni);
         $('#nombre').val(data.nombre);
         $('#apellido').val(data.apellido);
-        $('#dni').val(data.dni);
+        
         $('#telefono').val(data.telefono);
+
+        $('#email').val(data.email);
         
         quill_d.root.innerHTML = data.detalle;
 

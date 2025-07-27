@@ -11,7 +11,7 @@
     <meta name="author" content="PIXINVENT">
     <title>Dashboard Ecommerce - Frest - Bootstrap HTML admin template</title>
     <link rel="apple-touch-icon" href="">
-    <link rel="shortcut icon" type="image/x-icon" href="">
+    <link rel="shortcut icon" type="image/x-icon" href="../../../archivos/LOGO GOLD.png">
     <link href="https://fonts.googleapis.com/css?family=Rubik:300,400,500,600%7CIBM+Plex+Sans:300,400,500,600,700" rel="stylesheet">
 
     <!-- BEGIN: Vendor CSS-->

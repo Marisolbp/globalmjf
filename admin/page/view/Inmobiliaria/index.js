@@ -88,6 +88,78 @@ $(document).ready(function(){
     $.post("../../controller/ubicacion.php?op=combo_depart",function(data, status){
         $('#id_depart').html(data);
     });
+
+    // Definimos los campos por tipo de propiedad
+    const camposPorTipo = {
+        "1": [ // CASA
+            "#npisos", "#ndormit", "#nbanos", "#ncochera",
+            "#ncocina", "#nlavand", "#ndeposito", "#antiguedad",
+            "#atotal", "#aconstru"
+        ],
+        "2": [ // DEPARTAMENTO
+            "#npisos", "#ndormit", "#nbanos", "#ncochera",
+            "#ncocina", "#nlavand", "#ndeposito",
+            "#antiguedad", "#mantenimiento",
+            "#atotal", "#aconstru"
+        ],
+        "3": [ // TERRENO
+            "#atotal"
+        ]
+    };
+
+    // Todos los campos posibles
+    const todosCampos = [
+        "#npisos", "#ndormit", "#nbanos", "#ncochera",
+        "#ncocina", "#nlavand", "#ndeposito", "#antiguedad",
+        "#mantenimiento",
+        "#atotal", "#aconstru"
+    ];
+
+    // Función principal
+    function actualizarCampos() {
+        const tipoSeleccionado = $('#id_t_prop').val();
+        
+        // Si no hay selección, deshabilitar todo
+        if (!tipoSeleccionado) {
+            todosCampos.forEach(campo => {
+                $(campo).prop('readonly', true).val('');
+                if ($(campo).hasClass('select2')) {
+                    $(campo).select2('enable', false);
+                }
+            });
+            return;
+        }
+
+        // Obtener campos permitidos para este tipo
+        const camposPermitidos = camposPorTipo[tipoSeleccionado] || [];
+
+        // Actualizar cada campo
+        todosCampos.forEach(campo => {
+            const elemento = $(campo);
+            
+            if (camposPermitidos.includes(campo)) {
+                // Habilitar campo
+                elemento.prop('readonly', false);
+                if (elemento.hasClass('select2')) {
+                    elemento.select2('enable', true);
+                }
+                elemento.closest('.form-group, .input-group').css('opacity', '1');
+            } else {
+                // Deshabilitar campo
+                elemento.prop('readonly', true).val('');
+                if (elemento.hasClass('select2')) {
+                    elemento.select2('enable', false);
+                }
+                elemento.closest('.form-group, .input-group').css('opacity', '0.5');
+            }
+        });
+    }
+
+    // Event listener
+    $('#id_t_prop').on('change', actualizarCampos);
+    
+    // Ejecutar al cargar
+    actualizarCampos();
 });
 
 $('#id_depart').on('change', function () {
@@ -136,26 +208,26 @@ function guardarRegistro(){
     const camposPorTipo = {
         "1": [ // CASA
             "#codigo", "#nombre",
-            "#id_t_prop", "#moneda", "#precio", "#valmcua",
+            "#id_t_prop", "#moneda", "#precio",
             "#modalidad", "#id_depart", "#id_provin", "#id_distri",
             "#direccion", "#longitud", "#latitud",
             "#npisos", "#ndormit", "#nbanos", "#ncochera",
-            "#ncocina", "#nlavand", "#ndeposito", "#antiguedad",
-            "#estado_im", "#ubicacion", "#atotal", "#aconstru"
+            "#ncocina", "#nlavand", "#ndeposito",
+            "#estado_im", "#ubicacion", "#atotal"
         ],
         "2": [ // DEPARTAMENTO
             "#codigo", "#nombre",
-            "#id_t_prop", "#moneda", "#precio", "#valmcua",
+            "#id_t_prop", "#moneda", "#precio",
             "#modalidad", "#id_depart", "#id_provin", "#id_distri",
             "#direccion", "#longitud", "#latitud",
             "#npisos", "#ndormit", "#nbanos", "#ncochera",
-             "#ncocina", "#nlavand", "#ndeposito",
-            "#antiguedad", "#mantenimiento",
-            "#estado_im", "#ubicacion", "#atotal", "#aconstru"
+            "#ncocina", "#nlavand", "#ndeposito",
+            "#antiguedad",
+            "#estado_im", "#ubicacion", "#atotal"
         ],
         "3": [ // TERRENO
             "#codigo", "#nombre",
-            "#id_t_prop", "#moneda", "#precio", "#valmcua",
+            "#id_t_prop", "#moneda", "#precio",
             "#modalidad", "#id_depart", "#id_provin", "#id_distri", 
             "#direccion", "#longitud", "#latitud",
              "#estado_im", "#ubicacion", "#atotal"
@@ -366,6 +438,7 @@ function editarRegistro(id){
 
         $('#atotal').val(data.atotal);
         $('#aconstru').val(data.aconstru);
+
         $('#valmcua').val(data.valmcua);
 
         $('#estado').prop('checked', data.estado !== 'I');

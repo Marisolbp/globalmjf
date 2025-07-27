@@ -186,7 +186,7 @@ if(isset($_SESSION["id"])){
                                                         </div>
                                                     </div>
                                                 </form>
-                                                <div class="table-responsive">
+                                                <!-- <div class="table-responsive">
                                                     
                                                     <button type="button" type="button" onclick="return nuevoValor()" class="btn btn-primary">Nuevo</button>
                                                     
@@ -205,7 +205,7 @@ if(isset($_SESSION["id"])){
 
                                                         </tbody>
                                                     </table>
-                                                </div>
+                                                </div> -->
                                             </div>
                                         </div>
                                     </div>

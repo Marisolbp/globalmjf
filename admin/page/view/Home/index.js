@@ -1,23 +1,8 @@
-/*var tabla;
-var codusux = $('#l_codusu').val();
-var codrolx = $('#l_codrol').val();
-
-if (codrolx == 1 || codrolx == 2) {
-    $('#widgets-contable').show();
-    $('#widgets-legal').show();
-} else if (codrolx == 3 || codrolx == 4) {
-    $('#widgets-contable').show();
-    $('#widgets-legal').hide();
-} else {
-    $('#widgets-contable').hide();
-    $('#widgets-legal').show();
-}*/
-
 $(document).ready(function(){
 
-    $.post("../../controller/dashboard.php?op=obtener_solicitudes_activas", function (data) {
+    $.post("../../controller/dashboard.php?op=obtener_solicitudes_pendientes", function (data) {
         data = JSON.parse(data); 
-        $('#lblSolicitudesOn').html(data.total_solicitudes);
+        $('#lblSolicitudesPe').html(data.total_solicitudes);
     });
 
     $.post("../../controller/dashboard.php?op=obtener_total_miembros", function (data) {

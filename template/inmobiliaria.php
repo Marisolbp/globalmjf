@@ -8,7 +8,7 @@
     <meta name="description" content="Rethouse - Real Estate HTML Template">
     <meta name="keywords" content="Real Estate, Property, Directory Listing, Marketing, Agency" />
     <meta name="author" content="mardianto - retenvi.com">
-    <title>Rethouse - Real Estate HTML Template</title>
+    <title>Global MJF Arquitectos</title>
 
     <!-- Facebook and Twitter integration -->
     <meta property="og:title" content="" />
@@ -24,10 +24,19 @@
     <link rel="manifest" href="site.webmanifest">
     <!-- favicon.ico in the root directory -->
     <link rel="apple-touch-icon" href="icon.png">
+    <link rel="shortcut icon"  href="imagen/logo-gold.png">
     <meta name="theme-color" content="#3454d1">
     <link href="./css/styles.css?8918068d71def746395d" rel="stylesheet">
     
     <link rel="stylesheet" href="css/css/all.min.css">
+
+    <style>
+        @media (max-width: 768px) {
+            .lbl_boton {
+                display: none;
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -51,103 +60,81 @@
     <div class="search__area bg__shadow">
         <div class="container">
             <div class="search__area-inner">
-                <div class="row">
-                    <div class="col-6 col-lg-3 col-md-3">
-                        <div class="form-group">
-                            <label>Modalidad</label>
-                            <select class="wide select_option">
-                                <option data-display="Modalidad">Modalidad</option>
-                                <option>For Sale</option>
-                                <option>For Rent</option>
+                <form id="filtro_form">
+                    <div class="row">
+                        <div class="col-6 col-lg-3 col-md-3">
+                            <div class="form-group">
+                                <label>Tipo de propiedad</label>
+                                <select class="wide form-control" id="id_t_prop" name="id_t_prop">
 
-                            </select>
+                                </select>
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-6 col-lg-3 col-md-3">
-                        <div class="form-group">
-                            <label>Tipo de propiedad</label>
-                            <select class="wide select_option">
-                                <option data-display="Tipo de propiedad">Tipo de propiedad</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="col-6 col-lg-3 col-md-3">
-                        <div class="form-group">
-                            <label>Ubicación</label>
-                            <select class="wide select_option">
-                                <option data-display="Locations">Ubicación</option>
-                                <option>United Kingdom</option>
-                                <option>American Samoa</option>
-                                <option>Belgium</option>
-                                <option>Canada</option>
-                                <option>Delaware</option>
-                                <option>Indonesia</option>
-                                <option>Malaysia</option>
-                                <option>Japan</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="col-6 col-lg-3 col-md-3">
-                        <div class="form-group">
-                            <label>Área</label>
-                            <select class="wide select_option">
-                                <option data-display="Área">Área</option>
-                                <option>1500</option>
-                                <option>1200</option>
-                                <option>900</option>
-                                <option>600</option>
-                                <option>300</option>
-                                <option>100</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="col-6 col-lg-3 col-md-3">
-                        <div class="form-group">
-                            <label>Habitaciones</label>
-                            <select class="wide select_option">
-                                <option data-display="Habitaciones">Habitaciones</option>
-                                <option>1</option>
-                                <option>2</option>
-                                <option>3</option>
-                                <option>4</option>
-                                <option>5</option>
-                                <option>6</option>
-                                <option>7</option>
-                                <option>8</option>
-                                <option>9</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="col-6 col-lg-3 col-md-3">
-                        <div class="form-group">
-                            <label>Baños</label>
-                            <select class="wide select_option">
-                                <option data-display="Baños">Baños</option>
-                                <option>1</option>
-                                <option>2</option>
-                                <option>3</option>
-                                <option>4</option>
+                        <div class="col-6 col-lg-3 col-md-2">
+                            <div class="form-group">
+                                <label>Modalidad</label>
+                                <select class="wide form-control" id="modalidad" name="modalidad">
+                                    <option value="" data-display="Modalidad">Modalidad</option>
+                                    <option value="V">Venta</option>
+                                    <option value="A">Alquiler</option>
 
-
-                            </select>
+                                </select>
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-12 col-lg-3 col-md-3">
-                        <div class="form-group">
-                            <div class="filter__price">
-                                <input class="price-range" type="text" name="my_range" value="" />
+                        <div class="col-6 col-lg-6 col-md-4">
+                            <div class="form-group">
+                                <label>Ubicación</label>
+                                <select class="wide form-control" id="id_distri" name="id_distri">
+
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-6 col-lg-3 col-md-3">
+                            <div class="form-group">
+                                <label>Área</label>
+                                <select class="wide form-control" id="atotal" name="atotal">
+                                    <option value='' data-display="Área">Área</option>
+                                    <option value="0-200">Hasta 200 m²</option>
+                                    <option value="201-400">201 - 400 m²</option>
+                                    <option value="401-600">401 - 600 m²</option>
+                                    <option value="601-800">601 - 800 m²</option>
+                                    <option value="801-">Más de 801 m²</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-6 col-lg-2 col-md-2">
+                            <div class="form-group">
+                                <label>Pisos</label>
+                                <select class="wide form-control" id="npisos" name="npisos">
+                                    
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-6 col-lg-2 col-md-2">
+                            <div class="form-group">
+                                <label>Dormitorios</label>
+                                <select class="wide form-control" id="ndormit" name="ndormit">
+
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-12 col-lg-3 col-md-3">
+                            <div class="form-group">
+                                <label>Precio</label>
+                                <div class="filter__price">
+                                    <input class="form-control" type="text" id="price_range" name="my_range" value="" />
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-lg-2 col-md-2">
+                            <div class="form-group">
+                                <label style="color: #FFF" class="lbl_boton">Botón</label>
+                                <button type="button" id="limpiar_filtros" class="btn btn-secondary form-control">Limpiar</button>
                             </div>
                         </div>
                     </div>
-                    <div class="col-12 col-lg-3 col-md-3">
-                        <label style="color:#fff;">Buscar</label>
-                        <div class="form-group">
-                            <button class="btn btn-primary text-uppercase btn-block"> Buscar <i
-                                    class="fa fa-search ml-1"></i></button>
-                        </div>
-                    </div>
-                </div>
-
+                </form>
             </div>
         </div>
     </div>
@@ -166,7 +153,10 @@
 
                                         </div>
                                         <div class="cleafix"></div>
+
+                                        <div id="paginacion_inmobiliaria"></div>
                                     </div>
+
                                 </div>
                             </div>
                         </div>
@@ -189,7 +179,7 @@
 
                 </div>
                 <div class="col-lg-3">
-                    <a href="#" class="btn btn-light text-uppercase ">solicitar cotización</a>
+                    <a href="solicitud.php" class="btn btn-light text-uppercase ">solicitar cotización</a>
                 </div>
             </div>
         </div>

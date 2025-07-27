@@ -46,7 +46,9 @@ switch($_GET["op"]){
                 $output["id"]           = $row["id"];
                 $output["nombre"]       = $row["nombre"];
                 $output["apellido"]     = $row["apellido"];
+                $output["tip_doc"]      = $row["tip_doc"];
                 $output["dni"]          = $row["dni"];
+                $output["email"]        = $row["email"];
                 $output["telefono"]     = $row["telefono"];
                 $output["id_t_prop"]    = $row["id_t_prop"];
                 $output["tipo"]         = $row["tipo"];

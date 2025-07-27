@@ -3,7 +3,7 @@
         <div class="navbar-header">
             <ul class="nav navbar-nav flex-row">
                 
-                <li class="nav-item mr-auto"><a class="navbar-brand" href="../../../html/ltr/vertical-menu-template-semi-dark/index.html">
+                <li class="nav-item mr-auto"><a class="navbar-brand" href="../Home/">
                         <div class="brand-logo"><img class="logo" src="../../../archivos/LOGO GOLD.png" /></div>
                     </a>
                 </li>

@@ -1,4 +1,7 @@
 $(document).ready(function(){
+
+    
+
     $.urlParam = function(name) {
         var results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(window.location.href);
         if (!results) return 0;
@@ -21,6 +24,8 @@ $(document).ready(function(){
     }
     
     let id_proyecto = $.urlParam('v');
+
+    $('#id_proyecto').val(id_proyecto)
 
     $.post("./controller/proyecto.php?op=info_proyecto", { id: id_proyecto }, function(data) {
         data = JSON.parse(data);
@@ -78,9 +83,10 @@ $(document).ready(function(){
         iniciarCarrusel(); // iniciar scroll cuando ya se insertó el HTML
     });
 
+    $("#loader").fadeOut()
+
     obtenerFooter()
 });
-
 
 let currentImageIndex = 0;
 
@@ -216,3 +222,78 @@ function iniciarCarrusel() {
 
     setInterval(moveNext, 5000);
 }
+
+function enviarFormulario() {
+    let formData = new FormData($("#proyecto_form")[0]);
+    let esValido = true; // ✅ Asegúrate de inicializarlo
+
+    $("#proyecto_form [required]").each(function () {
+        if ($.trim($(this).val()) === "") {
+            $(this).addClass("input-error");
+            esValido = false;
+        } else {
+            $(this).removeClass("input-error");
+        }
+    });
+
+    if (!esValido) {
+        return false;
+    }
+
+    $("#loader").fadeIn();
+
+    $.ajax({
+        url: "./controller/proyecto.php?op=enviar_formulario",
+        type: "POST",
+        data: formData,
+        contentType: false,
+        processData: false,
+        success: function (datos) {
+            console.log(datos);  
+            if (datos.success == 1) {
+
+                // Ocultar loader al finalizar
+                $("#loader").fadeOut();
+
+                $("#proyecto_form")[0].reset();
+
+                Swal.fire({
+                    title: 'Formulario enviado!',
+                    text: 'Gracias por tu interés. Nos pondremos en contacto contigo pronto.',
+                    icon: 'success',
+                    confirmButtonText: 'Aceptar',
+                    customClass: {
+                        confirmButton: 'btn btn-primary'
+                    },
+                    buttonsStyling: false
+                });
+
+            } else {
+
+                $("#loader").fadeOut();
+
+                Swal.fire({
+                    title: 'Error',
+                    text: 'Hubo un problema al enviar el formulario. Intenta nuevamente.',
+                    icon: 'error',
+                    confirmButtonText: 'Aceptar',
+                    customClass: {
+                        confirmButton: 'btn btn-danger'
+                    },
+                    buttonsStyling: false
+                });
+            }
+        },
+    });
+
+    return true;
+}
+
+// Elimina el borde rojo cuando el usuario comienza a escribir o seleccionar
+$(document).ready(function () {
+    $("#proyecto_form").on("input change", "[required]", function () {
+        if ($.trim($(this).val()) !== "") {
+            $(this).removeClass("input-error");
+        }
+    });
+});

@@ -44,9 +44,6 @@
                                 <li class="list-inline-item">
                                     <a href="solicitud.php">Solicitud</a>
                                 </li>
-                                <li class="list-inline-item">
-                                    <a href="contacto.php">Contacto</a>
-                                </li>
                             </ul>
                         </div>
                     </div>

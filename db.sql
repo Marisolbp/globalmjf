@@ -305,11 +305,12 @@ create table m_nosotros(
     usu_actu varchar(30)
 );
 
-create table m_nosotros_valores(
+/* create table m_nosotros_valores(
     id int primary key auto_increment not null,
     valor varchar(50) not null,
     descripcion text
 );
+ */
 
 create table m_independizacion(
     id int primary key auto_increment not null,
@@ -362,6 +363,10 @@ create table m_usuario(
     fec_actu date,
     usu_actu varchar(30)
 );
+
+/*
+$2y$10$lKv6v5m0JzlglYEWLZc5nORmbPi/QmrOre89F1G488pCvEkwr5cv.
+*/
 
 create table m_miembro(
     id int primary key auto_increment not null,

@@ -9,7 +9,7 @@
     <meta name="description" content="Rethouse - Real Estate HTML Template">
     <meta name="keywords" content="Real Estate, Property, Directory Listing, Marketing, Agency" />
     <meta name="author" content="mardianto - retenvi.com">
-    <title>Rethouse - Real Estate HTML Template</title>
+    <title>Global MJF Arquitectos</title>
 
     <!-- Facebook and Twitter integration -->
     <meta property="og:title" content="" />
@@ -25,6 +25,7 @@
     <link rel="manifest" href="site.webmanifest">
     <!-- favicon.ico in the root directory -->
     <link rel="apple-touch-icon" href="icon.png">
+    <link rel="shortcut icon"  href="imagen/logo-gold.png">
     <meta name="theme-color" content="#3454d1">
     <link href="./css/styles.css?8918068d71def746395d" rel="stylesheet">
     
@@ -261,13 +262,17 @@
             transition: transform 0.5s ease;
             padding: 0px 10px; /* Un poco de espacio interno opcional */
         }
-
         .carrusel-wrapper > div {
             width: calc(100% / 3);
             flex-shrink: 0;
         }
-        
+        .input-error {
+            border: 2px solid #EF5350 !important;
+        }
     </style>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 </head>
 
@@ -346,36 +351,37 @@
                 </div>
 
                 <div class="col-lg-4 pt-5">
-                    
                     <div class="sticky-top">
-                        <!-- PROFILE AGENT -->
-                        <div class="profile__agent mb-30">
-                            <div class="profile__agent__group">
-                                <div class="profile__agent__body">
-                                    <h3 class="text-center">Contacto</h3>
-                                    <div class="form-group">
-                                        <input type="text" class="form-control" placeholder="Nombres">
+                        <form method="post" id="proyecto_form">
+                            <div class="profile__agent mb-30">
+                                <div class="profile__agent__group">
+                                    <div class="profile__agent__body">
+                                        <h3 class="text-center">Contacto</h3>
+                                        <input type="hidden" id="id_proyecto" name="id_proyecto">
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" name="nombre" required="" placeholder="Nombres">
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" name="telefono" required="" placeholder="N° Teléfono">
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" name="correo" required="" placeholder="Correo" >
+                                        </div>
+                                        <div class="form-group mb-0">
+                                            <textarea class="form-control required" name="mensaje" rows="5" required=""
+                                                placeholder="Mensaje"></textarea>
+                                        </div>
                                     </div>
-                                    <div class="form-group">
-                                        <input type="text" class="form-control" placeholder="N° Teléfono">
-                                    </div>
-                                    <div class="form-group">
-                                        <input type="text" class="form-control" placeholder="Correo">
-                                    </div>
-                                    <div class="form-group mb-0">
-                                        <textarea class="form-control required" rows="5" required="required"
-                                            placeholder="Mensaje"></textarea>
-                                    </div>
-                                </div>
-                                <div class="profile__agent__footer">
-                                    <div class="form-group mb-0">
-                                        <button class="btn btn-primary text-capitalize btn-block"> 
-                                            Enviar 
-                                        </button>
+                                    <div class="profile__agent__footer">
+                                        <div class="form-group mb-0">
+                                            <button type="button" onclick="return enviarFormulario()" class="btn btn-primary text-capitalize btn-block"> 
+                                                Enviar 
+                                            </button>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </form> 
                     </div>
                 </div>
 
@@ -439,7 +445,12 @@
 
         </div>
     </section>
-    <!-- END SINGLE DETAIL -->
+    
+    <div id="loader" style="display:none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; 
+        background: rgba(255,255,255,0.7); z-index: 9999; display: flex; align-items: center; justify-content: center;">
+        <div class="spinner-border text-primary" role="status">
+        </div>
+    </div>
 
     <?php include "footer.php";?>
 

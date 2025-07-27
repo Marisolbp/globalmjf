@@ -25,21 +25,21 @@ if(isset($_SESSION["id"])){
                                 <!-- Statistics Cards Starts -->
                                 <div class="col-12">
                                     <div class="row">
-                                        <div class="col-sm-4 col-12 dashboard-users-success">
+                                        <div class="col-sm-6 col-12 dashboard-users-success">
                                             <div class="card text-center">
                                                 <div class="card-content">
                                                     <div class="card-body py-4">
                                                         <div class="badge-circle badge-circle-lg badge-circle-light-success mx-auto mb-50">
                                                             <i class="bx bx-note font-medium-5"></i>
                                                         </div>
-                                                        <div class="text-muted line-ellipsis">Solicitudes activas</div>
-                                                        <h3 class="mb-0" id='lblSolicitudesOn'></h3>
+                                                        <div class="text-muted line-ellipsis">Solicitudes pendientes</div>
+                                                        <h3 class="mb-0" id='lblSolicitudesPe'></h3>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div> 
                                         
-                                        <div class="col-sm-4 col-12 dashboard-users-success">
+                                        <div class="col-sm-6 col-12 dashboard-users-success">
                                             <div class="card text-center">
                                                 <div class="card-content">
                                                     <div class="card-body py-4">
@@ -53,19 +53,6 @@ if(isset($_SESSION["id"])){
                                             </div>
                                         </div>    
                                         
-                                        <div class="col-sm-4 col-12 dashboard-users-success">
-                                            <div class="card text-center">
-                                                <div class="card-content">
-                                                    <div class="card-body py-4">
-                                                        <div class="badge-circle badge-circle-lg badge-circle-light-success mx-auto mb-50">
-                                                            <i class="bx bx-home font-medium-5"></i>
-                                                        </div>
-                                                        <div class="text-muted line-ellipsis">Total propiedades</div>
-                                                        <h3 class="mb-0" id='lblTotalPropiedades'></h3>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>     
                                     </div>
                                 </div>                                
                             </div>
@@ -80,7 +67,21 @@ if(isset($_SESSION["id"])){
                                 <!-- Statistics Cards Starts -->
                                 <div class="col-12">
                                     <div class="row">
-                                        <div class="col-sm-4 col-12 dashboard-users-success">
+                                        <div class="col-sm-6 col-12 dashboard-users-success">
+                                            <div class="card text-center">
+                                                <div class="card-content">
+                                                    <div class="card-body py-4">
+                                                        <div class="badge-circle badge-circle-lg badge-circle-light-success mx-auto mb-50">
+                                                            <i class="bx bx-home font-medium-5"></i>
+                                                        </div>
+                                                        <div class="text-muted line-ellipsis">Total propiedades</div>
+                                                        <h3 class="mb-0" id='lblTotalPropiedades'></h3>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div> 
+
+                                        <!-- <div class="col-sm-4 col-12 dashboard-users-success">
                                             <div class="card text-center">
                                                 <div class="card-content">
                                                     <div class="card-body py-4">
@@ -92,9 +93,9 @@ if(isset($_SESSION["id"])){
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div> 
+                                        </div> --> 
                                         
-                                         <div class="col-sm-4 col-12 dashboard-users-success"> 
+                                        <div class="col-sm-6 col-12 dashboard-users-success"> 
                                             <div class="card text-center">
                                                 <div class="card-content">
                                                     <div class="card-body py-4">
@@ -108,7 +109,7 @@ if(isset($_SESSION["id"])){
                                             </div>
                                         </div>    
                                         
-                                         <div class="col-sm-4 col-12 dashboard-users-success">
+                                        <!-- <div class="col-sm-4 col-12 dashboard-users-success">
                                             <div class="card text-center">
                                                 <div class="card-content">
                                                     <div class="card-body py-4">
@@ -120,7 +121,7 @@ if(isset($_SESSION["id"])){
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>     
+                                        </div>   -->   
                                     </div>
                                 </div>                                
                             </div>

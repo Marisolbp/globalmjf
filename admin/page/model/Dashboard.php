@@ -3,13 +3,13 @@ date_default_timezone_set('America/Bogota');
 
 class Dashboard extends Conectar{
  
-    public function obtener_solicitudes_activas(){
+    public function obtener_solicitudes_pendientes(){
         $conectar= parent::conexion();
         parent::set_names();
         
         $sql="SELECT COUNT(*) total_solicitudes
         FROM g_solicitud
-        WHERE estado = 'A' ";
+        WHERE estado = 'P' ";
 
         $sql=$conectar->prepare($sql);
         $sql->execute();

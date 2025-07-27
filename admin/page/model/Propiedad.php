@@ -45,7 +45,7 @@ class Propiedad extends Conectar{
             INNER JOIN m_departamento ON g_propi_venta.id_depart = m_departamento.id
             INNER JOIN m_provincia ON g_propi_venta.id_provin = m_provincia.id
             INNER JOIN m_distrito ON g_propi_venta.id_distri = m_distrito.id
-            ORDER BY g_propi_venta.fec_crea DESC";
+            ORDER BY g_propi_venta.fec_crea ASC";
         // $sql="call sp_l_usuario_01()"
         $sql=$conectar->prepare($sql);
         $sql->execute();

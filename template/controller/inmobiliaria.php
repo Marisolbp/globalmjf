@@ -7,6 +7,47 @@ $inmobiliaria = new Inmobiliaria();
 
 switch ($_GET["op"]) {
 
+    case "combo_distri":
+        $datos = $inmobiliaria->combo_distri();
+        if(is_array($datos)==true and count($datos)>0){
+            $html= "<option value='' data-display='Ubicación'>Ubicación </option>";
+            foreach($datos as $row){
+                $html.= "<option value='".$row['id']."'>".$row['depart']." - ".$row['distri']."</option>";
+            }
+            echo $html;
+        }
+        break;
+
+    case "combo_pisos":
+        $datos = $inmobiliaria->combo_pisos();
+        if(is_array($datos)==true and count($datos)>0){
+            $html= "<option value='' data-display='Pisos'>Pisos</option>";
+            foreach($datos as $row){
+                $html.= "<option value='".$row['npisos']."'>".$row['npisos']."</option>";
+            }
+            echo $html;
+        }
+        break;
+    
+    case "combo_dormitorios":
+        $datos = $inmobiliaria->combo_dormitorios();
+        if(is_array($datos)==true and count($datos)>0){
+            $html= "<option value='' data-display='Pisos'>Dormitorios</option>";
+            foreach($datos as $row){
+                $html.= "<option value='".$row['ndormit']."'>".$row['ndormit']."</option>";
+            }
+            echo $html;
+        }
+        break;
+    
+    case "rango_precio":
+        $datos = $inmobiliaria->rango_precio();
+        
+        if (!empty($datos)) {
+            echo json_encode($datos);
+        }
+        break;
+
     case "mostar_tipos":
         $datos = $inmobiliaria->mostar_tipos();
         echo json_encode($datos);
@@ -14,7 +55,7 @@ switch ($_GET["op"]) {
 
     case "listar_propiedades":
 
-        $datos = $inmobiliaria->listar_inmobiliaria($_POST['id_t_prop']);
+        $datos = $inmobiliaria->listar_inmobiliaria($_POST);
         $html = '';
 
         foreach ($datos as $row) {
@@ -41,13 +82,13 @@ switch ($_GET["op"]) {
             } else {
                 $contenido_propiedad .= '
                     <li class="list-inline-item">
-                        <span>Baths <br><i class="fa fa-bath"></i> ' . (int)$row["nbanos"] . '</span>
+                        <span>Pisos <br><i class="fa fa-inbox"></i> ' . (int)$row["npisos"] . '</span>
                     </li>
                     <li class="list-inline-item">
-                        <span>Beds <br><i class="fa fa-bed"></i> ' . (int)$row["ndormit"] . '</span>
+                        <span>Dormit. <br><i class="fa fa-bed"></i> ' . (int)$row["ndormit"] . '</span>
                     </li>
                     <li class="list-inline-item">
-                        <span>Rooms <br><i class="fa fa-inbox"></i> ' . (int)$row["npisos"] . '</span>
+                        <span>Baños <br><i class="fa fa-bath"></i> ' . (int)$row["nbanos"] . '</span>
                     </li>
                     <li class="list-inline-item">
                         <span>Área <br><i class="fa fa-map"></i> ' . htmlspecialchars($row["area"]) . ' m²</span>
@@ -65,7 +106,7 @@ switch ($_GET["op"]) {
                                 <h6 class="text-capitalize"><a href="'.$link.'">'.htmlspecialchars($row["nombre"]).'</a></h6>
                                 <p class="text-capitalize">
                                     <i class="fa fa-map-marker"></i>
-                                    '.htmlspecialchars($row["distrito"]).'
+                                    '.htmlspecialchars($row["distrito"]).', '.htmlspecialchars($row["depart"]).'
                                 </p>
                                 <ul class="list-inline card__content">
                                     ' . $contenido_propiedad . '
@@ -93,7 +134,14 @@ switch ($_GET["op"]) {
         break;
     
     case "mostrar_inmobiliaria":
-        $datos = $inmobiliaria->listar_inmobiliaria(0);
+        $params = $_POST;
+        $params['limit'] = isset($_POST['limit']) ? intval($_POST['limit']) : 15;
+        $params['offset'] = isset($_POST['offset']) ? intval($_POST['offset']) : 0;
+
+        $resultado = $inmobiliaria->mostrar_inmobiliaria($params);
+        $datos = $resultado['data'];
+        $total = $resultado['total'];
+
         $html = '';
 
         foreach ($datos as $row) {
@@ -118,13 +166,13 @@ switch ($_GET["op"]) {
             } else {
                 $contenido_propiedad .= '
                     <li class="list-inline-item">
-                        <span>Baths <br><i class="fa fa-bath"></i> ' . (int)$row["nbanos"] . '</span>
+                        <span>Pisos <br><i class="fa fa-inbox"></i> ' . (int)$row["npisos"] . '</span>
                     </li>
                     <li class="list-inline-item">
-                        <span>Beds <br><i class="fa fa-bed"></i> ' . (int)$row["ndormit"] . '</span>
+                        <span>Dormit. <br><i class="fa fa-bed"></i> ' . (int)$row["ndormit"] . '</span>
                     </li>
                     <li class="list-inline-item">
-                        <span>Rooms <br><i class="fa fa-inbox"></i> ' . (int)$row["npisos"] . '</span>
+                        <span>Baños <br><i class="fa fa-bath"></i> ' . (int)$row["nbanos"] . '</span>
                     </li>
                     <li class="list-inline-item">
                         <span>Área <br><i class="fa fa-map"></i> ' . htmlspecialchars($row["area"]) . ' m²</span>
@@ -143,7 +191,7 @@ switch ($_GET["op"]) {
                         <h6 class="text-capitalize"><a href="' . $link . '">' . htmlspecialchars($row["nombre"]) . '</a></h6>
                         <p class="text-capitalize">
                             <i class="fa fa-map-marker"></i>
-                            ' . htmlspecialchars($row["distrito"]) . '
+                            '.htmlspecialchars($row["distrito"]).', '.htmlspecialchars($row["depart"]).'
                         </p>
                         <ul class="list-inline card__content">
                             ' . $contenido_propiedad . '
@@ -168,8 +216,10 @@ switch ($_GET["op"]) {
             </div>';
         }
 
-
-        echo $html;
+        echo json_encode([
+            'html' => $html,
+            'total' => $total
+        ]);
         break;
     
     case "info_propiedad":
@@ -256,13 +306,13 @@ switch ($_GET["op"]) {
             } else {
                 $contenido_propiedad .= '
                     <li class="list-inline-item">
-                        <span>Baths <br><i class="fa fa-bath"></i> ' . (int)$row["nbanos"] . '</span>
+                        <span>Pisos <br><i class="fa fa-inbox"></i> ' . (int)$row["npisos"] . '</span>
                     </li>
                     <li class="list-inline-item">
-                        <span>Beds <br><i class="fa fa-bed"></i> ' . (int)$row["ndormit"] . '</span>
+                        <span>Dormit. <br><i class="fa fa-bed"></i> ' . (int)$row["ndormit"] . '</span>
                     </li>
                     <li class="list-inline-item">
-                        <span>Rooms <br><i class="fa fa-inbox"></i> ' . (int)$row["npisos"] . '</span>
+                        <span>Baños <br><i class="fa fa-bath"></i> ' . (int)$row["nbanos"] . '</span>
                     </li>
                     <li class="list-inline-item">
                         <span>Área <br><i class="fa fa-map"></i> ' . htmlspecialchars($row["area"]) . ' m²</span>
@@ -279,6 +329,10 @@ switch ($_GET["op"]) {
                     <div class="card__image-body">
                         <span class="badge badge-primary text-capitalize mb-2">'.htmlspecialchars($row["tipo_propiedad"]).'</span>
                         <h6 class="text-capitalize"><a href="'.$link.'">'.htmlspecialchars($row["nombre"]).'</a></h6>
+                        <p class="text-capitalize">
+                            <i class="fa fa-map-marker"></i>
+                            '.htmlspecialchars($row["distrito"]).', '.htmlspecialchars($row["depart"]).'
+                        </p>
                         <ul class="list-inline card__content">
                             ' . $contenido_propiedad . '
                         </ul>
@@ -304,5 +358,9 @@ switch ($_GET["op"]) {
 
         $html .= '</div>'; // fin carrusel-wrapper
         echo $html;
+        break;
+
+    case "enviar_formulario":
+        $inmobiliaria->enviar_formulario($_POST['id_inmobiliaria'], $_POST['nombre'], $_POST['telefono'], $_POST['correo'], $_POST['mensaje']);
         break;
 }

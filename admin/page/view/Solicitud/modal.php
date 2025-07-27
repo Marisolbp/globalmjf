@@ -11,27 +11,19 @@
                             <div class="tab-pane active fade show" id="information" aria-labelledby="information-tab" role="tabpanel">
                                 <div class="row">
                                     <input type="hidden" id="codigo" name="codigo">
-                                    <div class="col-md-4 col-sm-12">
-                                        <h6>Nombre</h6>
-                                        <fieldset class="form-group position-relative has-icon-left">
-                                            <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre">
-                                            <div class="form-control-position">
-                                                <i class="bx bx-user"></i>
-                                            </div>
-                                        </fieldset>
+
+                                    <div class="col-md-6 col-sm-12">
+                                        <h6>Documento</h6>
+                                        <div class="form-group">
+                                            <select class="form-control" id="tip_doc" name="tip_doc">
+                                                <option value="DNI">DNI</option>
+                                                <option value="Pasaporte">Pasaporte</option>
+                                                <option value="RUC">RUC</option>    
+                                            </select>
+                                        </div>
                                     </div>
 
-                                    <div class="col-md-4 col-sm-12">
-                                        <h6>Apellido</h6>
-                                        <fieldset class="form-group position-relative has-icon-left">
-                                            <input type="text" class="form-control" id="apellido" name="apellido" placeholder="Apellido">
-                                            <div class="form-control-position">
-                                                <i class="bx bx-user"></i>
-                                            </div>
-                                        </fieldset>
-                                    </div>
-
-                                    <div class="col-md-4 col-sm-12">
+                                    <div class="col-md-6 col-sm-12">
                                         <h6>N° documento</h6>
                                         <fieldset class="form-group position-relative has-icon-left">
                                             <input type="text" class="form-control" id="dni" name="dni" placeholder="N° documento">
@@ -41,7 +33,37 @@
                                         </fieldset>
                                     </div>
 
-                                    <div class="col-md-4 col-sm-12">
+                                    <div class="col-md-6 col-sm-12">
+                                        <h6>Nombre</h6>
+                                        <fieldset class="form-group position-relative has-icon-left">
+                                            <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre">
+                                            <div class="form-control-position">
+                                                <i class="bx bx-user"></i>
+                                            </div>
+                                        </fieldset>
+                                    </div>
+
+                                    <div class="col-md-6 col-sm-12">
+                                        <h6>Apellido</h6>
+                                        <fieldset class="form-group position-relative has-icon-left">
+                                            <input type="text" class="form-control" id="apellido" name="apellido" placeholder="Apellido">
+                                            <div class="form-control-position">
+                                                <i class="bx bx-user"></i>
+                                            </div>
+                                        </fieldset>
+                                    </div>
+
+                                    <div class="col-md-6 col-sm-12">
+                                        <h6>Email</h6>
+                                        <fieldset class="form-group position-relative has-icon-left">
+                                            <input type="text" class="form-control" id="email" name="email" placeholder="Email">
+                                            <div class="form-control-position">
+                                                <i class="bx bx-envelope"></i>
+                                            </div>
+                                        </fieldset>
+                                    </div>
+
+                                    <div class="col-md-6 col-sm-12">
                                         <h6>N° telefono</h6>
                                         <fieldset class="form-group position-relative has-icon-left">
                                             <input type="text" class="form-control" id="telefono" name="telefono" placeholder="N° telefono">
@@ -51,7 +73,7 @@
                                         </fieldset>
                                     </div>
 
-                                    <div class="col-md-4 col-sm-12">
+                                    <div class="col-md-6 col-sm-12">
                                         <h6>Propiedad</h6>
                                         <div class="form-group">
                                             <select class="select2 form-control" id="id_t_prop" name="id_t_prop">
@@ -60,7 +82,7 @@
                                         </div>
                                     </div>
 
-                                    <div class="col-md-4 col-sm-12">
+                                    <div class="col-md-6 col-sm-12">
                                         <h6>Modalidad</h6>
                                         <div class="form-group">
                                             <select class="select2 form-control" id="modalidad" name="modalidad">

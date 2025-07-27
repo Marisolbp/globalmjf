@@ -14,4 +14,8 @@ switch($_GET["op"]) {
             echo json_encode($output);
         }
         break;
+
+    case "enviar_formulario":
+        $declaratoria->enviar_formulario($_POST['nombre'],$_POST['correo'],$_POST['asunto'],$_POST['consulta']);
+        break;
 }
