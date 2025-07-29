@@ -103,7 +103,10 @@ $(document).ready(function(){
             "#atotal", "#aconstru"
         ],
         "3": [ // TERRENO
-            "#atotal"
+            "#atotal", "#aconstru"
+        ],
+        "4": [ // TERRENO
+            "#atotal", "#aconstru"
         ]
     };
 
@@ -199,7 +202,6 @@ function nuevoRegistro(){
     $('#lblTitle').html('Nuevo registro');
     $('#modal_propiedad').modal('show');
 }
-
 function guardarRegistro(){
     var formData = new FormData($("#propiedad_form")[0]);
     var tipo = $("#id_t_prop").val(); // “1”=Terreno, “2”=Departamento, “3”=Casa
@@ -226,6 +228,13 @@ function guardarRegistro(){
             "#estado_im", "#ubicacion", "#atotal"
         ],
         "3": [ // TERRENO
+            "#codigo", "#nombre",
+            "#id_t_prop", "#moneda", "#precio",
+            "#modalidad", "#id_depart", "#id_provin", "#id_distri", 
+            "#direccion", "#longitud", "#latitud",
+             "#estado_im", "#ubicacion", "#atotal"
+        ],
+        "4": [ // TERRENO
             "#codigo", "#nombre",
             "#id_t_prop", "#moneda", "#precio",
             "#modalidad", "#id_depart", "#id_provin", "#id_distri", 

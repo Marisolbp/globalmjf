@@ -11,6 +11,7 @@ class Miembro extends Conectar{
             puesto,
             linkedin,
             instagram,
+            tiktok,
             correo,
             foto,
             descrip,
@@ -25,12 +26,12 @@ class Miembro extends Conectar{
         return $resultado=$sql->fetchAll();
     }
  
-    public function registrar($nombre, $apellido, $codcap, $puesto, $detapuesto, $linkedin, $instagram, $correo, $contacto, $descrip, $orden, $estado, $foto, $usuario){
+    public function registrar($nombre, $apellido, $codcap, $puesto, $detapuesto, $linkedin, $instagram, $tiktok, $correo, $contacto, $descrip, $orden, $estado, $foto, $usuario){
         $conectar= parent::conexion();
         parent::set_names();
         
-        $sql = "INSERT INTO m_miembro(nombre,apellido,codcap,puesto,detapuesto,linkedin,instagram,correo,contacto,descrip,orden,estado,foto,fec_crea,usu_crea,fec_actu,usu_actu) 
-        VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,now(),?,now(),?)";
+        $sql = "INSERT INTO m_miembro(nombre,apellido,codcap,puesto,detapuesto,linkedin,instagram,tiktok,correo,contacto,descrip,orden,estado,foto,fec_crea,usu_crea,fec_actu,usu_actu) 
+        VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,now(),?,now(),?)";
         $sql = $conectar->prepare($sql);
         $sql->bindValue(1, $nombre);
         $sql->bindValue(2, $apellido);
@@ -39,14 +40,15 @@ class Miembro extends Conectar{
         $sql->bindValue(5, $detapuesto);
         $sql->bindValue(6, $linkedin);
         $sql->bindValue(7, $instagram);
-        $sql->bindValue(8, $correo);
-        $sql->bindValue(9, $contacto);
-        $sql->bindValue(10, $descrip);
-        $sql->bindValue(11, $orden);
-        $sql->bindValue(12, $estado);
-        $sql->bindValue(13, $foto, PDO::PARAM_LOB);
-        $sql->bindValue(14, $usuario);
+        $sql->bindValue(8, $tiktok);
+        $sql->bindValue(9, $correo);
+        $sql->bindValue(10, $contacto);
+        $sql->bindValue(11, $descrip);
+        $sql->bindValue(12, $orden);
+        $sql->bindValue(13, $estado);
+        $sql->bindValue(14, $foto, PDO::PARAM_LOB);
         $sql->bindValue(15, $usuario);
+        $sql->bindValue(16, $usuario);
 
         if( $sql->execute()){
             //Si hay datos entonces retornas algo
@@ -73,6 +75,7 @@ class Miembro extends Conectar{
             puesto,
             detapuesto,
             instagram,
+            tiktok,
             linkedin,
             descrip,
             orden,
@@ -86,13 +89,13 @@ class Miembro extends Conectar{
         $sql->execute();
         return $resultado=$sql->fetchAll();
     }
-    public function editar($id, $nombre, $apellido, $codcap, $puesto, $detapuesto, $linkedin, $instagram, $correo, $contacto, $descrip, $orden, $estado, $foto, $usuario){
+    public function editar($id, $nombre, $apellido, $codcap, $puesto, $detapuesto, $linkedin, $instagram, $tiktok, $correo, $contacto, $descrip, $orden, $estado, $foto, $usuario){
 
         $conectar= parent::conexion();
         parent::set_names();
 
         if ($foto !== null) {
-            $sql = "UPDATE m_miembro SET nombre=?, apellido=?, codcap=?, puesto=?, detapuesto=?, linkedin=?, instagram=?, correo=?, contacto=?, descrip=?, orden=?, estado=?, foto=?, fec_actu=now(), usu_actu=? WHERE id=?";
+            $sql = "UPDATE m_miembro SET nombre=?, apellido=?, codcap=?, puesto=?, detapuesto=?, linkedin=?, instagram=?,  tiktok=?, correo=?, contacto=?, descrip=?, orden=?, estado=?, foto=?, fec_actu=now(), usu_actu=? WHERE id=?";
             $sql = $conectar->prepare($sql);
             $sql->bindValue(1, $nombre);
             $sql->bindValue(2, $apellido);
@@ -101,31 +104,33 @@ class Miembro extends Conectar{
             $sql->bindValue(5, $detapuesto);
             $sql->bindValue(6, $linkedin);
             $sql->bindValue(7, $instagram);
-            $sql->bindValue(8, $correo);
-            $sql->bindValue(9, $contacto);
-            $sql->bindValue(10, $descrip);
-            $sql->bindValue(11, $orden);
-            $sql->bindValue(12, $estado);
-            $sql->bindValue(13, $foto, PDO::PARAM_LOB);
+            $sql->bindValue(8, $tiktok);
+            $sql->bindValue(9, $correo);
+            $sql->bindValue(10, $contacto);
+            $sql->bindValue(11, $descrip);
+            $sql->bindValue(12, $orden);
+            $sql->bindValue(13, $estado);
+            $sql->bindValue(14, $foto, PDO::PARAM_LOB);
+            $sql->bindValue(15, $usuario);
+            $sql->bindValue(16, $id);
+        } else {
+            $sql = "UPDATE m_miembro SET nombre=?, apellido=?, codcap=?, puesto=?, detapuesto=?, linkedin=?, instagram=?, tiktok=?, correo=?, contacto=?, descrip=?, orden=?, estado=?, fec_actu=now(), usu_actu=? WHERE id=?";
+            $sql = $conectar->prepare($sql);
+            $sql->bindValue(1, $nombre);
+            $sql->bindValue(2, $apellido);
+            $sql->bindValue(3, $codcap);
+            $sql->bindValue(4, $puesto);
+            $sql->bindValue(5, $detapuesto);
+            $sql->bindValue(6, $linkedin);
+            $sql->bindValue(7, $instagram);
+            $sql->bindValue(8, $tiktok);
+            $sql->bindValue(9, $correo);
+            $sql->bindValue(10, $contacto);
+            $sql->bindValue(11, $descrip);
+            $sql->bindValue(12, $orden);
+            $sql->bindValue(13, $estado);
             $sql->bindValue(14, $usuario);
             $sql->bindValue(15, $id);
-        } else {
-            $sql = "UPDATE m_miembro SET nombre=?, apellido=?, codcap=?, puesto=?, detapuesto=?, linkedin=?, instagram=?, correo=?, contacto=?, descrip=?, orden=?, estado=?, fec_actu=now(), usu_actu=? WHERE id=?";
-            $sql = $conectar->prepare($sql);
-            $sql->bindValue(1, $nombre);
-            $sql->bindValue(2, $apellido);
-            $sql->bindValue(3, $codcap);
-            $sql->bindValue(4, $puesto);
-            $sql->bindValue(5, $detapuesto);
-            $sql->bindValue(6, $linkedin);
-            $sql->bindValue(7, $instagram);
-            $sql->bindValue(8, $correo);
-            $sql->bindValue(9, $contacto);
-            $sql->bindValue(10, $descrip);
-            $sql->bindValue(11, $orden);
-            $sql->bindValue(12, $estado);
-            $sql->bindValue(13, $usuario);
-            $sql->bindValue(14, $id);
         }
     
         if($sql->execute()){

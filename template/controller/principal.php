@@ -128,6 +128,9 @@ switch($_GET["op"]){
             if (!empty($row["instagram"])) {
                 $html .= '<li class="list-inline-item"><a href="https://www.instagram.com/'.$row["instagram"].'" target="_blank"><i class="fab fa-instagram"></i></a></li>';
             }
+            if (!empty($row["tiktok"])) {
+                $html .= '<li class="list-inline-item"><a href="https://www.tiktok.com/@'.$row["tiktok"].'" target="_blank"><i class="fab fa-tiktok"></i></a></li>';
+            }
             if (!empty($row["correo"])) {
                 $html .= '<li class="list-inline-item"><a href="mailto:'.$row["correo"].'"><i class="fa fa-envelope"></i></a></li>';
             }

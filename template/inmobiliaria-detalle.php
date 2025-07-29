@@ -341,7 +341,7 @@
                                         </div>
                                         <div class="form-group mb-0">
                                             <textarea class="form-control required" name="mensaje" rows="5" required=""
-                                                placeholder="Mensaje"></textarea>
+                                                placeholder="Mensaje">¡Hola! Quiero que se comuniquen conmigo por esta propiedad que vi en Global MJF.</textarea>
                                         </div>
                                     </div>
                                     <div class="profile__agent__footer">

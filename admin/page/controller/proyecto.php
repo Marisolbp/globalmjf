@@ -53,7 +53,7 @@ switch($_GET["op"]){
         }
 
         $estado = $_POST['estado_real'];
-        $proyecto->registrar($_POST['nombre'], $_POST['id_t_prop'], $descripcion, $_POST['npisos'], $_POST['ndormit'], $_POST['nbanos'], $_POST['area'], $estado,  $_SESSION['usuario']);
+        $proyecto->registrar($_POST['nombre'], $_POST['id_t_prop'], $descripcion, $_POST['npisos'], $_POST['ndormit'], $_POST['nbanos'], $_POST['area'], $_POST['aconstru'], $estado,  $_SESSION['usuario']);
         break;
 
     case "obtener":
@@ -67,6 +67,7 @@ switch($_GET["op"]){
                 $output["ndormit"]      = $row["ndormit"];
                 $output["nbanos"]       = $row["nbanos"];
                 $output["area"]         = $row["area"];
+                $output["aconstru"]     = $row["aconstru"];
                 $output["id_t_prop"]    = $row["id_t_prop"];
                 $output["tipo"]         = $row["tipo"];
                 $output["estado"]       = $row["estado"];
@@ -85,7 +86,7 @@ switch($_GET["op"]){
         }
 
         $estado = $_POST['estado_real'];
-        $proyecto->editar($_POST['codigo'], $_POST['nombre'], $_POST['id_t_prop'], $descripcion, $_POST['npisos'],  $_POST['ndormit'], $_POST['nbanos'], $_POST['area'], $estado,  $_SESSION['usuario']);
+        $proyecto->editar($_POST['codigo'], $_POST['nombre'], $_POST['id_t_prop'], $descripcion, $_POST['npisos'],  $_POST['ndormit'], $_POST['nbanos'], $_POST['area'], $_POST['aconstru'], $estado,  $_SESSION['usuario']);
         break;
 
     case "listar_foto":

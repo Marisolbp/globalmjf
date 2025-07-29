@@ -32,14 +32,21 @@ $(document).ready(function(){
         $('#title_proyect').html(data.nombre);
         $('#descrip').html(data.descrip);
 
+        // Función para mostrar guion si el valor es null o 0
+        const mostrarValor = (valor, sufijo = '') => {
+            return (valor === null || valor == 0) ? '-' : valor + sufijo;
+        };
+
         // Controlar valores dinámicos
-        const area          = data.area +' m²';
-        const dormitorios   = data.ndormit;
-        const pisos         = data.npisos;
-        const banos         = data.nbanos;
+        const area          = mostrarValor(data.area, ' m²');
+        const aconstru      = mostrarValor(data.aconstru, ' m²');
+        const dormitorios   = mostrarValor(data.ndormit);
+        const pisos         = mostrarValor(data.npisos);
+        const banos         = mostrarValor(data.nbanos);
 
         // Asignar dinámicamente los datos a los <li>
         $('.area-value').html(area);
+        $('.aconstru-value').html(aconstru);
         $('.dormitorios-value').html(dormitorios);
         $('.pisos-value').html(pisos);
         $('.banos-value').html(banos);

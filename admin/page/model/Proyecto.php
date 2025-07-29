@@ -24,15 +24,15 @@ class Proyecto extends Conectar{
         return $resultado=$sql->fetchAll();
     }
 
-    public function registrar($nombre, $id_t_prop, $descrip, $npisos, $ndormit, $nbanos, $area, $estado, $usuario){
+    public function registrar($nombre, $id_t_prop, $descrip, $npisos, $ndormit, $nbanos, $area, $aconstru, $estado, $usuario){
         $conectar= parent::conexion();
         parent::set_names();
 
         // Asegurar que la conexión use UTF-8
         $conectar->exec("SET NAMES utf8mb4 COLLATE utf8mb4_unicode_ci");
         
-        $sql = "INSERT INTO g_proyec_arqui(nombre,id_t_prop,descrip,npisos,ndormit,nbanos,area,estado,fec_crea,usu_crea,fec_actu,usu_actu) 
-        VALUES (?,?,?,?,?,?,?,?,now(),?,now(),?)";
+        $sql = "INSERT INTO g_proyec_arqui(nombre,id_t_prop,descrip,npisos,ndormit,nbanos,area,aconstru,estado,fec_crea,usu_crea,fec_actu,usu_actu) 
+        VALUES (?,?,?,?,?,?,?,?,?,now(),?,now(),?)";
         $sql = $conectar->prepare($sql);
         $sql->bindValue(1, $nombre);
         $sql->bindValue(2, $id_t_prop);
@@ -41,9 +41,10 @@ class Proyecto extends Conectar{
         $sql->bindValue(5, $ndormit);
         $sql->bindValue(6, $nbanos);
         $sql->bindValue(7, $area);
-        $sql->bindValue(8, $estado);
-        $sql->bindValue(9, $usuario);
+        $sql->bindValue(8, $aconstru);
+        $sql->bindValue(9, $estado);
         $sql->bindValue(10, $usuario);
+        $sql->bindValue(11, $usuario);
 
         if( $sql->execute()){
             //Si hay datos entonces retornas algo
@@ -69,6 +70,7 @@ class Proyecto extends Conectar{
             g_proyec_arqui.ndormit,
             g_proyec_arqui.nbanos,
             g_proyec_arqui.area,
+            g_proyec_arqui.aconstru,
             g_proyec_arqui.id_t_prop,
             m_tipo_propiedad.nombre tipo,
             g_proyec_arqui.estado
@@ -82,14 +84,14 @@ class Proyecto extends Conectar{
         return $resultado=$sql->fetchAll();
     }
 
-    public function editar($codigo, $nombre, $id_t_prop, $descrip, $npisos, $ndormit, $nbanos, $area, $estado, $usuario){
+    public function editar($codigo, $nombre, $id_t_prop, $descrip, $npisos, $ndormit, $nbanos, $area, $aconstru, $estado, $usuario){
         $conectar= parent::conexion();
         parent::set_names();
 
         // Asegurar que la conexión use UTF-8
         $conectar->exec("SET NAMES utf8mb4 COLLATE utf8mb4_unicode_ci");
         
-        $sql = "UPDATE g_proyec_arqui SET nombre=?, id_t_prop=?, descrip=?, npisos=?, ndormit=?, nbanos=?, area=?, estado=?, fec_actu=now(), usu_actu=? WHERE id = ?";
+        $sql = "UPDATE g_proyec_arqui SET nombre=?, id_t_prop=?, descrip=?, npisos=?, ndormit=?, nbanos=?, area=?, aconstru=?, estado=?, fec_actu=now(), usu_actu=? WHERE id = ?";
         $sql = $conectar->prepare($sql);
         $sql->bindValue(1, $nombre);
         $sql->bindValue(2, $id_t_prop);
@@ -98,9 +100,10 @@ class Proyecto extends Conectar{
         $sql->bindValue(5, $ndormit);
         $sql->bindValue(6, $nbanos);
         $sql->bindValue(7, $area);
-        $sql->bindValue(8, $estado);
-        $sql->bindValue(9, $usuario);
-        $sql->bindValue(10, $codigo);
+        $sql->bindValue(8, $aconstru);
+        $sql->bindValue(9, $estado);
+        $sql->bindValue(10, $usuario);
+        $sql->bindValue(11, $codigo);
 
         if( $sql->execute()){
             //Si hay datos entonces retornas algo

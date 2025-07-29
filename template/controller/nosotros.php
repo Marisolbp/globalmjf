@@ -57,6 +57,9 @@ switch($_GET["op"]) {
                                     if (!empty($row["instagram"])) {
                                         $html .= '<a href="https://www.instagram.com/'.$row["instagram"].'" class="social-btn instagram" target="_blank"><i class="fab fa-instagram"></i></a>';
                                     }
+                                    if (!empty($row["tiktok"])) {
+                                        $html .= '<a href="https://www.tiktok.com/@'.$row["tiktok"].'" class="social-btn tiktok" target="_blank"><i class="fab fa-tiktok"></i></a>';
+                                    }
             $html .=        '</div>
                             </div>
                         </div>

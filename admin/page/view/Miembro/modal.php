@@ -63,7 +63,7 @@
                                                 </fieldset>
                                             </div>
 
-                                            <div class="col-md-6 col-sm-12">
+                                            <div class="col-md-12 col-sm-12">
                                                 <h6>Correo *</h6>
                                                 <fieldset class="form-group position-relative has-icon-left">
                                                     <input type="text" class="form-control" id="correo" name="correo" placeholder="Correo">
@@ -99,6 +99,16 @@
                                                     <input type="text" class="form-control" id="instagram" name="instagram" placeholder="Instagram">
                                                     <div class="form-control-position">
                                                         <i class="bx bxl-instagram"></i>
+                                                    </div>
+                                                </fieldset>
+                                            </div>
+
+                                            <div class="col-md-6 col-sm-12">
+                                                <h6>Tiktok</h6>
+                                                <fieldset class="form-group position-relative has-icon-left">
+                                                    <input type="text" class="form-control" id="tiktok" name="tiktok" placeholder="Tiktok">
+                                                    <div class="form-control-position">
+                                                        <i class="bx bxl-tiktok"></i>
                                                     </div>
                                                 </fieldset>
                                             </div>

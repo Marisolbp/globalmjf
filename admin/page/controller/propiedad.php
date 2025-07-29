@@ -391,9 +391,10 @@ switch($_GET["op"]){
             // Imagen principal en tamaño uniforme
             $html .= '<div class="main-image-container mb-3" id="main-property-image">';
             
-            // Si hay fotos, mostrar la primera como principal
-            if(is_array($fotos) && count($fotos) > 0){
-                $html .= '<img src="data:image/jpeg;base64,' . base64_encode($fotos[0]["foto"]) . '" class="img-fluid rounded main-image-display" alt="Imagen principal">';
+            if (is_array($fotos) && count($fotos) > 0) {
+                $ruta_imagen = $fotos[0]["ruta_imagen"]; // ✅ Aquí corriges el error
+                $ruta_web = "../../../../" . $ruta_imagen;
+                $html .= '<img src="' . $ruta_web . '" class="img-fluid rounded main-image-display" alt="Imagen principal">';
             } else {
                 // Imagen por defecto si no hay fotos
                 $html .= '<img src="../../assets/img/default-property.jpg" class="img-fluid rounded main-image-display" alt="Imagen no disponible">';
@@ -410,9 +411,10 @@ switch($_GET["op"]){
             if(is_array($fotos) && count($fotos) > 0){
                 foreach($fotos as $index => $foto){
                     $activeClass = ($index == 0) ? 'active-thumbnail' : '';
+                    $ruta_web = "../../../../" . $foto["ruta_imagen"]; // ✅ Esta línea debe estar aquí
                     $html .= '
                     <div class="thumbnail-item">
-                        <img src="data:image/jpeg;base64,' . base64_encode($foto["foto"]) . '" 
+                        <img src="' . $ruta_web . '"
                             class="img-fluid rounded thumbnail-image ' . $activeClass . '" 
                             alt="Miniatura ' . ($index + 1) . '"
                             data-index="' . $index . '" 
@@ -450,10 +452,10 @@ switch($_GET["op"]){
             $html .= '<script>
                 var propertyImages = [];
             ';
-            
-            if(is_array($fotos) && count($fotos) > 0){
+            if (is_array($fotos) && count($fotos) > 0) {
                 foreach($fotos as $index => $foto){
-                    $html .= 'propertyImages[' . $index . '] = "data:image/jpeg;base64,' . base64_encode($foto["foto"]) . '";';
+                    $ruta_web = "../../../../" . $foto["ruta_imagen"];
+                    $html .= 'propertyImages[' . $index . '] = "' . $ruta_web . '";';
                 }
             }
             
@@ -778,7 +780,6 @@ switch($_GET["op"]){
                 .thumbnail-image {
                     width: 100%;
                     height: 100%;
-                    object-fit: cover;
                     border: 2px solid transparent;
                     transition: all 0.2s ease-in-out;
                     cursor: pointer;

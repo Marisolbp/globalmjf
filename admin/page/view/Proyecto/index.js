@@ -237,6 +237,7 @@ function editarRegistro(id){
         $('#ndormit').val(data.ndormit);
         $('#nbanos').val(data.nbanos);
         $('#area').val(data.area);
+        $('#aconstru').val(data.aconstru);
 
         quill_d.root.innerHTML = data.descrip;
 

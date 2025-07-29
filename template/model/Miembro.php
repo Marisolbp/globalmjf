@@ -9,6 +9,7 @@ class Miembro extends Conectar{
             apellido, puesto,
             detapuesto, codcap,
             linkedin, instagram,
+            tiktok,
             correo, contacto,
             foto, descrip, orden
             FROM 

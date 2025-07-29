@@ -208,6 +208,7 @@
         
         .social-btn.linkedin { background-color: #0077b5; }
         .social-btn.instagram { background-color: #e4405f; }
+        .social-btn.tiktok { background-color: #000; }
         
         .description-section {
             background: white;

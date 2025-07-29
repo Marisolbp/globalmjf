@@ -72,9 +72,12 @@ switch ($_GET["op"]) {
             // Comprobamos si es terreno
             $esTerreno = strtolower(trim($row["tipo_propiedad"])) === 'terreno';
 
+            // Comprobamos si es local
+            $esLocal = strtolower(trim($row["tipo_propiedad"])) === 'local comercial';
+
             // Contenido dinámico para las características
             $contenido_propiedad = '';
-            if ($esTerreno) {
+            if ($esTerreno || $esLocal) {
                 $contenido_propiedad .= '
                     <li class="list-inline-item">
                         <span>Área <br><i class="fa fa-map"></i> ' . htmlspecialchars($row["area"]) . ' m²</span>
@@ -156,9 +159,12 @@ switch ($_GET["op"]) {
             // Comprobamos si es terreno
             $esTerreno = strtolower(trim($row["tipo_propiedad"])) === 'terreno';
 
+            // Comprobamos si es local
+            $esLocal = strtolower(trim($row["tipo_propiedad"])) === 'local comercial';
+
             // Contenido dinámico para las características
             $contenido_propiedad = '';
-            if ($esTerreno) {
+            if ($esTerreno || $esLocal) {
                 $contenido_propiedad .= '
                     <li class="list-inline-item">
                         <span>Área <br><i class="fa fa-map"></i> ' . htmlspecialchars($row["area"]) . ' m²</span>
@@ -229,6 +235,7 @@ switch ($_GET["op"]) {
                 $output["id"]         = $row["id"];
                 $output["codigo"]     = $row["codigo"];
                 $output["id_t_prop"]  = $row["id_t_prop"];
+                $output["tipo_propiedad"]  = $row["tipo_propiedad"];
 
                 $output["area"]       = $row["area"];
                 $output["aconstru"]   = $row["aconstru"];
@@ -255,7 +262,32 @@ switch ($_GET["op"]) {
 
                 $output["valmcua"]    = $row["valmcua"];
                 $output["estado_im"]  = $row["estado_im"];
-                $output["ubicacion"]  = $row["ubicacion"];
+
+                switch ($row["ubicacion"]) {
+                    case "E":
+                        $ubicacion = 'Esquinero';
+                        break;
+                    case "ME":
+                       $ubicacion = 'Medianero';
+                        break;
+                    case "I":
+                       $ubicacion = 'Intermedio';
+                        break;
+                    case "F":
+                       $ubicacion = 'Frontal';
+                        break;
+                    case "P":
+                       $ubicacion = 'Posterior';
+                        break;
+                    case "D":
+                       $ubicacion = 'Doble frente';
+                        break;
+                    default:
+                       $ubicacion = 'Sin ubicación';
+                        break;
+                }
+
+                $output["ubicacion"]  = $ubicacion;
             }
             echo json_encode($output);
         }

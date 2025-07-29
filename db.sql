@@ -294,6 +294,7 @@ INSERT INTO m_tipo_propiedad (nombre, estado) VALUES
 ('Casa', 'A'),
 ('Departamento', 'A'),
 ('Terreno', 'A');
+('Local comercial', 'A');
 
 create table m_nosotros(
     quienes_somos text,
@@ -328,6 +329,7 @@ create table m_configuracion(
     facebook varchar(200),
     linkedin varchar(200),
     instagram varchar(200),
+    tiktok varchar(200),
     direccion varchar(250),
     longitud varchar(50),
     latitud varchar(50),
@@ -377,6 +379,7 @@ create table m_miembro(
     codcap varchar(20) not null,
     linkedin varchar(200),
     instagram varchar(200),
+    tiktok varchar(200),
     correo varchar(100),
     contacto varchar(20),
     foto longblob not null,
@@ -450,7 +453,8 @@ create table g_proyec_arqui(
     npisos int,
     ndormit int,
     nbanos int,
-    area varchar(20) not null,
+    area varchar(20) NOT NULL,
+    aconstru varchar(20) NULL,
     id_t_prop int not null,
     FOREIGN KEY (id_t_prop) REFERENCES m_tipo_propiedad(id),
     estado char(1) not null,

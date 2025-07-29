@@ -369,7 +369,8 @@
                                         </div>
                                         <div class="form-group mb-0">
                                             <textarea class="form-control required" name="mensaje" rows="5" required=""
-                                                placeholder="Mensaje"></textarea>
+                                                placeholder="Mensaje">¡Hola! Quiero que se comuniquen conmigo por este proyecto que vi en Global MJF.
+                                            </textarea>
                                         </div>
                                     </div>
                                     <div class="profile__agent__footer">
@@ -405,14 +406,15 @@
                                     <div class="row">
                                         <div class="col-md-6 col-lg-6">
                                             <ul class="property__detail-info-list list-unstyled">
-                                                <li><b>Área:</b> <span class="area-value">Cargando...</span></li>
+                                                <li><b>Área total:</b> <span class="area-value">Cargando...</span></li>
                                                 <li><b>Dormitorios:</b> <span class="dormitorios-value">Cargando...</span></li>
+                                                <li><b>Baños:</b> <span class="banos-value">Cargando...</span></li>
                                             </ul>
                                         </div>
                                         <div class="col-md-6 col-lg-6">
                                             <ul class="property__detail-info-list list-unstyled">
+                                                <li><b>Área construida:</b> <span class="aconstru-value">Cargando...</span></li>
                                                 <li><b>Pisos:</b> <span class="pisos-value">Cargando...</span></li>
-                                                <li><b>Baños:</b> <span class="banos-value">Cargando...</span></li>
                                             </ul>
                                         </div>
                                     </div>

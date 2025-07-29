@@ -36,7 +36,7 @@
                                         </div>
                                     </div>
 
-                                    <div class="col-md-3 col-sm-12">
+                                    <div class="col-md-4 col-sm-12">
                                         <h6>N° Pisos</h6>
                                         <fieldset class="form-group position-relative has-icon-left">
                                             <input type="text" class="form-control" id="npisos" name="npisos">
@@ -46,7 +46,7 @@
                                         </fieldset>
                                     </div>
 
-                                    <div class="col-md-3 col-sm-12">
+                                    <div class="col-md-4 col-sm-12">
                                         <h6>N° Habitaciones</h6>
                                         <fieldset class="form-group position-relative has-icon-left">
                                             <input type="text" class="form-control" id="ndormit" name="ndormit">
@@ -56,7 +56,7 @@
                                         </fieldset>
                                     </div>
 
-                                    <div class="col-md-3 col-sm-12">
+                                    <div class="col-md-4 col-sm-12">
                                         <h6>N° Baños</h6>
                                         <fieldset class="form-group position-relative has-icon-left">
                                             <input type="text" class="form-control" id="nbanos" name="nbanos">
@@ -66,19 +66,29 @@
                                         </fieldset>
                                     </div>
 
-                                    <div class="col-md-3 col-sm-12">
-                                        <h6>Área</h6>
+                                    <div class="col-md-6 col-sm-12">
+                                        <h6>Área total</h6>
                                         <div class="input-group">
                                             <input type="text" class="form-control text-start input-mask" id="area" name="area" data-inputmask="'alias': 'numeric', 'groupSeparator': ',', 'digits': 2, 'digitsOptional': false, 'placeholder': '0'">
                                             <div class="input-group-append">
                                                 <span class="input-group-text">m²</span>
                                             </div>
                                         </div>
-                                    </div>                     
+                                    </div> 
+
+                                    <div class="col-md-6 col-sm-12">
+                                        <h6>Área construida</h6>
+                                        <div class="input-group">
+                                            <input type="text" class="form-control text-start input-mask" id="aconstru" name="aconstru" data-inputmask="'alias': 'numeric', 'groupSeparator': ',', 'digits': 2, 'digitsOptional': false, 'placeholder': '0'">
+                                            <div class="input-group-append">
+                                                <span class="input-group-text">m²</span>
+                                            </div>
+                                        </div>
+                                    </div>                      
 
                                     <input type="hidden" name="estado_real" id="estado_real" value="A">
 
-                                    <div class="col-md-3 col-sm-12">
+                                    <div class="col-md-3 col-sm-12 mt-1">
                                         <h6>Estado</h6>
                                         <div class="custom-control custom-switch custom-control-inline">
                                             <input type="checkbox" class="custom-control-input" id="estado" name="estado">

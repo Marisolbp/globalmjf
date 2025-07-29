@@ -113,6 +113,17 @@ if(isset($_SESSION["id"])){
                                                             </div>
                                                         </div>
                                                         <div class="col-md-1">
+                                                            <label>Tiktok</label>
+                                                        </div>
+                                                        <div class="col-md-5 form-group ">
+                                                            <div class="position-relative has-icon-left">
+                                                                <input type="text" id="tiktok" class="form-control" name="tiktok" placeholder="Tiktok">
+                                                                <div class="form-control-position">
+                                                                    <i class="bx bxl-tiktok"></i>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-1">
                                                             <label>Dirección</label>
                                                         </div>
                                                         <div class="col-md-5 form-group ">

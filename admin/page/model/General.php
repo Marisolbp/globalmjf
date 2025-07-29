@@ -2,7 +2,7 @@
 date_default_timezone_set('America/Bogota');
 class General extends Conectar{
     
-    public function registrar_general($numero, $correo, $facebook, $linkedin, $instagram, $direccion, $usuario){
+    public function registrar_general($numero, $correo, $facebook, $linkedin, $instagram, $tiktok, $direccion, $usuario){
         $conectar= parent::conexion();
         parent::set_names();
     
@@ -12,27 +12,29 @@ class General extends Conectar{
         $resultado_check = $stmt_check->fetch();
     
         if ($resultado_check['total'] > 0) {
-            $sql = "UPDATE m_configuracion SET numero = ?, correo = ?, facebook = ?, linkedin = ?, instagram = ?, direccion = ?, fec_actu = now(), usu_actu = ?";
+            $sql = "UPDATE m_configuracion SET numero = ?, correo = ?, facebook = ?, linkedin = ?, instagram = ?, tiktok = ?, direccion = ?, fec_actu = now(), usu_actu = ?";
             $sql = $conectar->prepare($sql);
             $sql->bindValue(1, $numero);
             $sql->bindValue(2, $correo);
             $sql->bindValue(3, $facebook);
             $sql->bindValue(4, $linkedin);
             $sql->bindValue(5, $instagram);
-            $sql->bindValue(6, $direccion);
-            $sql->bindValue(7, $usuario);  
+            $sql->bindValue(6, $tiktok);
+            $sql->bindValue(7, $direccion);
+            $sql->bindValue(8, $usuario);  
         } else {
-            $sql = "INSERT INTO m_configuracion(numero, correo, facebook, linkedin, instagram, direccion, fec_crea, usu_crea, fec_actu, usu_actu) 
-            VALUES (?,?,?,?,?,?, now(), ?, now(), ?)";
+            $sql = "INSERT INTO m_configuracion(numero, correo, facebook, linkedin, instagram, tiktok, direccion, fec_crea, usu_crea, fec_actu, usu_actu) 
+            VALUES (?,?,?,?,?,?,?, now(), ?, now(), ?)";
             $sql = $conectar->prepare($sql);
             $sql->bindValue(1, $numero);
             $sql->bindValue(2, $correo);
             $sql->bindValue(3, $facebook);
             $sql->bindValue(4, $linkedin);
             $sql->bindValue(5, $instagram);
-            $sql->bindValue(6, $direccion);
-            $sql->bindValue(7, $usuario);
+            $sql->bindValue(6, $tiktok);
+            $sql->bindValue(7, $direccion);
             $sql->bindValue(8, $usuario);
+            $sql->bindValue(9, $usuario);
         }
 
         try {

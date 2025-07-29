@@ -86,6 +86,7 @@ switch ($_GET["op"]) {
                 $output["ndormit"]          = $row["ndormit"];
                 $output["nbanos"]           = $row["nbanos"];
                 $output["area"]             = $row["area"];
+                $output["aconstru"]         = $row["aconstru"];
                 $output["tipo_propiedad"]   = $row["tipo_propiedad"];
             }
             echo json_encode($output);

@@ -63,6 +63,7 @@ $(document).ready(function(){
             $("#facebook").val(info.facebook);
             $("#linkedin").val(info.linkedin);
             $("#instagram").val(info.instagram);
+            $("#tiktok").val(info.tiktok);
             $("#direccion").val(info.direccion);
             /* $("#longitud").val(info.longitud);
             $("#latitud").val(info.latitud); */

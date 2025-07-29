@@ -14,15 +14,51 @@ switch($_GET["op"]){
             $sub_array[] = $row["apellido"];
             $sub_array[] = $row["puesto"];
 
-            $sub_array[] = '<div class="position-relative d-inline-block mr-1">
-                                <a href="'.$row["linkedin"].'" target="_blank"><i class="bx bxl-linkedin font-medium-5 text-primary"></i></a>
-                            </div>
-                            <div class="position-relative d-inline-block mr-1">
-                                <a href="'.$row["instagram"].'" target="_blank"><i class="bx bxl-instagram font-medium-5 text-danger"></i></a>
-                            </div>
-                            <div class="position-relative d-inline-block">
-                                <a href="mailto:'.$row["correo"].'" target="_blank"><i class="bx bx-envelope font-medium-5 text-info"></i></a>
-                            </div>';
+            if (!empty($row["linkedin"])) {
+                $linkedin = ltrim($row["linkedin"], '@');
+                $linkedin_link = '<div class="position-relative d-inline-block mr-1">
+                                    <a href="https://www.linkedin.com/in/' . $linkedin . '" target="_blank">
+                                        <i class="bx bxl-linkedin font-medium-5 text-primary"></i>
+                                    </a>
+                                </div>';
+            } else {
+                $linkedin_link = '';
+            }
+
+            if (!empty($row["instagram"])) {
+                $instagram = ltrim($row["instagram"], '@');
+                $instagram_link = '<div class="position-relative d-inline-block mr-1">
+                                    <a href="https://www.instagram.com/' . $instagram . '" target="_blank">
+                                        <i class="bx bxl-instagram font-medium-5 text-danger"></i>
+                                    </a>
+                                </div>';
+            } else {
+                $instagram_link = '';
+            }
+
+            if (!empty($row["tiktok"])) {
+                $tiktok = ltrim($row["tiktok"], '@');
+                $tiktok_link = '<div class="position-relative d-inline-block mr-1">
+                                    <a href="https://www.tiktok.com/@' . $tiktok . '" target="_blank">
+                                        <i class="bx bxl-tiktok font-medium-5 text-secondary"></i>
+                                    </a>
+                                </div>';
+            } else {
+                $tiktok_link = '';
+            }
+
+            if (!empty($row["correo"])) {
+                $correo = $row["correo"];
+                $correo_link = '<div class="position-relative d-inline-block">
+                                    <a href="mailto:' . $correo . '">
+                                        <i class="bx bx-envelope font-medium-5 text-info"></i>
+                                    </a>
+                                </div>';
+            } else {
+                $correo_link = '';
+            }
+
+            $sub_array[] = "$linkedin_link $instagram_link $tiktok_link $correo_link";
 
             $foto_base64 = base64_encode($row["foto"]);
 
@@ -76,7 +112,7 @@ switch($_GET["op"]){
             $fotoBlob = file_get_contents($_FILES['foto0']['tmp_name']);
         }
 
-        $miembro->registrar($_POST['nombre'], $_POST['apellido'], $_POST['codcap'], $_POST['puesto'], $_POST['detapuesto'], $_POST['linkedin'], $_POST['instagram'], $_POST['correo'], $_POST['contacto'], $_POST['descrip'], $_POST['orden'], $estado, $fotoBlob, $_SESSION['usuario']);
+        $miembro->registrar($_POST['nombre'], $_POST['apellido'], $_POST['codcap'], $_POST['puesto'], $_POST['detapuesto'], $_POST['linkedin'], $_POST['instagram'], $_POST['tiktok'], $_POST['correo'], $_POST['contacto'], $_POST['descrip'], $_POST['orden'], $estado, $fotoBlob, $_SESSION['usuario']);
         break;
 
     case "obtener":
@@ -93,6 +129,7 @@ switch($_GET["op"]){
                 $output["contacto"]     = $row["contacto"];
                 $output["linkedin"]     = $row["linkedin"];
                 $output["instagram"]    = $row["instagram"];
+                $output["tiktok"]       = $row["tiktok"];
                 $output["descrip"]      = $row["descrip"];
                 $output["orden"]        = $row["orden"];
                 $output["estado"]       = $row["estado"];
@@ -112,7 +149,7 @@ switch($_GET["op"]){
             $fotoBlob = file_get_contents($_FILES['foto0']['tmp_name']);
         }
     
-        $miembro->editar($_POST['codigo'], $_POST['nombre'], $_POST['apellido'], $_POST['codcap'], $_POST['puesto'], $_POST['detapuesto'], $_POST['linkedin'], $_POST['instagram'], $_POST['correo'], $_POST['contacto'], $_POST['descrip'], $_POST['orden'], $estado, $fotoBlob, $_SESSION['usuario']);
+        $miembro->editar($_POST['codigo'], $_POST['nombre'], $_POST['apellido'], $_POST['codcap'], $_POST['puesto'], $_POST['detapuesto'], $_POST['linkedin'], $_POST['instagram'], $_POST['tiktok'], $_POST['correo'], $_POST['contacto'], $_POST['descrip'], $_POST['orden'], $estado, $fotoBlob, $_SESSION['usuario']);
         break;
     
     case "actualizar_orden":

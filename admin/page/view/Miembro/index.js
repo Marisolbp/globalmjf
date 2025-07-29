@@ -291,6 +291,7 @@ function editarRegistro(id){
         $('#contacto').val(data.contacto);
         $('#linkedin').val(data.linkedin);
         $('#instagram').val(data.instagram);
+        $('#tiktok').val(data.tiktok);
         $('#descrip').val(data.descrip);
         $('#orden').val(data.orden);
 

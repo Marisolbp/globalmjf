@@ -127,9 +127,9 @@ if(isset($_SESSION["id"])){
                                                     <tr>
                                                         <th>Nombre</th>
                                                         <th>N° pisos</th>
-                                                        <th>N° habitaciones</th>
+                                                        <th>N° dormitorios</th>
                                                         <th>N° baños</th>
-                                                        <th>Área</th>
+                                                        <th>Área total</th>
                                                         <th>Tipo de propiedad</th>
                                                         <th>Estado</th>
                                                         <th>Acción</th>

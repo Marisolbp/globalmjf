@@ -7,7 +7,7 @@ switch($_GET["op"]){
 
     case "registrar_general":
 
-        $general->registrar_general($_POST['numero'], $_POST['correo'], $_POST['facebook'], $_POST['linkedin'], $_POST['instagram'], $_POST['direccion'], $_SESSION['usuario']);
+        $general->registrar_general($_POST['numero'], $_POST['correo'], $_POST['facebook'], $_POST['linkedin'], $_POST['instagram'], $_POST['tiktok'], $_POST['direccion'], $_SESSION['usuario']);
 
         break;
 

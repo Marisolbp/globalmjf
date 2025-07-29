@@ -72,7 +72,7 @@ $(document).ready(function(){
                 { label: "Lavandería", valor: data.nlavand },
                 { label: "Cochera", valor: data.ncochera },
 
-                { label: "Tipo de propiedad", valor: "Casa" },
+                { label: "Tipo de propiedad", valor: data.tipo_propiedad },
                 { label: "Valor m²", valor: simbolo + data.valmcua },
                 { label: "Área construida", valor: data.aconstru + " m²" },
                 { label: "Estado Inmueble", valor: data.estado_im },
@@ -93,7 +93,7 @@ $(document).ready(function(){
                 { label: "Lavandería", valor: data.nlavand },
                 { label: "Cochera", valor: data.ncochera },
 
-                { label: "Tipo de propiedad", valor: "Departamento" },
+                { label: "Tipo de propiedad", valor: data.tipo_propiedad },
                 { label: "Valor m²", valor: simbolo + data.valmcua },
                 { label: "Área construida", valor: data.aconstru + " m²" },
                 { label: "Estado Inmueble", valor: data.estado_im },
@@ -110,20 +110,37 @@ $(document).ready(function(){
                 { label: "Modalidad", valor: (data.modalidad == 'A') ? 'Alquiler' : 'Venta' },
                 { label: "Ubicación", valor: data.ubicacion },
 
-                { label: "Tipo de propiedad", valor: "Terreno" },
+                { label: "Tipo de propiedad", valor: data.tipo_propiedad },
+                { label: "Valor m²", valor: simbolo + data.valmcua },
+                { label: "Estado Inmueble", valor: data.estado_im }
+            ],
+            "4": [ // TERRENO
+                { label: "Código", valor: data.codigo },
+                { label: "Precio", valor: simbolo + data.precio },
+                { label: "Área total", valor: data.area + " m²" },
+                { label: "Área construida", valor: data.aconstru + " m²" },
+                { label: "Modalidad", valor: (data.modalidad == 'A') ? 'Alquiler' : 'Venta' },
+                { label: "Ubicación", valor: data.ubicacion },
+
+                { label: "Tipo de propiedad", valor: data.tipo_propiedad },
                 { label: "Valor m²", valor: simbolo + data.valmcua },
                 { label: "Estado Inmueble", valor: data.estado_im }
             ]
         };
 
-        // 1. Obtener y filtrar los campos que deben mostrarse
         const campos = (camposPorTipo[tipo] || []).filter(c => {
             const v = c.valor?.toString().trim();
+            
+            // Mostrar siempre área total y área construida, incluso si es 0
+            if (c.label === "Área total" || c.label === "Área construida") {
+                return true;
+            }
+
             return v &&
                 v !== "0" &&
                 v !== "0.00" &&
-                !v.startsWith("0 ") &&               // ej. "0 años"
-                !v.startsWith(simbolo + "0") &&      // ej. "$0.00"
+                !v.startsWith("0 ") &&               
+                !v.startsWith(simbolo + "0") &&      
                 !v.includes("0.00 m²") &&
                 !v.includes(simbolo + "0.00") &&
                 v !== simbolo + '0.00';
