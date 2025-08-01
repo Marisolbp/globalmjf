@@ -37,6 +37,14 @@ $(document).ready(function(){
             return (valor === null || valor == 0) ? '-' : valor + sufijo;
         };
 
+        let id_t_prop = data.id_t_prop
+
+        if(id_t_prop == 1 || id_t_prop == 3) {
+            $('#lblATotal').html('Área de terreno')
+        } else {
+            $('#lblATotal').html('Área ocupada')
+        }
+
         // Controlar valores dinámicos
         const area          = mostrarValor(data.area, ' m²');
         const aconstru      = mostrarValor(data.aconstru, ' m²');

@@ -116,6 +116,7 @@ class Proyecto extends Conectar{
                 p.nbanos,
                 p.area,
                 p.aconstru,
+                p.id_t_prop,
                 tp.nombre AS tipo_propiedad
             FROM g_proyec_arqui p
             INNER JOIN m_tipo_propiedad tp ON p.id_t_prop = tp.id

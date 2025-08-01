@@ -77,6 +77,17 @@ $(document).ready(function(){
     $('#estado').prop('checked', true); 
 });
 
+$('#id_t_prop').on('change', function () {
+
+    let id_t_prop = $('#id_t_prop').val()
+
+    if(id_t_prop == 1 || id_t_prop == 3) {
+        $('#lblATotal').html('Área de terreno')
+    } else {
+        $('#lblATotal').html('Área ocupada')
+    }
+});
+
 $('#estado').on('change', function () {
     if ($(this).is(':checked')) {
         $('#estado_real').val('A');

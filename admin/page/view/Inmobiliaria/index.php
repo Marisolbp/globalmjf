@@ -133,7 +133,7 @@ if(isset($_SESSION["id"])){
                                                         <th>Distrito</th>
                                                         <th>Estado</th>
                                                         <th>Ubicación</th>
-                                                        <th>Área total</th>
+                                                        <th>Área</th>
                                                         <th>Estado</th>
                                                         <th>Acción</th>
                                                     </tr>

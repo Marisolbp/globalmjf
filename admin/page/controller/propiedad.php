@@ -535,12 +535,19 @@ switch($_GET["op"]){
             
             // Determinar qué campos mostrar según el tipo de propiedad
             $id_tipo_propiedad = $datos["id_t_prop"];
+
+            if ($id_tipo_propiedad == 1 || $id_tipo_propiedad == 3){
+                $lblArea = 'Área de terreno';
+            } else {
+                $lblArea = 'Área ocupada';
+            }
             
             // Mapeo de IDs a nombres de tipos de propiedad
             $tipos_propiedades = [
                 '1' => 'Casa',
                 '2' => 'Departamento',
-                '3' => 'Terreno'
+                '3' => 'Terreno',
+                '4' => 'Local comercial'
             ];
             
             // Mapeo de campos a etiquetas y categorías para mostrar
@@ -577,8 +584,8 @@ switch($_GET["op"]){
                 'medidas' => [
                     'titulo' => 'Medidas',
                     'campos' => [
-                        'atotal' => 'Área Total',
-                        'aconstru' => 'Área Construida'
+                        'atotal' => $lblArea,
+                        'aconstru' => 'Área construida'
                     ]
                 ],
                 'condicion' => [

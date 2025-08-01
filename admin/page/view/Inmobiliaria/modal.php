@@ -237,7 +237,7 @@
                                     </div>
 
                                     <div class="col-md-2 col-sm-12">
-                                        <h6>Área total</h6>
+                                        <h6 id="lblATotal">Área de terreno</h6>
                                         <div class="input-group">
                                             <input type="text" class="form-control text-start input-mask" id="atotal" name="atotal" data-inputmask="'alias': 'numeric', 'groupSeparator': ',', 'digits': 2, 'digitsOptional': false, 'placeholder': '0'">
                                             <div class="input-group-append">

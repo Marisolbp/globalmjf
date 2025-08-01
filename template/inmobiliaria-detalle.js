@@ -64,7 +64,7 @@ $(document).ready(function(){
             "1": [ // CASA
                 { label: "Código", valor: data.codigo },
                 { label: "Precio", valor: simbolo + data.precio },
-                { label: "Área total", valor: data.area + " m²" },
+                { label: "Área de terreno", valor: data.area + " m²" },
                 { label: "Modalidad", valor: (data.modalidad == 'A') ? 'Alquiler' : 'Venta' },
                 { label: "Ubicación", valor: data.ubicacion },
                 { label: "Pisos", valor: data.npisos },
@@ -85,7 +85,7 @@ $(document).ready(function(){
             "2": [ // DEPARTAMENTO
                 { label: "Código", valor: data.codigo },
                 { label: "Precio", valor: simbolo + data.precio },
-                { label: "Área total", valor: data.area + " m²" },
+                { label: "Área ocupada", valor: data.area + " m²" },
                 { label: "Modalidad", valor: (data.modalidad == 'A') ? 'Alquiler' : 'Venta' },
                 { label: "Ubicación", valor: data.ubicacion },
                 { label: "Pisos", valor: data.npisos },
@@ -106,7 +106,7 @@ $(document).ready(function(){
             "3": [ // TERRENO
                 { label: "Código", valor: data.codigo },
                 { label: "Precio", valor: simbolo + data.precio },
-                { label: "Área total", valor: data.area + " m²" },
+                { label: "Área de terreno", valor: data.area + " m²" },
                 { label: "Modalidad", valor: (data.modalidad == 'A') ? 'Alquiler' : 'Venta' },
                 { label: "Ubicación", valor: data.ubicacion },
 
@@ -114,10 +114,10 @@ $(document).ready(function(){
                 { label: "Valor m²", valor: simbolo + data.valmcua },
                 { label: "Estado Inmueble", valor: data.estado_im }
             ],
-            "4": [ // TERRENO
+            "4": [ // LOCAL COMERCIAL
                 { label: "Código", valor: data.codigo },
                 { label: "Precio", valor: simbolo + data.precio },
-                { label: "Área total", valor: data.area + " m²" },
+                { label: "Área ocupada", valor: data.area + " m²" },
                 { label: "Área construida", valor: data.aconstru + " m²" },
                 { label: "Modalidad", valor: (data.modalidad == 'A') ? 'Alquiler' : 'Venta' },
                 { label: "Ubicación", valor: data.ubicacion },
@@ -132,7 +132,7 @@ $(document).ready(function(){
             const v = c.valor?.toString().trim();
             
             // Mostrar siempre área total y área construida, incluso si es 0
-            if (c.label === "Área total" || c.label === "Área construida") {
+            if (c.label === "Área de terreno" || c.label === "Área ocupada" || c.label === "Área construida") {
                 return true;
             }
 

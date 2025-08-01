@@ -121,6 +121,12 @@ $(document).ready(function(){
     // Función principal
     function actualizarCampos() {
         const tipoSeleccionado = $('#id_t_prop').val();
+
+        if(tipoSeleccionado == 1 || tipoSeleccionado == 3) {
+            $('#lblATotal').html('Área de terreno')
+        } else {
+            $('#lblATotal').html('Área ocupada')
+        }
         
         // Si no hay selección, deshabilitar todo
         if (!tipoSeleccionado) {
