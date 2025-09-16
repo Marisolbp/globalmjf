@@ -1,3 +1,54 @@
+
+<!-- 
+    Contenedor de chatbot donde se gestionaran 
+-->
+<div class='super_content_btn_chats'>
+    <div class='super_bot' id="btn_bot">
+        <a class='conten_bot'>
+            <div class='conten_img_bot'>
+                <img class='img_bot' src='images/bot.svg'>
+            </div>
+        </a>
+    </div>
+
+    <div class='super_wsp'>
+        <a class='conten_wsp' href="https://wa.me/51926636364?text=Solicito%20información%20general" target="_blank">
+            <div class='conten_img_wsp'>
+                <img class='img_wsp' src='images/wsp.svg'>
+            </div>
+        </a>
+    </div>
+</div>
+
+<div class='content_chat_bot close' id='element_chat_bot'>
+    <div class="header_chat_bot">
+        <span>Khalibot</span>
+    </div>
+    <div class="body_chat_bot" id='body_chat_bot'>
+
+        <div class='row_chat chat_me' >
+            <div class='avatar_chat'>
+                <img class='img_avatar' src='images/bot.svg'>
+            </div>
+            <div class='bubble_chat'>
+                ¡Hola! Soy Khalibot, tu asistente virtual. Estoy aquí para ayudarte a encontrar propiedades, proyectos arquitectónicos y mucho más. ¿En qué te puedo ayudar hoy?"
+            </div>
+        </div>
+
+    </div>
+    <div class="input_chat_bot">
+        <div class='ipb_content_input'>
+            <textarea name="text" id="chat_input" rows="1" ></textarea>
+        </div>
+        <div class='ipb_content_button'>
+            <div class='button_send_chat' id='btn_send_chat'>
+                <img class='img_send_chat'  src='images/send.svg'>
+            </div>
+        </div>
+    </div>
+</div>
+
+
 <footer>
     <div class="wrapper__footer bg-theme-footer">
         <div class="container">
@@ -90,6 +141,7 @@
 </footer>
 
 <script>
+
     function obtenerFooter(){
         $.post("./controller/principal.php?op=informacion_principal", function(data) {
             data = JSON.parse(data);
