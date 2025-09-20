@@ -30,6 +30,7 @@
     <link href="./css/styles.css?8918068d71def746395d" rel="stylesheet">
 
     <link rel="stylesheet" href="css/css/all.min.css">
+    <link rel="stylesheet" href="css/css/chat.css">
 
     <style>
         .btn-filter a {
@@ -158,6 +159,7 @@
     <script src="./js/index.bundle.js?8918068d71def746395d"></script>
 
     <script src="index.js"></script>
+    <script src='./js/chat.js'></script>
 </body>
 
 </html>
