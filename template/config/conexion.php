@@ -7,7 +7,7 @@
         protected function Conexion() {
             try {
                 // Cambiado "mysql:local" (incorrecto) por "mysql:host"
-                $this->dbh = new PDO("mysql:host=localhost;dbname=bd_globalmjf2", "root", "root", [
+                $this->dbh = new PDO("mysql:host=localhost;dbname=bd_globalmjf2", "root", "", [
                     PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8mb4"
                 ]);
                 // Aseguramos que la conexión use utf8mb4 para emojis
