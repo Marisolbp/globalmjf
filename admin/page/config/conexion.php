@@ -7,7 +7,7 @@
         protected function Conexion(){
             try{
                 // CAMBIO 1: Agregar charset=utf8mb4 en la conexión
-                $conectar = $this->dbh = new PDO("mysql:host=localhost;dbname=bd_globalmjf2;charset=utf8mb4","root","root");
+                $conectar = $this->dbh = new PDO("mysql:host=localhost;dbname=bd_globalmjf;charset=utf8mb4","root","root");
                 
                 // CAMBIO 2: Configurar atributos PDO para UTF-8MB4
                 $conectar->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);

@@ -293,7 +293,7 @@ create table m_tipo_propiedad(
 INSERT INTO m_tipo_propiedad (nombre, estado) VALUES
 ('Casa', 'A'),
 ('Departamento', 'A'),
-('Terreno', 'A');
+('Terreno', 'A'),
 ('Local comercial', 'A');
 
 create table m_nosotros(
